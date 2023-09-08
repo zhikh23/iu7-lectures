@@ -56,3 +56,7 @@
 1. Telegram `@zhikhkirill`
 2. Discord `@zhikh`
 3. VK `@zhikh.localhost`
+
+--- 
+
+Многое что я использовал при написании этих лекций взято [отсюда](https://github.com/gillescastel)
