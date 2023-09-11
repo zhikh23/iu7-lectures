@@ -36,7 +36,7 @@
 |      ...
 |
 |___ common                         (e)
-|    |___ preamble.tex
+|    |___ preamble.tex              (f)
 |
 |___ README.md
 |___ .gitignore
