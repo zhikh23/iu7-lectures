@@ -15,8 +15,8 @@
     a \neq b \\
   \end{gather*}
   \begin{gather}
-    \lim_{n \to \infty} = a \iff (\forall \epsilon_1 > 0)(\exists N_2(\epsilon_2) \in N)(\forall n > N_1(\epsilon_1) \implies |x_{n} - a| < \epsilon_1) \\
-    \lim_{n \to \infty} = b \iff (\forall \epsilon_1 > 0)(\exists N_2(\epsilon_2) \in N)(\forall n > N_1(\epsilon_1) \implies |x_{n} - b| < \epsilon_1)  
+    \lim_{n \to \infty} = a \iff (\forall \epsilon_1 > 0)(\exists N_1(\epsilon_1) \in N)(\forall n > N_1(\epsilon_1) \implies |x_{n} - a| < \epsilon_1) \\
+    \lim_{n \to \infty} = b \iff (\forall \epsilon_2 > 0)(\exists N_2(\epsilon_2) \in N)(\forall n > N_2(\epsilon_2) \implies |x_{n} - b| < \epsilon_2)  
   \end{gather} 
   Выберем $N=max \{N_1\left( \epsilon_1 \right) , N_2\left( \epsilon_2 \right) \}$. \\
   Пусть 
@@ -28,13 +28,12 @@
   = |(x_{n} - a) - (x_{n} - b)| \le |x_{n} - a| + |x_{n} - b| < \epsilon_1 + \epsilon_2 = 2 \epsilon \\
   3 \epsilon = 2 \epsilon
   \end{gather*}
-  Противоречние. Значит, предоположение не является верным $\implies$ последовательност $x_{n}$ имеет единственный предел.
+  Противоречие. Значит, предоположение не является верным $\implies$ последовательность $x_{n}$ имеет единственный предел.
 \end{proof}
 
 \begin{proof} Геометрическое доказательство\\
   Нельзя уложить бесконечное число членов последовательности $x_{n}$ в две непересекающиеся окрестности. \\
   % рисуночек
-  (1) бесконечное количество членов в окрестности 
 \end{proof}
 
 \begin{theorem}
@@ -48,7 +47,7 @@
     \implies \lim_{n \to \infty} = a \iff (\forall \epsilon > 0)(\exists N(\epsilon)\in \N)(\forall n > N(\epsilon) \implies |x_{n} - a| < \epsilon).
   \end{gather*}
   Выберем в качестве $M = max \{|x_{1}|, |x_2|, \ldots |x_n|, |a - \epsilon|, |a + \epsilon|\}$. \\
-Тогда для $\forall n \in \N$ будет верно $|x_{n}| \le M$ - это и ознaчает, что последовательность $x_{n}$ - ограниченая.
+Тогда для $\forall n \in \N$ будет верно $|x_{n}| \le M$ - это и ознaчает, что последовательность $x_{n}$ - ограниченная.
 \end{proof}
 
 \begin{theorem}
@@ -67,13 +66,12 @@
 
 \subsubsection{Гиперболический функции}
 
-$sh\left( x \right) = \frac{e^x - e^{-x}}{2}$ - гиперболический синус
-
-$ch\left( x \right) = \frac{e^x + e^{-x}}{2}$ - гиперболический косинус
-
-$th\left( x \right) = \frac{sh(x)}{ch(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$ - гиперболический тангенс
-
-$cth\left( x \right) = \frac{ch(x)}{sh(x)} = \frac{e^x + e^{-x}}{e^x - e^{-x}}$ - гиперболический котангенс
+\begin{itemize}
+$sh\left( x \right) = \frac{e^x - e^{-x}}{2}$ - гиперболический синус \\
+$ch\left( x \right) = \frac{e^x + e^{-x}}{2}$ - гиперболический косинус \\
+$th\left( x \right) = \frac{sh(x)}{ch(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$ - гиперболический тангенс \\
+$cth\left( x \right) = \frac{ch(x)}{sh(x)} = \frac{e^x + e^{-x}}{e^x - e^{-x}}$ - гиперболический котангенс \\
+\end{itemize}
 
 Основное гиперболическое тождество
 \[
@@ -96,14 +94,14 @@ $cth\left( x \right) = \frac{ch(x)}{sh(x)} = \frac{e^x + e^{-x}}{e^x - e^{-x}}$ 
 
 \begin{definition}
   \textit{Определение функции по Коши} или \textit{на языке $\epsilon$ и $\delta$ }. \\
-  Число $a$ называется пределом функции $y = f\left( x \right) $ в точке $x_0$, если $\forall \epsilon > 0$ найдется $\delta$, зависящее от  $\epsilon$ такое что $\forall x \in S(x_0; \delta)$ будет верно неравенство $|f\left( x \right) - a| < \epsilon$.
+  Число $a$ называется пределом функции $y = f\left( x \right) $ в точке $x_0$, если $\forall \epsilon > 0$ найдется $\delta$, зависящее от  $\epsilon$ такое что $\forall x \in \mathring{S}(x_0; \delta)$ будет верно неравенство $|f\left( x \right) - a| < \epsilon$.
   \[
-    \lim_{x \to \infty} f(x) = a \iff (\forall \epsilon > 0)(\exists  \delta(\epsilon) > 0)(\forall  x \in S(x_0; \delta) \implies |f(x) - a| < \epsilon
+    \lim_{x \to x_0} f(x) = a \iff (\forall \epsilon > 0)(\exists  \delta(\epsilon) > 0)(\forall  x \in \mathring{S}(x_0; \delta) \implies |f(x) - a| < \epsilon)
   \]
 
   Еще несколько вариантов записи:
   \[
-    \ldots \forall x \in \r{S(x_0; \delta)} \implies \ldots
+  \ldots \forall x \in \mathring{S}(x_0; \delta) \implies \ldots
   \] 
   \[
   \ldots \forall x \neq x_0, |x - x_0| < \epsilon \implies \ldots
@@ -131,7 +129,7 @@ $cth\left( x \right) = \frac{ch(x)}{sh(x)} = \frac{e^x + e^{-x}}{e^x - e^{-x}}$ 
 \] 
 \begin{definition}
   \textit{Определение предела функции по Гейне} или \textit{на языке последовательнсотей}. \\
-  Число $a$ называется пределом $y = f\left( x \right) $ в точке $x_0$, если эта функция определена в окрестности точки $a$ и $\forall$ последовательнсти $x_{n}$ из области определения этой функции, сходящейся к $x_0$ соответствующая последовательность функций $\{f(x_{n}\}$ сходится к $a$.
+  Число $a$ называется пределом $y = f\left( x \right) $ в точке $x_0$, если эта функция определена в окрестности точки $a$ и $\forall$ последовательнсти $x_{n}$ из области определения этой функции, сходящейся к $x_0$ соответствующая последовательность функций $\{f(x_{n})\}$ сходится к $a$.
   \[
   \lim_{x \to x_0} = a \iff (\forall x_{n}\in D_f)(\lim_{n \to \infty} x_{n} = x_0 \implies \lim_{n \to \infty} f(x_{n}) = a) 
   \] 
