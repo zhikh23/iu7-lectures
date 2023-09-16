@@ -224,25 +224,28 @@
     \marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
 }
 
-\def\@lesson{}%
-\newcommand{\lesson}[2]{
-    \ifthenelse{\isempty{#2}}{%
-        \def\@lesson{Лекция #1}%
-    }{%
-        \def\@lesson{Лекция #1: #2}%
-    }%
-    \subsection*{\@lesson}
+
+\def\@header{}
+\newcommand{\lectures}[1]{
+  \def\@header{#1. Лекции}
+  \begin{center}
+    \section*{#1. Лекции}
+  \end{center}
 }
 
-% \renewcommand\date[1]{\marginpar{#1}}
-
+\def\@header{}
+\newcommand{\seminars}[1]{
+  \def\@header{#1. Семинары}
+  \begin{center}
+    \section*{#1. Семинары}
+  \end{center}
+}
 
 % fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-% \fancyhead[LE,RO]{Gilles Castel}
-\fancyhead[RO,LE]{\@lesson}
+\fancyhead[RO,LE]{\@header}
 \fancyhead[RE,LO]{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[C]{\leftmark}
