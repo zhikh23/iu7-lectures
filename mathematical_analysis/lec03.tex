@@ -78,23 +78,18 @@
     \lim_{x \to x_0} f(x) = a \iff (\forall \epsilon > 0)(\exists  \delta(\epsilon) > 0)(\forall  x \in \mathring{S}(x_0; \delta) \implies |f(x) - a| < \epsilon)
   \]
 
-  Еще несколько вариантов записи:
-  \[
-  \ldots \forall x \in \mathring{S}(x_0; \delta) \implies \ldots
-  \] 
-  \[
-  \ldots \forall x \neq x_0, |x - x_0| < \epsilon \implies \ldots
-  \] 
-  \[
-  \ldots \forall x, 0 < |x - x_0| < \delta \implies \ldots
-  \]
-  Для последней части:
-  \[
-  \ldots \implies |f(x) - a| < \epsilon
-  \] 
-  \[
-  \ldots \implies f(x) \in S(a, \epsilon)
-  \] 
+  Эквивалентные записи определения
+
+  \begin{gather*}
+    \ldots \forall x \in \mathring{S}(x_0; \delta) \implies \ldots \\
+    \ldots \forall x \neq x_0, |x - x_0| < \epsilon \implies \ldots \\
+    \ldots \forall x, 0 < |x - x_0| < \delta \implies \ldots \\
+  \end{gather*}
+  
+  \begin{gather*}
+    \ldots \implies |f(x) - a| < \epsilon \\
+    \ldots \implies f(x) \in \mathring{S}(a, \epsilon) \\
+  \end{gather*}
 \end{definition}
 
 \subsubsection*{Геометрический смысл предела функции}
