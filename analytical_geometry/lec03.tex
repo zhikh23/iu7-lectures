@@ -42,7 +42,7 @@
   Пусть в пространстве $V_3$ зафиксирован ортонормированный базис $\vec{i}, \vec{j}, \vec{k}$
   Тогда:
   \begin{gather*}
-    \vec{a} = \{x_a, b_a, c_a\} \\
+    \vec{a} = \{x_a, y_a, z_a\} \\
     \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k}
   \end{gather*}
 \end{eg}
@@ -59,15 +59,16 @@
 \begin{gather*}
   \vec{a} = \alpha \vec{b} + \beta \vec{c} \\
   3 \vec{i} - 4 \vec{j} = \alpha(2 \vec{i} + \vec{j}) + \beta (- \vec{i} + 5 \vec{j}) \\
-  3 \vec{i} - 4 \vec{j} = (2 \alpha - \beta) \vec{i} + (\alpha + 5 \beta) \implies \\
+  3 \vec{i} - 4 \vec{j} = (2 \alpha - \beta) \vec{i} + (\alpha + 5 \beta) \vec{j} \implies \\
   \begin{cases}
     3 = 2 \alpha - \beta \\
     -4 = \alpha + 5 \beta
-  \end{cases} \implies 
-    \begin{cases}
-      \beta = -1 \\
-      \alpha - 1
-    \end{cases}
+  \end{cases} 
+  \implies 
+  \begin{cases}
+    \beta = -1 \\
+    \alpha - 1
+  \end{cases}
 \end{gather*}
 
 \begin{note}
@@ -91,7 +92,7 @@
   $k \vec{a} = k \cdot \{ \ldots \} $ - так записывать нельзя!
 \end{note}
 
-Если $\vec{a} \parallel \vec{b}$, то $\vec{b} = \lambda \vec{a}, \lambda = const$
+Если $\vec{a} \parallel \vec{b}$, то $\vec{b} = \lambda \vec{a}, где \lambda = const$
 \begin{gather*}
   \begin{cases}
     x_b = \lambda x_a \\
@@ -170,7 +171,7 @@
 \begin{gather*}
   \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cos \varphi \\
   \vec{a} \cdot \vec{b} > 0 \text{, если } \varphi \in \left( 0; \frac{\pi}{2} \right)  \\
-  \vec{a} \cdot \vec{b} < 0 \text{, если } \varphi \in \left( \frac{\pi}{2}; \pi \right) 
+  \vec{a} \cdot \vec{b} < 0 \text{, если } \varphi \in \left( \frac{\pi}{2}; \pi \right) \\
   \vec{a} \cdot \vec{b} = 0 \text{, если } \varphi = \frac{\pi}{2}
 \end{gather*}
 
@@ -178,29 +179,48 @@
 \begin{gather*}
   \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \\
   \vec{b} = x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \\
-  \vec{c} = x_c \vec{i} + y_c \vec{j} + z_c \vec{k} \\
 \end{gather*}
+
 Тогда:
 \begin{gather*}
-  \vec{i}^2 = 1, \vec{j}^2 = 1, \vec{k}^2 = 1
-  % Перпендикулярность векторов \implies произведение = 0
+  \begin{matrix}
+    \vec{i}^2 = \vec{i} \cdot \vec{i} = |\vec{i}|^2 = 1 \\
+    \vec{j}^2 = \vec{j} \cdot \vec{j} = |\vec{j}|^2 = 1 \\ 
+    \vec{k}^2 = \vec{k} \cdot \vec{k} = |\vec{k}|^2 = 1 \\
+  \end{matrix}
+  \qquad 
+  \begin{matrix}
+    \vec{i} \perp \vec{j} \implies \vec{i} \cdot \vec{j} = 0 \\ 
+    \vec{i} \perp \vec{k} \implies \vec{i} \cdot \vec{k} = 0 \\ 
+    \vec{j} \perp \vec{k} \implies \vec{j} \cdot \vec{k} = 0 \\ 
+  \end{matrix}
 \end{gather*}
-\begin{gather*}
-  \vec{a} * \vec{b} = \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) = \\
-  % дальше куча умножений ...
+
+\begin{center}
+  \vec{a} \cdot \vec{b}
+  = \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) \\
+  = x_a x_b \vec{i}^2 + x_a y_b (\vec{i} \cdot \vec{j}) + x_a z_b (\vec{i} \cdot \vec{k}) \\
+  + y_a x_a (\vec{i} \cdot \vec{j}) + y_a y_b \vec{j}^2 + y_a z_b (\vec{j} \cdot \vec{k}) \\
+  + z_a x_b (\vec{i} \cdot \vec{k}) + z_a y_b (\vec{j} \cdot \vec{k}) + z_a z_b \vec{k}^2 \\
   = x_a x_b + y_a y_b + z_a z_b \\
-\end{gather*}
+\end{center}
+
+\begin{center}
+  \boxed{\vec{a} \cdot \vec{b} = x_a x_b + y_a y_b + z_a z_b}
+\end{center}
+
+
 
 \subsubsection{Формула косинуса между векторами, заданными ортонормированным базисом}
 
-Т.к. $\vec{a} \vec{b} = |\vec{a}| |\vec{b}| \cos \phi$, то  \[
-\cos \phi = \frac{\vec{a} \vec{b}}{|\vec{a}| |\vec{b}|}.
-\] 
+Т.к. $\vec{a} \vec{b} = |\vec{a}| |\vec{b}| \cos \phi$, то:
+\begin{gather*}
+  \cos \varphi = \frac{\vec{a} \vec{b}}{|\vec{a}| |\vec{b}|} \\
+  = \frac{x_a x_b + y_a y_b + z_a z_b}{|\vec{a}| \cdot |\vec{b}|} \\
+  = \frac{x_a x_b + y_a y_b + z_a z_b}{\sqrt{x_a^2 + y_a^2 + z_a^2} +\sqrt{x_b^2 + y_b^2 + z)b^2} } \\
+  \boxed{\cos \varphi = \frac{x_a x_b + y_a y_b + z_a z_b}{\sqrt{x_a^2 + y_a^2 + z_a^2} +\sqrt{x_b^2 + y_b^2 + z)b^2}}}
+\end{gather*}
 
-%Если $\smallmatrix{
-%  \vec{a} = x_a \vec{i} + y_a * \vec{j} + z_a * \vec{k} \\
-%  \vec{b} = x_b \vec{i} + y_b * \vec{j} + z_b * \vec{k}
-%}$
 
 \subsection{Векторное произведение векторов}
 
@@ -216,10 +236,10 @@
   \textbf{Векторным произведением} векторов $\vec{a}$ и $\vec{b}$ называется вектор $\vec{c}$, который удовлетворяет следующему условию:
   \begin{enumerate}
     \item $\vec{c}$ ортогонален векторам $\vec{a}$ и $\vec{b}$ (перпендикулярен плоскости, в которой лежат вектора $\vec{a}$ и $\vec{b}$);
-    \item $\vec{c} = |\vec{a}| |\vec{b}| * \cos \phi$
-    \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов. 
-  \end{enumerate}.
-  \[
+    \item $\vec{c} = |\vec{a}| |\vec{b}| \cdot \sin \phi$
+    \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов.
+  \end{enumerate}
+  Обозначение: \[
     \vec{a} \times \vec{b} \text{ или } [\vec{a}, \vec{b}]
   \] 
 \end{definition}
@@ -230,10 +250,10 @@
   \item Антикомунитативность \[
     \vec{a} \times \vec{b} = - \vec{b} \times \vec{a}
   \] 
-  \item Линейность \[
+\item Дистрибутивность \[
     \left( \vec{a_1} + \vec{a_2} \right) \times \vec{b} = \vec{a_1} \times \vec{b} + \vec{a_2} \times  \vec{b} 
   \]  
-  \item Свойство (чего-то) \[
+  \item Ассоциативность \[
     \left( \lambda \vec{a} \right) \times \vec{b} = \lambda \left( \vec{a} \times \vec{b} \right)  
   \]
 \end{enumerate}
