@@ -1,0 +1,240 @@
+\begin{theorem}
+  \textit{О разложении вектора по базису} \\
+  Любой вектор можно разложить по базису и при этом единственным образом.
+\end{theorem}
+\begin{proof}
+  Пусть в пространстве $V_3$ зафиксирован базис $\vec{e_1}, \vec{e_2}, \vec{e_3}$. Возьмём вектор $\vec{x}$. Тогда система векторов $\vec{x}, \vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно зависима, если вектор $\vec{x}$ можно представить в виде линейной комбинации векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$: \[
+  \vec{x} = \lambda_1 \vec{e_1} + \lambda_2 \vec{e_2} + \lambda_3 + \vec{e_3} \tag{1}
+\]
+  Предположим, что разложение вектора $\vec{x}$ - не единственное. \[
+  \vec{x} = \rho \vec{e_1} + \rho \vec{e_2} + \rho \vec{e_3} \tag{2}
+\]
+  Вычтем из (1) уранвение (2). Тогда: \[
+    \vec{0} = \left( \lambda_1 - \rho_1 \right) \vec{e_1} + \left( \lambda_2 - \rho_2 \right) \vec{e_2} + \left( \lambda_3 - \rho_3 \right) \vec{e_3} \tag{3}
+\]
+Поскольку базисные вектора $\vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно независимы, то выражение (3) представляет собой тривиальную линейную комбинацию векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$, равную нулю. Тогда получаем:
+  \begin{gather*}
+    \begin{matrix}  
+      \lambda_1 - \delta_1 = 0 \\
+      \lambda_2 - \delta_2 = 0 \\
+      \lambda_3 - \delta_3 = 0 \\
+    \end{matrix}
+    \quad \implies \quad
+    \begin{matrix}
+      \lambda_1 = \delta_1 \\
+      \lambda_2 = \delta_2 \\
+      \lambda_3 = \delta_3 \\
+    \end{matrix}
+  \end{gather*}
+  Коэффициенты равны, что и требовалось доказать.
+\end{proof}
+\begin{eg}
+  Пусть в пространстве $V_2$ зафиксирован базис $\vec{i}, \vec{j}$.
+  \begin{gather*}
+    |\vec{i}| = 1, \quad |\vec{j}| = 1 \\
+    \vec{a} = \overrightarrow{OA} + \overrightarrow{OB} \\
+    \overrightarrow{OA} \parallel \vec{i} \implies \overrightarrow{OA} = x_a \vec{i} \\
+    \overrightarrow{OB} \parallel \vec{j} \implies \overrightarrow{OB} = y_a \vec{j} \\
+    \implies \vec{a} = x_a \vec{i} + y_a \vec{j}
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  Пусть в пространстве $V_3$ зафиксирован ортонормированный базис $\vec{i}, \vec{j}, \vec{k}$
+  Тогда:
+  \begin{gather*}
+    \vec{a} = \{x_a, b_a, c_a\} \\
+    \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k}
+  \end{gather*}
+\end{eg}
+
+\exercise{}
+Разложить $\vec{a}$ по векторам $\vec{a}, \vec{b}, \vec{c}$. \\
+Дано:
+\begin{gather*}
+  \vec{a} = 3 \vec{i} - 4 \vec{j} \\
+  \vec{b} = 2 \vec{i} -   \vec{j} \\
+  \vec{c} = - \vec{i} - 5 \vec{j}
+\end{gather*}
+Решение:
+\begin{gather*}
+  \vec{a} = \alpha \vec{b} + \beta \vec{c} \\
+  3 \vec{i} - 4 \vec{j} = \alpha(2 \vec{i} + \vec{j}) + \beta (- \vec{i} + 5 \vec{j}) \\
+  3 \vec{i} - 4 \vec{j} = (2 \alpha - \beta) \vec{i} + (\alpha + 5 \beta) \implies \\
+  \begin{cases}
+    3 = 2 \alpha - \beta \\
+    -4 = \alpha + 5 \beta
+  \end{cases} \implies 
+    \begin{cases}
+      \beta = -1 \\
+      \alpha - 1
+    \end{cases}
+\end{gather*}
+
+\begin{note}
+  Два вектора равны, если равны соответствующие координаты.
+\end{note}
+
+\subsection{Координаты вектора. Действия с векторами}
+
+Пусть:
+\begin{gather*}
+  \vec{a} = \{x_a, y_a, x_a\} \\
+  \vec{b} = \{x_b, y_b, z_b \}
+\end{gather*}
+
+Тогда:
+\begin{gather*}
+  \vec{c} = \vec{a} + \vec{b} = \{x_a + x_b, y_a + y_b, z_a + z_b\} \\ 
+  k \vec{a} = \{k x_a, k y_a, k z_a\} 
+\end{gather*}
+\begin{note}
+  $k \vec{a} = k \cdot \{ \ldots \} $ - так записывать нельзя!
+\end{note}
+
+Если $\vec{a} \parallel \vec{b}$, то $\vec{b} = \lambda \vec{a}, \lambda = const$
+\begin{gather*}
+  \begin{cases}
+    x_b = \lambda x_a \\
+    y_b = \lambda y_a \\
+    z_b = \lambda z_b
+  \end{cases}
+  \implies 
+  \frac{x_a}{x_b} = \frac{y_a}{y_b} = \frac{z_a}{z_b}
+\end{gather*}
+
+\subsubsection*{Расчёт косинуса угла по разложению в базисе}
+
+\begin{eg}
+  В $V_2$:
+  \begin{gather*}
+    \vec{a} = \{x_a, y_a, z_a\} \\
+    |\vec{a}| = \sqrt{x_a^2 + y_a^2 + z_a^2} \\
+    \cos \alpha = \frac{x_a}{|\vec{a}|} \\
+    \cos \beta = \frac{y_a}{|\vec{a}|}
+  \end{gather*}
+\end{eg}
+
+\begin{eg}
+  Для $V_3$: \\
+  \begin{gather*}
+    \begin{matrix}
+      \cos \alpha = \frac{x_a}{|\vec{a}|} \\
+      \cos \beta = \frac{y_a}{|\vec{a}|} \\
+      \cos \gamma = \frac{z_a}{|\vec{a}|}
+    \end{matrix}
+    \qquad
+    \begin{matrix}
+      x_a = |\vec{a}| \cos \alpha \\
+      y_a = |\vec{a}| \cos \beta \\
+      z_a = |\vec{a}| \cos \gamma \\
+    \end{matrix}
+  \end{gather*}
+  Возведём в квадрат:
+  \begin{gather*}
+    |\vec{a}|^2 \cos^2 \alpha + |\vec{a}|^2 \cos^2 \beta + |\vec{a}|^2 \cos^2 \gamma = x_a^2 + y_a^2 + z_a^2 = |\vec{a}|^2 \\
+    \implies \cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma = 1
+  \end{gather*}
+  В результате получаем орт вектора $\vec{a}$: \[
+  \vec{e_a} = \{\cos \alpha, \cos \beta, \cos \gamma\} 
+  \] 
+\end{eg}
+
+\begin{definition}
+  \textbf{Скалярным произведением} векторов $\vec{a}, \vec{b}$ называется \textit{число}  равное произведению длин этих векторов на косинус угла между ними.\[
+  \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos \phi
+  \] 
+\end{definition}
+
+\subsubsection{Свойства скалярного произведения}
+
+\begin{enumerate}
+  \item Коммунитативность \[
+    \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}
+  \] 
+\item
+  \begin{gather*}
+    \vec{a}^2 \ge 0 \\
+    \vec{a}^2 = 0 \iff \vec{a} = \vec{0} \\
+    \vec{a}^2 = |\vec{a}|^2
+  \end{gather*}
+  \item Дистрибутивность \[
+      \left( \vec{a} + \vec{b} \right) \cdot \vec{c} = \vec{a} \cdot \vec{c} + \vec{b} \cdot \vec{c}
+  \]
+  \item Ассоциативность \[
+    \left( \lambda \vec{a} \right) \cdot \vec{b} = \lambda \left( \vec{a} \cdot \vec{b} \right) 
+  \]
+\end{enumerate}
+
+\subsubsection{Формула для вычисления скалярного произведения двух векторов, заданных ортонормированным базисом}
+
+\begin{gather*}
+  \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cos \varphi \\
+  \vec{a} \cdot \vec{b} > 0 \text{, если } \varphi \in \left( 0; \frac{\pi}{2} \right)  \\
+  \vec{a} \cdot \vec{b} < 0 \text{, если } \varphi \in \left( \frac{\pi}{2}; \pi \right) 
+  \vec{a} \cdot \vec{b} = 0 \text{, если } \varphi = \frac{\pi}{2}
+\end{gather*}
+
+Пусть в пространстве $V_3$ с заданным ортонормированном базисе $\vec{i}, \vec{j}, \vec{k}$ заданы вектора $\vec{a}, \vec{b}$:
+\begin{gather*}
+  \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \\
+  \vec{b} = x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \\
+  \vec{c} = x_c \vec{i} + y_c \vec{j} + z_c \vec{k} \\
+\end{gather*}
+Тогда:
+\begin{gather*}
+  \vec{i}^2 = 1, \vec{j}^2 = 1, \vec{k}^2 = 1
+  % Перпендикулярность векторов \implies произведение = 0
+\end{gather*}
+\begin{gather*}
+  \vec{a} * \vec{b} = \left( x_a \vec{i} + y_a \vec{j} + z_a \vec{k} \right) \left( x_b \vec{i} + y_b \vec{j} + z_b \vec{k} \right) = \\
+  % дальше куча умножений ...
+  = x_a x_b + y_a y_b + z_a z_b \\
+\end{gather*}
+
+\subsubsection{Формула косинуса между векторами, заданными ортонормированным базисом}
+
+Т.к. $\vec{a} \vec{b} = |\vec{a}| |\vec{b}| \cos \phi$, то  \[
+\cos \phi = \frac{\vec{a} \vec{b}}{|\vec{a}| |\vec{b}|}.
+\] 
+
+%Если $\smallmatrix{
+%  \vec{a} = x_a \vec{i} + y_a * \vec{j} + z_a * \vec{k} \\
+%  \vec{b} = x_b \vec{i} + y_b * \vec{j} + z_b * \vec{k}
+%}$
+
+\subsection{Векторное произведение векторов}
+
+\begin{definition}
+  Тройка векторов называется \textbf{правой}, если кратчайший поворот от вектора $\vec{a}$ к $\vec{b}$ осуществляется \textit{против часовой стрелки} (смотря из конца вектора $\vec{c}$).
+\end{definition}
+
+\begin{definition}
+  Тройка векторов называется \textbf{левой}, если кратчайший поворот от вектора $\vec{a}$ к $\vec{b}$ осуществляется \textit{по часовой стрелки} (смотря из конца вектора $\vec{c}$).
+\end{definition}
+
+\begin{definition}
+  \textbf{Векторным произведением} векторов $\vec{a}$ и $\vec{b}$ называется вектор $\vec{c}$, который удовлетворяет следующему условию:
+  \begin{enumerate}
+    \item $\vec{c}$ ортогонален векторам $\vec{a}$ и $\vec{b}$ (перпендикулярен плоскости, в которой лежат вектора $\vec{a}$ и $\vec{b}$);
+    \item $\vec{c} = |\vec{a}| |\vec{b}| * \cos \phi$
+    \item Вектора $\vec{a}, \vec{b}, \vec{c}$ образуют \textit{правую} тройку векторов. 
+  \end{enumerate}.
+  \[
+    \vec{a} \times \vec{b} \text{ или } [\vec{a}, \vec{b}]
+  \] 
+\end{definition}
+
+\subsubsection{Свойства векторного произведения векторов}
+
+\begin{enumerate}
+  \item Антикомунитативность \[
+    \vec{a} \times \vec{b} = - \vec{b} \times \vec{a}
+  \] 
+  \item Линейность \[
+    \left( \vec{a_1} + \vec{a_2} \right) \times \vec{b} = \vec{a_1} \times \vec{b} + \vec{a_2} \times  \vec{b} 
+  \]  
+  \item Свойство (чего-то) \[
+    \left( \lambda \vec{a} \right) \times \vec{b} = \lambda \left( \vec{a} \times \vec{b} \right)  
+  \]
+\end{enumerate}
+
