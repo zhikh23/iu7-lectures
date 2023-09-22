@@ -1,0 +1,180 @@
+\subsection{Основные теоремы о пределах}
+
+\begin{theorem}
+  \textit{О локальной ограниченности функции, имеющей конечный предел}. \\
+  Функция, имеющая конечный предел, локально ограничена.
+\end{theorem}
+\begin{proof}
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = a \\
+    \iff (\forall \varepsilon > 0)(\exist \delta(\varepsilon) > 0) (\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon) \\
+  \end{gather*}
+  Распишем:
+  \begin{gather*}
+    \begin{matrix}
+      - \varepsilon < f(x) - a < \varepsilon \\
+      a - \varepsilon < f(x) < a + \varepsilon \\
+    \end{matrix}
+    \qquad
+    \forall  x \in \mathring{S}(x_0, \delta)
+  \end{gather*}
+  Выберем $M = max\{|a - \varepsilon|, |a + \varepsilon|\}$ 
+  \begin{gather*}
+    |f(x)| \le  M, \quad \forall  x \in  \mathring{S}(x_0, a)
+  \end{gather*}
+  Что и требовалось доказать.
+\end{proof}
+
+\begin{theorem}
+  \textit{О единственности предела функции}. \\
+  Если функция имеет конечный предел, то он единственный.
+\end{theorem}
+\begin{proof}
+ Предположим, что функция имеет более одного предела, например 2 - $a$ и $b$. Тогда:
+ \begin{gather*}
+   \lim_{x \to x_0} = a \tag{1} \\  
+   \lim_{x \to x_0} = b  \tag{2} \\
+    a \neq b \text{, пусть } b > a
+ \end{gather*}
+ \begin{gather*}
+   (1) \iff (\forall  \varepsilon_1 > 0)(\exists  \delta_1(\varepsilon_1) > 0)(\forall  x \in  \mathring{S}(x_0, \delta_1) \implies |f(x) - a| < \varepsilon_1) \\
+   (2) \iff (\forall  \varepsilon_2 > 0)(\exists  \delta_2(\varepsilon_2) > 0)(\forall  x \in  \mathring{S}(x_0, \delta_2) \implies |f(x) - b| < \varepsilon_2) \\
+ \end{gather*}
+ Распишем:
+ \begin{gather*}
+   (1) \implies a - \varepsilon_1 < f(x) < a + \varepsilon_1, \forall  x \in \mathring{S}(x_0, \delta_1) \\
+   (1) \implies b - \varepsilon_2 < f(x) < b + \varepsilon_2, \forall  x \in \mathring{S}(x_0, \delta_2) \\
+ \end{gather*}
+ Выберем $\delta = min \{\delta_1, \delta_2\}$, тогда $\forall x \in  \mathring{S}(x_0, \delta)$
+ будет верно (1) и (2) одновременно.
+
+ Пусть $\varepsilon_1 = \varepsilon_2 = \varepsilon = \frac{b - a}{2}$:
+
+ \begin{gather*}
+  (1) \implies f(x) < a + \varepsilon_1 = a + \frac{b - a}{2} = \frac{a + b}{2} \\
+  (2) \implies f(x) < b - \varepsilon_2 = b - \frac{b - a}{2} = \frac{a + b}{2} \\
+  \forall x \in \mathring{S}(x_0, \delta)
+ \end{gather*}
+ 
+ Мы получили противоречие. Это означает, что предположение не является верным. Функция имеет единственный предел.
+\end{proof}
+
+\begin{theorem}
+  \textit{О сохранении функией знака своего предела} \\
+  Если $\lim_{x \to x_0} = a \neq 0$, то $\exists \mathring{S}(x_0, \delta)$ такая, что функция в ней сохраняет знак своего предела. \[
+  \lim_{x \to x_0} f(x) = a \neq 0 \to 
+  \begin{matrix}
+    a > 0 \\
+    a < 0
+  \end{matrix}
+  \implies 
+  \begin{matrix}
+    f(x) > 0 \\
+    f(x) < 0
+  \end{matrix}
+  \quad
+  \forall x \in \mathring{S}(x_0, \delta)
+  \] 
+\end{theorem}
+\begin{proof}
+  Пусть $a > 0$. Выберем  $\varepsilon = a > 0$.
+  \begin{gather*}
+    \lim_{x \to x_0} = a \iff (\forall \varepsilon = a)(\exists  \delta(x) > 0) (\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)- a| < \varepsilon = a) 
+  \end{gather*}
+
+  Распишем:
+  \begin{gather*}
+    -a < f(x) - a < a \\
+    \boxed{0 < f(x) < 2a}
+  \end{gather*}
+  Знак у функции $f(x)$ и числа $a$ - одинаковые.
+
+  Пусть $a < 0$. Выберем  $\varepsilon = -a$.
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = a \iff (\forall \varepsilon = -a)(\exists  \delta(x) > 0) (\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon = -a) 
+  \end{gather*}
+
+  Распишем:
+  \begin{gather*}
+    -a < f(x) - a < a \\
+    \boxed{-2a < f(x) < 0}
+  \end{gather*}
+  Знак у функции $f(x)$ и числа  $a$ - одинаковые.
+
+  Значит, $f(x)$ сохраняет знак своего предела  $\forall x \in \mathring{S}(x_0, \delta)$ 
+\end{proof}
+
+\begin{corollary}
+  Если функция $y = f(x)$ имеет предел в точке  $x_0$ и знакопостояна в $\mathring{S}(x_0, \delta)$, тогда её предел не может иметь с ней противоположные знак.
+\end{corollary}
+
+\begin{theorem}
+  \textit{О предельном переходе в неравенстве}. \\
+  Пусть существуют конечные пределы функций $f(x)$ и  $g(x)$ в точке $x_0$ и $\forall x \in \amthring{S}(x_0, \delta)$ верно $f(x) < g(x)$. Тогда $\forall x \in \mathring{S}(x_0, \delta)$ имеет место неравенство $\lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x)$.
+\end{theorem}
+\begin{proof}
+  По условию $f(x) < g(x), \forall x \in \mathring{S}(x_0, \delta)$. \\
+  Введём функцию $F(x) = f(x) - g(x) < 0, \forall x \in \mathring{S}(x_0, \delta)$. 
+  Т.к. $f(x)$ и $g(x)$ имеют конечные пределы в точке $x_0$, соответственно и функция $F(X)$ имеет конечный предел в точке $x_0$ (как разность $f(x)$ и $g(x)$).
+  
+  По следствию из предыдущей теоремы
+  % вставить ссылку
+  $\implies \lim_{x \to x_0} F(x) $ 
+  
+  Подставим $F(x) = f(x) - g(x)$: \[
+    \lim_{x \to x_0} \left( f(x) - g(x) \right) \le 0 \implies \lim_{x \to x_0} f(x) - \lim_{x \to x_0} g(x) \le 0 \implies \lim_{x \to x_0} f(x) \le \lim_{x \to x_0} g(x) 
+  \]
+\end{proof}
+\begin{eg}
+  Пусть $f(x) = 0$, $g(x) = x^2$ и $x_0 = 0$. \\
+  \begin{gather*}
+    \forall x \in \mathring{S}(x_0, \delta) \qquad 0 < x^2 \\
+    \lim_{x \to 0} f(x) = 0 \\
+    \lim_{x \to 0} g(x) = \lim_{x \to 0} x^2 = 0 \\
+    \lim_{x \to 0} f(x) = \lim_{x \to 0} g(x) \\
+    \lim_{x \to 0} f(x) \le \lim_{x \to 0} g(x) 
+  \end{gather*}
+  В теореме знак \textbf{строгий} переходит в \textbf{нестрогий}!  
+\end{eg}
+
+\begin{theorem}
+  \textit{О пределе промежуточной функции.} \\
+  Пусть существуют конечные пределы функций $f(x)$ и $g(x)$ в точке  $x_0$ и $\lim_{x \to x_0} f(x) = a$ и $\lim_{x \to x_0} g(x) = a$, $\forall x \in \mathring{S}(x_0, \delta)$ верно неравенство $f(x) \le h(x) \le g(x)$. Тогда $\lim_{x \to x_0} h(x) = a$.
+\end{theorem}
+\begin{proof}
+  По условию: 
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_1(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x) - a| < \varepsilon) \tag{1} \\
+    \lim_{x \to x_0} g(x) = a \iff (\forall \varepsilon > 0)(\exists \delta_2(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |g(x) - a| < \varepsilon) \tag{2}
+  \end{gather*}
+  Выберем $\delta_0 = min \{\delta, \delta_1, \delta_2\}$, тогда (1), (2) и $f(x) \le h(x) \le g(x)$ верны одновременно $\forall x \in \mathring{S}(x_0, \delta_0)$.
+  \begin{align*}
+    (1) \quad a - \varepsilon < f(x) < a + \varepsilon \\
+    (2) \quad a - \varepsilon < g(x) < a + \varepsilon \\
+  \end{align*}
+  \begin{gather*}
+    f(x) \le h(x) \le g(x) \\
+    \implies a - \varepsilon_1 < f(x) \le h(x) \le g(x) < a + \varepsilon_2 \\
+    \implies \forall x \in \mathring{S}(x_0, \delta_0) \qquad a - \varepsilon < h(x) < a + \varepsilon
+  \end{gather*}
+  В итоге:
+  \begin{gather*}
+    (\forall \varepsilon > 0)(\exists \delta_0(\varepsilon) > 0)(\forall x \in \mathring{S}(x_0, \delta_0 \implies |h(x) - a| < \varepsilon) \\
+    \implies \text{по определению предела} \\
+    \lim_{x \to x_0} h(x) = a
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}
+  \textit{О пределе сложной функции}. \\
+  Если функция $y = f(x)$ имеет предел в точке  $x_0$ равный $a$, то функция  $\varphi(y)$ имеет предел в точке $a$, равный $C$, тода сложная функция  $\varphi(f(x))$ имеет предел в точке $x_0$, равный $C$.
+  \begin{gather*}
+    \begin{rcases}
+      y = f(x) \\
+      \lim_{x \to x_0} f(x) = a \\
+      \lim_{y \to a} \varphi(y) = C \\
+    \end{rcases}
+    \implies \lim_{x \to x_0} \varphi(f(x)) = C
+  \end{gather*}
+\end{theorem}
+
