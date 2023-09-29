@@ -177,4 +177,18 @@
     \implies \lim_{x \to x_0} \varphi(f(x)) = C
   \end{gather*}
 \end{theorem}
+\begin{proof}
+  \begin{gather*}
+    \lim_{y \to a} \varphi(y) \iff (\forall \varepsilon > 0)(\exists \delta_1 > 0)(\forall y \in \mathring{S}(a, \delta_1) \implies |\varphi(y) - a| < \varepsilon) \tag{1}
+  \end{gather*}
+  Выберем в качестве $\varepsilon$ в пределе найденное $\delta_1$: \[
+    \lim_{x \to x_0} f(x) = a \iff (\forall \delta_1 > 0)(\exists \delta_2 > 0)(\forall x: 0 < |x - x_0| < \delta_2 \implies |f(x) - a| < \delta_1 \tag{2} 
+  \] 
+  В итоге: \[
+  (\forall \varepsilon > 0)(\exists \delta_2 > 0)(\forall x: 0 < |x - x_0| < \delta_2 \implies |\varphi(f(x)) - c| < \varepsilon)
+  \] 
+  Что равносильно: \[
+  \lim_{x \to x_0} \varphi(f(x)) = c
+  \] 
+\end{proof}
 
