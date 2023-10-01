@@ -1,0 +1,48 @@
+\section{Прямая на плоскости}
+
+\subsection{Каноническое уравнение}
+
+Пусть прямая $l$ проходит через точку $M_0(x_0, y_0)$ и задана направляющим вектором $\vec{S} = \{m, n\}$ (т.е. вектор паралеллен прямой). Выберем на прямой $l$ произвольную точку $M$.
+Составим $\overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\}$. 
+\[
+  \overrightarrow{M_0M} \parallel \vec{s} \implies \boxed{\frac{x - x_0}{m} = \frac{y - y_0}{n}}
+\]
+
+\subsection{Параметрическое уравнение}
+
+Пусть прямая $l$ задана каноническим уравнением: \[
+\frac{x - x_0}{m} = \frac{y - y_0}{n}
+\] 
+Обозначим коеффициент пропорциональности через $t$. Тогда:
+\begin{gather*}
+  \begin{matrix}
+    \frac{x - x_0}{m} = t \\
+    \frac{y - y_0}{n} = t
+  \end{matrix} \implies \boxed{\begin{cases}
+    x = x_0 + mt \\
+    y = y_0 + nt
+  \end{cases}}
+\end{gather*}
+ 
+\subsection{Через две точки}
+
+Пусть прямая $l$ проходит через точки $M_0(x_0, y_0)$ и $M(x, y)$. Выберем на прямой $l$ произвольную точку $M_1(x_1, y_1)$. Составим два вектора $\overrightarrow{M_0M}$, $\overrightarrow{M_0, M_1}$.
+\begin{gather*}
+  \overrightarrow{M_0M} = \{x - x_0, y - y_0\} \\
+  \overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0\}
+\end{gather*}
+
+Т.к. вектора коллинеарны, то и соответствующие координаты пропорциональны:
+ \[
+  \boxed{\frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0}}
+\]
+
+\subsection{В отрезках}
+
+% Рисуночек
+Пусть прямая $l$ отсекает от координатного угла отрезки $a$ и $b$. Тогда прямая $l$ проходит через точки $A(0, a)$ и  $B(b, 0)$.
+\begin{gather*}
+  \frac{x - a}{0 - a} = \frac{y - 0}{b - 0} \implies \boxed{\frac{x}{a} + \frac{y}{b} = 1}
+\end{gather*}
+
+
