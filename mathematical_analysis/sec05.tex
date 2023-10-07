@@ -160,8 +160,66 @@
 \end{theorem}
 
 \begin{theorem}
+  \textit{О пределе отношения функций}. \\ 
   Предел отношения двух функций, имеющих конечный предел, равен частному их пределов при условии, что предел в знаменателе отличен от нуля. \[
   \lim_{x \to x_0} \left(\frac{f(x)}{g(x)} \right) = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)}, \lim_{x \to x_0} g(x) \neq 0
   \] 
 \end{theorem}
+
+\begin{theorem}
+  \textit{О пределе произведения функций}. \\
+  Предел произведения функций равен произведению пределов.
+  \begin{gather*}
+    \lim_{x \to x_0} (f(x) \cdot g(x)) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x)
+  \end{gather*}
+\end{theorem}
+\begin{proof}
+  Пусть:
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = a \tag{1} \\
+    \lim_{x \to x_0} f(x) = b \tag{2} \\
+  \end{gather*}
+
+  По теореме о связи функции, её предела и бесконечно малой функции:
+  \begin{gather*}
+    (1) \implies f(x) = a + \alpha(x) \text{, где } \alpha(x) \text{ - б.м.ф.} \\
+    (2) \implies f(x) = b + \beta(x) \text{, где } \beta(x) \text{ - б.м.ф.}
+  \end{gather*}
+
+  Рассмотрим:
+  \begin{gather*}
+    \begin{align*}
+      f(x) \cdot g(x) &= (a + \alpha(x))(b + \beta(x)) \\
+                      &= ab + \underbrace{a \cdot \beta(x) + b \alpha (x) + \alpha(x) \cdot \beta(x)}_{\gamma(x)} \\
+                  &= ab + \gamma(x) \\
+    \end{align*}
+  \end{gather*}
+
+  По следствию из теоремы 15:
+  \begin{gather*}
+    a \cdot \beta(x) = \text{б.м.ф. при } x \to 0 \\ 
+    b \cdot \alpha(x) = \text{б.м.ф. при } x \to 0 \\ 
+    \alpha(x) \cdot \beta(x) = \text{б.м.ф. при } x \to 0 \\ 
+  \end{gather*}
+
+  По теореме о сумме конечного числа с б.м.ф.:
+  \begin{gather*}
+    \gamma(x) = \text{б.м.ф. при } x \to 0 \\ 
+  \end{gather*}
+
+  Далее расписываем предел:
+  \begin{gather*}
+    \begin{align*}
+      \lim_{x \to x_0} f(x) \cdot g(x) &= \lim_{x \to x_0} (f(x) \cdot g(x)) \\
+                                &= \lim_{x \to x_0} ab + \lim_{x \to x_0} \gamma(x) \\
+                                &= ab + 0 \\
+                                &= ab \\
+    \end{align*}
+  \end{gather*}
+\end{proof}
+\begin{corollary}
+  \begin{gather*}
+    \lim_{x \to x_0} (c \cdot  f(x)) = c \cdot \lim_{x \to x_0} f(x)
+  \end{gather*}  
+\end{corollary}
 
