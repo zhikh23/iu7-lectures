@@ -1,4 +1,4 @@
-\section{Прамая в пространстве}
+\section{Прямая в пространстве}
 
 \subsection{Способы задания прямой в пространстве}
 
@@ -58,7 +58,7 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
   \alpha_2: A_2x + B_2y + C_2z + D_2 = 0 \\
 \end{gather*}
 Если $\alpha_1 \not \parallel \alpha_2$, то они пересекаются по прямой $l$.
-Тогда $\forall M(x, y, z) \in l$ будут удовлетворять системе:
+Тогда $\forall M(x, y, z) \in l$ будет выполнятся система:
 \begin{gather*}
   \boxed{
     \begin{cases}
@@ -74,9 +74,8 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
     \alpha_1: 2x + y - z + 4 = 0 \\
     \alpha_2: 3x + 2y + z - 6 = 0
   \end{gather*}
-\end{eg}
 
-Для того, чтобы содать уравнение прямой $l$, нужно знать  $M_0(x_0, y_0, z_0)$ т направляющий вектор $\vec{S} = \{m, n, p\}$.
+Для того, чтобы содать уравнение прямой $l$, нужно знать  $M_0(x_0, y_0, z_0)$ направляющий вектор $\vec{S} = \{m, n, p\}$.
 
 \begin{gather*}
   \text{Из (1) } \implies \vec{n_1} = \{2, 1, -1\} \\ 
@@ -90,20 +89,31 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
 \begin{gather*}
   \begin{cases}
     2x_0 + y_0 + 4 = 0 \\
-    3x_0 + 2y_0 - 6
+    3x_0 + 2y_0 - 6 = 0
   \end{cases} \implies 
-  M_0(-14, 24, 0)
+  \begin{cases}
+    4x_0 + 2y_0 + 8 = 0 \\
+    3x_0 + 2y_0 + - 6 = 0
+  \end{cases} \implies
+  \begin{cases}
+    x_0 = -14 \\
+    y_0 = 24
+  \end{cases} \\
+  \\
+  \implies M_0(-14, 24, 0)
 \end{gather*}
 
-Найдем направляющий вектор $\vec{S}$ ^
-\begin{gather*}
+Найдем направляющий вектор $\vec{S}$
+\begin{align*}
   \vec{s} &= \vec{n_2} \cdot \vec{n_1} \\
           &= 
   \begin{vmatrix}
     \vec{i} & \vec{j} & \vec{k} \\
     3 & 2 & 1 \\
     2 & 1 & -1
-  \end{vmatrix} = -3 \vec{i} + 5 \vec{j} - \vec{k} \\
+  \end{vmatrix} = -3 \vec{i} + 5 \vec{j} - \vec{k}
+\end{align*}
+\begin{gather*}
   \implies \vec{S} = \{-3, 5, 1\} 
 \end{gather*}
 
@@ -111,6 +121,7 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
 \begin{gather*}
   \frac{x + 14}{-3} = \frac{y - 24}{5} = \frac{z}{-1}
 \end{gather*}
+\end{eg}
 
 \subsection{Расстояние от точки до прямой в пространстве}
 
@@ -172,11 +183,11 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \begin{vmatrix}
     y_1 - y_0 & z_1 - z_0 \\
     n & p
-  \end{vmatrix}^2,
+  \end{vmatrix}^2 +
   \begin{vmatrix}
     x_1 - x_0 & z_1 - z_0 \\
     m & p
-  \end{vmatrix}^2, 
+  \end{vmatrix}^2 + 
   \begin{vmatrix}
     x_1 - x_0 & y_1 - y_0 \\
     m & n
@@ -188,11 +199,11 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \begin{vmatrix}
     y_1 - y_0 & z_1 - z_0 \\
     n & p
-  \end{vmatrix}^2,
+  \end{vmatrix}^2 +
   \begin{vmatrix}
     x_1 - x_0 & z_1 - z_0 \\
     m & p
-  \end{vmatrix}^2, 
+  \end{vmatrix}^2 +
   \begin{vmatrix}
     x_1 - x_0 & y_1 - y_0 \\
     m & n
@@ -205,15 +216,15 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
 Пусть прямые заданы каноническими уравнениями:
 \begin{gather*}
   l_1: \frac{x - x_0}{m_1} = \frac{y - y_0}{n_1} = \frac{z - z_0}{p_1} \implies M_0(x_0, y_0, z_0), \vec{S_1} = \{m_1, n_1, p_1\} \\
-  l_2: \frac{x - x_0}{m_2} = \frac{y - y_0}{n_2} = \frac{z - z_0}{p_2} \implies M_0(x_0, y_0, z_0), \vec{S_2} = \{m_2, n_2, p_2\}
+  l_2: \frac{x - x_0}{m_2} = \frac{y - y_0}{n_2} = \frac{z - z_0}{p_2} \implies M_0(x_0, y_0, z_0), \vec{S_2} = \{m_2, n_2, p_2\} \\
   l_1 \parallel l_2 \implies \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2}
 \end{gather*}
 
 Построим параллелограмм на векторах $\overrightarrow{S_1}$ и $\overrightarrow{M_1M_2}$.
 Тогда расстояние между прямыми $l_1$ и $l_2$ будет высота данного параллелограмма.
 \begin{gather*}
-  \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
-  \frac{\sqrt{
+  \rho(l_1, l_2) = \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \boxed{\frac{\sqrt{
   \begin{vmatrix}
     y_2 - y_1 & z_2 - z_1 \\
     n_1 & p_1
@@ -226,18 +237,18 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
     x_2 - x_1 & y_2 - y_1 \\
     m_1 & n_1
   \end{vmatrix}^2
-  }}{\sqrt{m_1^2 + n_1^2 + p_1^2} } 
+}}{\sqrt{m_1^2 + n_1^2 + p_1^2} }}
 \end{gather*}
 
 \subsubsection{Расстояние между скрещивающимися прямыми}
 
 Пусть прямые заданы каноническими уравнениями:
 \begin{gather*}
-  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \vec{S_1} = \{m_1, n_1, p_1\} \\
-  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \vec{S_2} = \{m_2, n_2, p_2\}
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \quad \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \quad \vec{S_2} = \{m_2, n_2, p_2\}
 \end{gather*}
 
-Составим вектора $\overrightarrow{M_1M_2}$: \[
+Составим вектор $\overrightarrow{M_1M_2}$: \[
 \overrightarrow{M_1M_2} = \{x_2 - x_1, y_2 - y_1, z_2 - z_1\} 
 \] 
 
@@ -280,7 +291,7 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \end{vmatrix} \\
 \end{align*}
 \begin{gather*}
-  \implies \rho(l_2, l_1) = 
+  \implies \boxed{\rho(l_2, l_1) = 
   \frac{
     \left|
     \begin{vmatrix}
@@ -304,18 +315,11 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
       n_2 & p_2
     \end{vmatrix}^2 
   } 
-  }
+  }}
 \end{gather*}
   
 
 \subsection{Взаимное расположение прямых в пространстве}
-
-\begin{enumerate}
-  \item Совпадают
-  \item Параллельны
-  \item Пересекаются
-  \item Скрещиваются
-\end{enumerate}
 
 Пусть прямые $l_1$ и $l_2$ заданы каноническими уравнениями:
 \begin{gather*}  
@@ -325,12 +329,14 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
 
 Составим вектор $\overrightarrow{M_1M_2}$.
 
+\subsubsection{Совпадают}
 Если прямые $l_1$ и $l_2$ \textbf{совпадают}, то:
 \begin{gather*}
-  \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2} \\
-  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{m_2} = \frac{z_2 - z_1}{p_2}
+    \frac{m_1}{m_2} = \frac{n_1}{n_1} = \frac{p_1}{p_1} \\
+    \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{n_1} = \frac{z_2 - z_1}{p_1}
 \end{gather*}
 
+\subsubsection{Параллельны}
 Если прямые $l_1$ и $l_2$ \textbf{параллельны} то: 
 \begin{gather*}
   \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2} \\
@@ -339,28 +345,34 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   И \textbf{не} выполняется условие:
 \end{center}
 \begin{gather*}
-  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{m_2} = \frac{z_2 - z_1}{p_2}
+  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{n_1} = \frac{z_2 - z_1}{p_1}
 \end{gather*}
 
+\subsubsection{Пересекаются}
 Если прямые $l_1$ и $l_2$ \textbf{пересекаются}, они лежат в одной плоскости.
-В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - компланарны.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - компланарны:
 \begin{gather*}
   \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} = 0 \\
-  \begin{vmatrix}
-    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
-    m_1 & n_1 & p_1 \\
-    m_2 & n_2 & p_2 \\
-  \end{vmatrix} = 0
+  \boxed{
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix} = 0
+  }
 \end{gather*}
 
+\subsubsection{Скрещиваются}
 Если прямые $l_1$ и $l_2$ \textbf{скрещиваются}, то они не лежат в одной плоскости.
-В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - некомпланарны.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - некомпланарны:
 \begin{gather*}
   \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} \neq 0 \\
-  \begin{vmatrix}
-    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
-    m_1 & n_1 & p_1 \\
-    m_2 & n_2 & p_2 \\
-  \end{vmatrix} \neq 0
+  \boxed{
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix} \neq 0
+  }
 \end{gather*}
 

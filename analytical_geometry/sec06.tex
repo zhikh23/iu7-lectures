@@ -206,20 +206,23 @@ M(x, y, z) \in \alpha
     \alpha: Ax + By + Cx + D = 0, \text{ где } \vec{n} = \{A, B, C\} 
 \] 
 
-Пусть существует некоторая точка $M_0(x_0, y_0, z_0)$. Возьмём некоторую точку $M(x, y, z) \in \alpha$. Составим вектор $\overrightarrow{MM_0} = \{x_0 - x, y_0 - y, z_0 - z\}$. Тогда модуль проекции $\overrightarrow{MM_0}$ на вектор на направление вектора нормали и есть искомое расстояние. 
+Пусть задана некоторая точка $M_0(x_0, y_0, z_0)$. 
+Возьмём некоторую точку $M(x, y, z) \in \alpha$. 
+Составим вектор $\overrightarrow{M_0M} = \{x_0 - x, y_0 - y, z_0 - z\}$. 
+Тогда модуль проекции $\overrightarrow{MM_0}$ на вектор на направление вектора нормали и есть искомое расстояние. 
 Найдем: 
 \begin{gather*}
-  \overrightarrow{MM_0} \cdot \vec{n} = |\overrightarrow{MM_0}|\underbrace
+  \overrightarrow{M_0M} \cdot \vec{n} = |\overrightarrow{M_0M}|\underbrace
   {|\vec{n}| \cdot \cos \varphi}_
-  {np_{\vec{n}}\overrightarrow{MM_0}}
+  {np_{\vec{n}}\overrightarrow{M_0M}}
 \end{gather*}
 \begin{align*}
-  \vec{n} \cdot \overrightarrow{MM_0} &= A(x_0 - x) + B(y_0 - y) + C(z_0 - z) \\
+  \vec{n} \cdot \overrightarrow{M_0M} &= A(x_0 - x) + B(y_0 - y) + C(z_0 - z) \\
                                  &= Ax_0 + By_0 + Cz_0 + (-Ax - By - Cz) \\
                                  &= Ax_0 + By_0 + Cz_0  + D \\
 \end{align*}
 \begin{gather*}
-  |\vec{n}| = \sqrt{A^2 + B^2 + C^2}
-  \boxed{\rho(M_0, \alpha) = |np_{\vec{n}\overrightarrow{MM_0}}| = \frac{|Ax_0 + By_0 + Cz_0 + D| }{\sqrt{A^2 + B^2 + C^2} } }
+  |\vec{n}| = \sqrt{A^2 + B^2 + C^2} \\
+  \boxed{\rho(M_0, \alpha) = |np_{\vec{n}\overrightarrow{M_0M}}| = \frac{|Ax_0 + By_0 + Cz_0 + D| }{\sqrt{A^2 + B^2 + C^2} } }
 \end{gather*}   
 
