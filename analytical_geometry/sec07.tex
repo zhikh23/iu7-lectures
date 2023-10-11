@@ -1,0 +1,366 @@
+\section{Прамая в пространстве}
+
+\subsection{Способы задания прямой в пространстве}
+
+\subsubsection{Каноническое уравнение прямой}
+
+Пусть прямая $l$ проходит через точку $M_0\left(x_0, y_0, z_0 \right)$ и имеет направляющий вектор $\vec{S} = \{m, n, p\}$.
+Возьмём на прямой $l$ произвольную точку $M(x, y, z)$.
+Составим вектор: \[
+\overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\} 
+\] 
+Отсюда:
+\begin{gather*}
+  \overrightarrow{M_0M} \parallel \vec{S} \implies \boxed{\frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}}
+\end{gather*}
+
+\subsubsection{Параметрическое уравнение}
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
+\] 
+Отсюда:
+\begin{gather*}
+  \begin{cases}
+  \frac{x - x_0}{m} = t \\
+  \frac{y - y_0}{n} = t \\
+  \frac{z - z_0}{p} = t \\
+  \end{cases} \implies \boxed{
+  \begin{cases}
+    x = x_0 + mt \\
+    y = y_0 + nt \\
+    z = z_0 + pt \\
+  \end{cases}}
+\end{gather*}
+
+\subsubsection{Через две точки}
+
+Пусть прямая $l$ проходит через точки $M_0(x_0, y_0, z_0)$ и $M_1(x_1, y_1, z_1)$.
+Возьмём на прямой $l$ точку  $M(x, y, z)$.
+Составим два вектора:
+\begin{gather*}
+  \overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\} \\ 
+  \overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0, z_1 - z_0\}
+\end{gather*}
+Отсюда:
+\begin{gather*}
+  \overrightarrow{M_0M} \parallel  \overrightarrow{M_0M_1} \implies \\
+  \boxed{
+    \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} = \frac{z - z_0}{z_1 - z_0}
+  }
+\end{gather*}
+
+\subsubsection{Общее уравнение}
+
+Пусть плоскости $\alpha_1$ и $\alpha_2$ заданы общими уравнениями:
+\begin{gather*}
+  \alpha_1: A_1x + B_1y + C_1z + D_1 = 0 \\
+  \alpha_2: A_2x + B_2y + C_2z + D_2 = 0 \\
+\end{gather*}
+Если $\alpha_1 \not \parallel \alpha_2$, то они пересекаются по прямой $l$.
+Тогда $\forall M(x, y, z) \in l$ будут удовлетворять системе:
+\begin{gather*}
+  \boxed{
+    \begin{cases}
+      A_1x + B_1y + C_1z + D_1 = 0 \\
+      A_2x + B_2y + C_2z + D_2 = 0 \\
+    \end{cases}
+  }
+\end{gather*}
+
+\begin{eg}
+  Составить уравнение прямой, являющейся пересечением плоскостей:
+  \begin{gather*}
+    \alpha_1: 2x + y - z + 4 = 0 \\
+    \alpha_2: 3x + 2y + z - 6 = 0
+  \end{gather*}
+\end{eg}
+
+Для того, чтобы содать уравнение прямой $l$, нужно знать  $M_0(x_0, y_0, z_0)$ т направляющий вектор $\vec{S} = \{m, n, p\}$.
+
+\begin{gather*}
+  \text{Из (1) } \implies \vec{n_1} = \{2, 1, -1\} \\ 
+  \text{Из (2) } \implies \vec{n_2} = \{3, 2, 1\} \\
+  \alpha_1 \neq \alpha_2
+\end{gather*}
+
+Найдем точку $M_0$.
+Пусть $z_0 = 0$ (прямая обязательно пересечёт плоскость oXY):
+
+\begin{gather*}
+  \begin{cases}
+    2x_0 + y_0 + 4 = 0 \\
+    3x_0 + 2y_0 - 6
+  \end{cases} \implies 
+  M_0(-14, 24, 0)
+\end{gather*}
+
+Найдем направляющий вектор $\vec{S}$ ^
+\begin{gather*}
+  \vec{s} &= \vec{n_2} \cdot \vec{n_1} \\
+          &= 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    3 & 2 & 1 \\
+    2 & 1 & -1
+  \end{vmatrix} = -3 \vec{i} + 5 \vec{j} - \vec{k} \\
+  \implies \vec{S} = \{-3, 5, 1\} 
+\end{gather*}
+
+Составим каноническое уравнение прямой:
+\begin{gather*}
+  \frac{x + 14}{-3} = \frac{y - 24}{5} = \frac{z}{-1}
+\end{gather*}
+
+\subsection{Расстояние от точки до прямой в пространстве}
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
+\] \[
+\vec{S} = \{m, n, p\} 
+\] 
+Задана точка $M_1(x_1, y_1, z_1) \not \in l$.
+Составим вектор:  \[
+\overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0, z_1 - z_0\} 
+\] 
+Построим на векторах $\vec{S}$ и $\overrightarrow{M_0M}$ параллелограмм.
+Тогда высота этого параллелограмма из точки $M_1$ и есть искомое расстояние от точки $M_1$ до прямой $l$.
+\begin{gather*}
+  S_{par} = h \cdot |\vec{S}| \\
+  h = \frac{S_{par}}{|\vec{S}|} \\
+  S_{par} = |\overrightarrow{M_0M_1} \times \vec{S}| 
+\end{gather*}
+Тогда:
+\begin{gather*}
+  \overrightarrow{M_0M_1} \times \vec{S} = 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    x_1 - x_0 & y_1 - y_0 & z_1 - z_0 \\
+    m & n & p
+  \end{vmatrix} = \\
+  = \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix} \cdot \vec{i} -
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix} \cdot \vec{j} + 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix} \cdot \vec{k} \implies \\
+  \\
+  \overrightarrow{M_0M_1 \times \vec{S}} = 
+  \left\{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix},
+   - \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}, 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}
+  \right\} \implies \\
+  \\
+  |\overrightarrow{M_0M_1 \times \vec{S}}| = 
+  \sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2,
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2, 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  } \implies \\
+  \rho(M_1, l) = 
+  \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \boxed{\frac{\sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2,
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2, 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  }}{\sqrt{m^2 + n^2 + p^2} }} 
+\end{gather*}
+
+\subsubsection{Расстояние между параллельными прямыми}
+
+Пусть прямые заданы каноническими уравнениями:
+\begin{gather*}
+  l_1: \frac{x - x_0}{m_1} = \frac{y - y_0}{n_1} = \frac{z - z_0}{p_1} \implies M_0(x_0, y_0, z_0), \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_0}{m_2} = \frac{y - y_0}{n_2} = \frac{z - z_0}{p_2} \implies M_0(x_0, y_0, z_0), \vec{S_2} = \{m_2, n_2, p_2\}
+  l_1 \parallel l_2 \implies \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2}
+\end{gather*}
+
+Построим параллелограмм на векторах $\overrightarrow{S_1}$ и $\overrightarrow{M_1M_2}$.
+Тогда расстояние между прямыми $l_1$ и $l_2$ будет высота данного параллелограмма.
+\begin{gather*}
+  \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \frac{\sqrt{
+  \begin{vmatrix}
+    y_2 - y_1 & z_2 - z_1 \\
+    n_1 & p_1
+  \end{vmatrix}^2,
+  \begin{vmatrix}
+    x_2 - x_1 & z_2 - z_1 \\
+    m_1 & p_1
+  \end{vmatrix}^2, 
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 \\
+    m_1 & n_1
+  \end{vmatrix}^2
+  }}{\sqrt{m_1^2 + n_1^2 + p_1^2} } 
+\end{gather*}
+
+\subsubsection{Расстояние между скрещивающимися прямыми}
+
+Пусть прямые заданы каноническими уравнениями:
+\begin{gather*}
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \vec{S_2} = \{m_2, n_2, p_2\}
+\end{gather*}
+
+Составим вектора $\overrightarrow{M_1M_2}$: \[
+\overrightarrow{M_1M_2} = \{x_2 - x_1, y_2 - y_1, z_2 - z_1\} 
+\] 
+
+Вектора $\vec{S}$ и $\overrightarrow{M_1M_2}$ не компланарны. 
+Поэтому на этих векторах можно построить параллелепипед.
+Тогда расстояние между прямыми $l_1$ и $l_2$ будет равно высоте этого параллелепипеда.
+
+\begin{gather*}
+  V = |\overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2}| \\
+  V= h \cdot S
+\end{gather*}
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2} = 
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2
+  \end{vmatrix}
+\end{gather*}
+\begin{align*}
+  S = |\vec{s_1} \times \vec{s_2}| &= 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2 \\
+  \end{vmatrix} \\
+  &=
+  \vec{i} \cdot 
+  \begin{vmatrix}
+    n_1 & p_1 \\
+    n_2 & p_2
+  \end{vmatrix} - \vec{j} \cdot 
+  \begin{vmatrix}
+    m_1 & p_1 \\
+    m_2 & p_2
+  \end{vmatrix} + \vec{k} \cdot 
+  \begin{vmatrix}
+    n_1 & p_1 \\
+    n_2 & p_2
+  \end{vmatrix} \\
+\end{align*}
+\begin{gather*}
+  \implies \rho(l_2, l_1) = 
+  \frac{
+    \left|
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & x_2 - x_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix}
+    \right| 
+  }{
+  \sqrt{
+    \begin{vmatrix}
+      n_1 & p_1 \\
+      n_2 & p_2
+    \end{vmatrix}^2 +
+    \begin{vmatrix}
+      m_1 & p_1 \\
+      m_2 & p_2
+    \end{vmatrix}^2 +  
+    \begin{vmatrix}
+      n_1 & p_1 \\
+      n_2 & p_2
+    \end{vmatrix}^2 
+  } 
+  }
+\end{gather*}
+  
+
+\subsection{Взаимное расположение прямых в пространстве}
+
+\begin{enumerate}
+  \item Совпадают
+  \item Параллельны
+  \item Пересекаются
+  \item Скрещиваются
+\end{enumerate}
+
+Пусть прямые $l_1$ и $l_2$ заданы каноническими уравнениями:
+\begin{gather*}  
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \vec{S_2} = \{m_2, n_2, p_2\}
+\end{gather*}
+
+Составим вектор $\overrightarrow{M_1M_2}$.
+
+Если прямые $l_1$ и $l_2$ \textbf{совпадают}, то:
+\begin{gather*}
+  \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2} \\
+  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{m_2} = \frac{z_2 - z_1}{p_2}
+\end{gather*}
+
+Если прямые $l_1$ и $l_2$ \textbf{параллельны} то: 
+\begin{gather*}
+  \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2} \\
+\end{gather*}
+\begin{center}
+  И \textbf{не} выполняется условие:
+\end{center}
+\begin{gather*}
+  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{m_2} = \frac{z_2 - z_1}{p_2}
+\end{gather*}
+
+Если прямые $l_1$ и $l_2$ \textbf{пересекаются}, они лежат в одной плоскости.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - компланарны.
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} = 0 \\
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2 \\
+  \end{vmatrix} = 0
+\end{gather*}
+
+Если прямые $l_1$ и $l_2$ \textbf{скрещиваются}, то они не лежат в одной плоскости.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - некомпланарны.
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} \neq 0 \\
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2 \\
+  \end{vmatrix} \neq 0
+\end{gather*}
+
