@@ -146,7 +146,7 @@
 
 \begin{theorem}
   \[
-  \lim_{x \to 0} \frac{\sin(x)}{x} = 1
+    \boxed{\lim_{x \to 0} \frac{\sin(x)}{x} = 1}
   \]  
 \end{theorem}
 \begin{proof}
@@ -188,11 +188,171 @@
    \] 
 
    По теореме о промежуточной функции: \[
-    \lim_{x \to 0} \cos(x) = 1 \implies \lim_{x \to 0+} \frac{\sin(x)}{x} = 1 
+    \lim_{x \to 0+} \cos(x) = 1 \implies \lim_{x \to 0+} \frac{\sin(x)}{x} = 1 
    \] 
 
    Аналогично для $\lim_{x \to 0-} \frac{\sin(x)}{x} = 1$. Т.к. односторонние пределы равны: \[
    \lim_{x \to 0+} \frac{\sin(x)}{x} = \lim_{x \to 0-} \frac{\sin(x)}{x} = 1 \iff \lim_{x \to x_0} \frac{\sin(x)}{x} = 1
    \] 
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\tg(x)}{x} = 1 
+  \]
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\tg(x)}{x} &= \frac{\sin(x)}{\cos(x)} \\
+    &= \lim_{x \to 0} \frac{\sin(x)}{x} \cdot \frac{x}{\cos(x)} \\
+    &= \lim_{x \to 0} \frac{1}{\cos(x)} \\
+    &= 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\arcsin(x)}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\arcsin(x)}{x} &= 
+    \begin{vmatrix}
+      t = \arcsin(x) \\
+      x \to 0, t \to 0
+    \end{vmatrix} \\
+    &= \lim_{t \to 0} \frac{t}{\sin(t)} \\
+    &= \lim_{t \to 0} \frac{1}{\frac{\sin(t)}{t}} \\
+    &= \frac{1}{1} = 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\arctg(x)}{x}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\arctg(x)}{x} &= 
+    \begin{vmatrix}
+      x = \tg(t) \\
+      x \to 0, t \to\infty
+    \end{vmatrix}
+    \\
+    &= \lim_{t \to \infty} \frac{t}{\tg(t)} \\
+    &= \lim_{t \to \infty} \frac{1}{\frac{tg(t)}{t}} \\
+    &= \frac{1}{1} = 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} &= 
+    \begin{vmatrix}
+      \sin^2 \frac{x}{2} = \frac{1 - \cos(x)}{2} \\
+      1 - \cos(x) = 2 \sin^2 \frac{x}{2}
+    \end{vmatrix}
+    \\
+    &= \lim_{x \to 0} \frac{2\sin^2 x-2}{x^2} \\
+    &= 2 \lim_{x \to 0} \frac{\sin^2 \frac{x}{2}}{(\frac{x}{2})^2} \cdot \frac{(\frac{x}{2})^2}{x^2} \\
+    &= 2 \cdot \frac{1}{4} = \frac{1}{2} \\
+  \end{align*}
+\end{proof}
+
+\subsubsection*{Второй замечательный предел}
+
+\begin{theorem}
+  \[
+    \boxed{\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e}
+  \] 
+\end{theorem}
+
+\begin{corollary}
+\[
+  \lim_{x \to 0} \left( 1 + x \right)^\left( \frac{1}{x} \right) = e
+\] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} (1 + x)^{\frac{1}{x}} &= 
+    \begin{vmatrix}
+      x = \frac{1}{t} \\
+      x \to 0, t \to \infty
+    \end{vmatrix} \\
+    &= \lim_{t \to \infty} \left( 1 + \frac{1}{t} \right) ^ t \\
+    &= e
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\ln(1 + x)}{x} &= \lim_{x \to 0} \frac{1}{x}\ln(1 + x) \\
+      &= \lim_{x \to 0} \ln \left( 1 + x \right) ^ {\frac{1}{x}} \\
+      &= \ln e = 1\\
+  \end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{\log_a(1 + x)}{x} = \frac{1}{\ln a}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\log_a(1 + x}{x} &= \frac{1}{x} \log_a(1 + x) \\
+      &= \lim_{x \to 0} \log_a(1 + x)^{\frac{1}{x}} \\
+      &= \log_a e = \frac{1}{\ln a} \\
+  \end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+     \lim_{x \to 0} \frac{e^x - 1}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+\begin{align*}
+    \lim_{x \to 0} \frac{e^x - 1}{x} &= 
+    \begin{vmatrix}
+      e^x - 1 = t \\
+      x = \ln(t + 1) \\
+      x \to 0, t \to  0
+    \end{vmatrix}
+    \\
+    &= \lim_{t \to 0} \frac{t}{\ln(1 + t)} \\
+    &= \frac{1}{\lim_{t \to 0} \frac{\ln(1 + t)}{t} }\\
+    &= \frac{1}{1} = 1 \\
+\end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{a^x - 1}{x} = \ln a
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{a^x - 1}{x} &= 
+    \begin{vmatrix}
+      a^x - 1 = t \\
+      x = \log_a(1 + t) \\
+      x \to 0, t \to 0
+    \end{vmatrix} \\
+    &= \lim_{t \to 0} \frac{t}{\log_a(1 + t)} \\
+    &= \frac{1}{\lim_{t \to 0} \frac{\log_a(1 + t)}{t}} \\
+    &= \frac{1}{\frac{1}{\ln a}} = \ln a \\
+  \end{align*}
 \end{proof}
 
