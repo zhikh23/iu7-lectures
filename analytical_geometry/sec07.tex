@@ -376,3 +376,273 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   }
 \end{gather*}
 
+
+\subsection{Угол между прямой и плоскостью}
+
+Пусть плоскость задана общим уравнением: \[
+\alpha: Ax + By + Cz + D = 0
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+Обозначим угол $\varphi$ - между прямой плоскостью, и $\beta$ - между прямой и нормалью.
+Тогда:
+\begin{gather*}
+  \cos \beta = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \beta = 90 - \varphi \\
+  \cos(90 - \varphi) = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \sin(\varphi) = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \boxed{\sin \varphi = \frac{|Am + Bn + Cp|}{\sqrt{A^2 + B^2 + C^2} \cdot \sqrt{m^2 + n^2 + p^2} }}
+\end{gather*}
+
+\subsubsection{Условие параллельности прямой и плоскости}
+
+Пусть плоскость задана общим уравнением: \[
+  \alpha: Ax + By + Cz + D = 0 \qquad \vec{n} = \{A, B, C\} 
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+\begin{gather*}
+  l \parallel \alpha \implies \vec{n} \perp \vec{s} \implies \vec{n} \cdot \vec{s} = 0 \\
+  \boxed{Am + Bn + Cp = 0}
+\end{gather*}
+
+\subsubsection{Условие перпендикулярности прямой и плоскости}
+
+Пусть плоскость задана общим уравнением: \[
+  \alpha: Ax + By + Cz + D = 0 \qquad \vec{n} = \{A, B, C\} 
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+\begin{gather*}
+  l \perp \alpha \implies \vec{n} \parallel \vec{s} \implies
+  \boxed{\frac{A}{m} = \frac{B}{n} = \frac{C}{p}}
+\end{gather*}
+
+\begin{eg}
+  Задача: \textit{составить уравнение прямой $l_2$ симметричной прямой $l_1$, которая задана каноническим уравнением}: \[
+  \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} \qquad \vec{s} = \{2, 1, 0\} 
+  \] 
+  относительно плоскости $\alpha$: \[
+    \alpha: x - y + 2z - 1 = 0 \qquad \vec{n} = \{1, -1, 2\} 
+  \] 
+  Решение:
+  1) Проверим, является ли прямая $l_1$ параллельной плоскости $\alpha$:
+  \begin{gather*}
+    \vec{s} \cdot \vec{n} = 2 \cdot 1 + 1 \cdot (-1) + 0 \cdot 2 = 2 - 1 = 1 \neq 0 \implies l_1 \not \parallel \alpha
+  \end{gather*}
+
+  2) Находим точку пересечения прямой $l$ с плоскостью $\alpha$ - пусть это точка $A(x, y, z)$.
+  Из канонического уравнения прямой $l_1$ получим параметрическое уравнение:
+  \begin{gather*}
+    \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} = t \\
+    \begin{cases}
+      \frac{x - 1}{2} = t \\
+      \frac{y}{1} = t \\
+      \frac{z + 1}{0} = t
+    \end{cases} \implies
+    \begin{cases}
+      x = 2t + 1 \\
+      y = t \\
+      z = -1
+    \end{cases}
+  \end{gather*}
+  Т.к. точка $A$ принадлежит и прямой, и плоскости, то её координаты удовлетворяют и параметрическому уравнению прямой, и общему уравнению плоскости:
+  \begin{gather*}
+    2t + 1 - t - 2 - 1 = 0 \\
+    t = 2 \implies \begin{cases}
+      x = 5 \\
+      y = 2 \\
+      z = -1
+    \end{cases} \implies A(5, 2, -1)
+  \end{gather*}
+
+  3) Из канонического уравнения прямой возьмем точку $M_1(1, 0, -1) \in l_1$. 
+  Найдем ей симметричную относительно плоскости $\alpha$ точку $M_2(x_2, y_2, z_2)$
+  Составим уравнение прямой $l_3$, проходящей через точку $M_1$ и с направляющим вектором $\vec{n}$. \[
+    \frac{x - 1}{1} = \frac{y}{-1} = \frac{z + 1}{2}
+  \] 
+  Найдём точку пересечения $O(x_3, y_3, z_3)$ прямой $l_3$ с плоскостью $\alpha$. 
+  Составим параметрическое уравнение прямой $l_3$:
+  \begin{gather*}
+    \frac{x - 1}{1} = \frac{y}{-1} = \frac{z + 1}{2} = t \\
+    \begin{cases}
+      \frac{x - 1}{1} = t \\
+      \frac{y}{-1} = t \\
+      \frac{z + 1}{2} = t
+    \end{cases} \implies
+    \begin{cases}
+      x = t + 1 \\
+      y = -t \\
+      z = 2t - 1
+    \end{cases}
+  \end{gather*}
+  Т.к. точка $O$ принадлежит и прямой, и плоскости, то её координаты удовлетворяют и параметрическому уравнению прямой, и общему уравнению плоскости:
+  \begin{gather*}
+    t + 1 + t + 4t - 2 = 0 \\
+    t = \frac{1}{3} \implies \begin{cases}
+      x = \frac{4}{3} \\
+      y = -\frac{1}{3} \\
+      z = \frac{1}{3}
+    \end{cases}
+  \end{gather*}
+
+  Составляем вектор $\overrightarrow{M_1O}$: \[
+  \overrightarrow{M_1O} = \{\frac{1}{3}, -\frac{1}{3}, \frac{2}{3}\} 
+  \] 
+
+  Пусть $M_2(x_2, y_2, z_2)$. Тогда:
+  \begin{gather*}
+    \overrightarrow{OM_2} = \{x_2, y_2, z_2\} \\
+    \overrightarrow{M_1O} = \overrightarrow{OM_2} \implies \begin{cases}
+      x_2 - \frac{4}{3} = \frac{1}{3} \\
+      y + \frac{1}{3} = -\frac{1}{3} \\
+      z + \frac{1}{3} = \frac{2}{3}
+    \end{cases} \iff \begin{cases}
+      x = \frac{5}{3} \\
+      t = \frac{2}{3} \\
+      z = \frac{1}{3}
+    \end{cases}
+  \end{gather*}
+
+  4) Составляем уравнение прямой, проходящей через точки $A(5, 2, -1)$ и $M_2(\frac{5}{3}, -\frac{2}{3}, \frac{1}{3})$:
+  \begin{gather*}
+    \frac{x - x_a}{x_1 - x_a} = \frac{y - y_a}{y_2 - y_a} = \frac{z - z_a}{z_2 - z_a} \\
+    \frac{x - 5}{\frac{5}{3} - 5} = \frac{y - 2}{-\frac{2}{3} - 2} = \frac{z + 1}{\frac{1}{3} + 1}  \\
+    \frac{x - 5}{-\frac{10}{3}} = \frac{y - 2}{-\frac{8}{3}} = \frac{z + 1}{\frac{4}{3}} \\
+    \boxed{\frac{x - 5}{-5} = \frac{y - 2}{-4} = \frac{z + 1}{4}}
+  \end{gather*}
+\end{eg}
+
+\begin{eg}
+  Задача: \textit{Составить каноническое уравнение общего перпендикуляра к прямым $l_1$ и $l_2$, заданными параметрическими уравнениями}:
+  \begin{gather*}
+    l_1: \begin{cases}
+      x = t + 2 \\
+      y = 3t + 4 \\
+      z = -2t - 2
+    \end{cases} \qquad
+    l_2: \begin{cases}
+      x = -3t + 2 \\
+      y = t \\
+      z = 3t - 4
+    \end{cases}
+  \end{gather*}
+  Решение: \\
+  1) Составим канонические уравнения прямых для $l_1$ и $l_2$:
+  \begin{gather*}
+    l_1: \begin{cases}
+      t = \frac{x - 2}{2} \\
+      t = \frac{y - 4}{3} \\
+      t = \frac{z + 2}{-2}
+    \end{cases} \implies
+    \frac{x - 2}{2} = \frac{y - 4}{3} = \frac{z + 2}{-2} \\
+    M_1(2, 4, -2) \qquad \vec{s_1} = \{2, 3, -2\} 
+
+    l_2: \begin{cases}
+      t = \frac{x - 1}{-3} \\
+      t = \frac{y}{1} \\
+      t = \frac{z + 4}{3}
+    \end{cases} \implies
+    \frac{x - 1}{-3} = \frac{y - 4}{3} = \frac{z + 2}{-2}
+    M_2(1, 4, -2) \qquad \vec{s_2} = \{-3, 1, 3\} 
+  \end{gather*}
+
+  Найдём вектор $\overrightarrow{M_1M_2}$:
+  \begin{gather*}
+    M_1(2, 4, -2) \qquad M_2(1, 4, -2) \\
+    \overrightarrow{M_1M_2} = \{0, -4, -2\} 
+  \end{gather*}
+
+  Проверим, являются ли прямые $l_1$ и $l_2$ скрещивающимися или параллельными. Найдём смешанное произведение $\overrightarrow{M_1M_2} \vec{s_1} \vec{s_2}$:
+  \begin{gather*}
+    \overrightarrow{M_1M_2} \vec{s_1} \vec{s_2} = 
+    \begin{vmatrix}
+      0 & -4 & -2 \\
+      2 & 3 & -2 \\
+      -3 & 1 & 3
+    \end{vmatrix} = -22 \neq 0
+  \end{gather*}
+  Значит, прямые не лежат в одной плоскости, следовательно, они скрещивающиеся.
+
+  2) Найдем направляющий вектор общего перпендикуляра к прямым $l_1$ и $l_2$.
+  \begin{gather*}
+    \begin{rcase}
+      \vec{s} \perp \vec{s_1}
+      \vec{s} \perp \vec{s_2}
+    \end{rcase}
+    \iff \vec{s} = \vec{s_1} \times \vec{s_2} \\
+    \vec{s_1} \times \vec{s_2} = 
+    \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      2 & 3 & -2 \\
+      -3 & 1 & 3
+    \end{vmatrix} = 11 \vec{i} + 11 \vec{k} \implies \vec{s} = \{1, 0, 1\} \\ 
+  \end{gather*}
+
+  3) Составим уравнение плоскости $\alpha_1$, проходящей через точки $M_1$ и вектора $\vec{s_1} \vec{s}$. 
+  Возьмём произвольную точку $M(x, y, z) \in \alpha_1$.
+  Составим вектор $\overrightarrow{M_1M}$: \[
+  \overrightarrow{M_1M} = \{x - 2, y - 4, z + 2\} 
+  \]
+  Вектора $\overrightarrow{M_1M}, \vec{s_1}, \vec{s}$ - компланарные, а следовательно: 
+  \begin{gather*}
+    \overrightarrow{M_1M} \vec{s_1} \vec{s} = 0 \\
+    \vec{M_1M} \vec{s_1} \vec{s} = 
+    \begin{vmatrix}
+      x - 2 & y - 4 & z + 2 \\
+      2 & -3 & 2 \\
+      1 & 0 & 1
+    \end{vmatrix} = 
+    -3x + 4y + 3z  - 4\\
+    \boxed{\alpha_1: -3x + 4y + 3z - 4 = 0}
+  \end{gather*}
+
+  4) Составим плоскость $\alpha_2$ через точку $M_2$  и вектора $\vec{s_1}$ и $\vec{s_2}$.
+  Возьмём произвольную точку $M(x, y, z) \in \alpha_2$.
+  Составим вектор $\overrightarrow{M_2M}$: \[
+  \overrightarrow{M_2M} = \{x - 2, y, z + 4\} 
+  \] 
+  Вектора $\overrightarrow{M_2M}, \vec{s_2}, \vec{s}$ - компланарные, а следовательно: 
+  \begin{gather*}
+    \overrightarrow{M_2M} \vec{s_2} \vec{s} = 0 \\
+    \vec{M_2M} \vec{s_2} \vec{s} = 
+    \begin{vmatrix}
+      x - 2 & y & z + 4 \\
+      -3 & 1 & 3 \\
+      1 & 0 & 1
+    \end{vmatrix} = 
+    x + 6y - z - 6 \\
+    \boxed{\alpha_2: x + 6y - z - 6 = 0}
+  \end{gather*}
+
+  5) Прямая $l$ пересекает плоскость $oXY$, т.е. $z = 0$. Тогда в системе уравнений:
+   \begin{gather*}
+    \begin{cases}
+      -3x + 4y + 3z - 4 = 0
+      x + 6y - z - 6 = 0
+    \end{cases} \\
+    \text{Полагаем, что } z = 0: \\
+    \begin{cases}
+      -3x + 4y - 4 = 0 \\
+      x + 6y - 6 = 0
+    \end{cases} \implies \begin{cases}
+      x = 0 \\
+      y = 1 
+    \end{cases} \implies A(0, 1, 0)
+  \end{gather*}
+  где точка $A \in \alpha_1, \alpha_2, l$.
+  
+  Составляем каноническое уравнение прямой $l$, проходящей через точку $A$, и с направляющим вектором $\vec{s}$.
+  \begin{gather*}
+    \frac{x - 0}{1} = \frac{y - 1}{0} = \frac{z - 0}{1} \\
+    \boxed{\frac{x}{1} = \frac{y - 1}{0} = \frac{z}{1}}
+  \end{gather*}
+ектора 
+\end{eg}
+
