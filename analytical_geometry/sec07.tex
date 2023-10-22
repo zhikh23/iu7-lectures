@@ -424,6 +424,8 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \boxed{\frac{A}{m} = \frac{B}{n} = \frac{C}{p}}
 \end{gather*}
 
+\subsubsection{Примеры задач}
+
 \begin{eg}
   Задача: \textit{составить уравнение прямой $l_2$ симметричной прямой $l_1$, которая задана каноническим уравнением}: \[
   \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} \qquad \vec{s} = \{2, 1, 0\} 
@@ -437,7 +439,7 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
     \vec{s} \cdot \vec{n} = 2 \cdot 1 + 1 \cdot (-1) + 0 \cdot 2 = 2 - 1 = 1 \neq 0 \implies l_1 \not \parallel \alpha
   \end{gather*}
 
-  2) Находим точку пересечения прямой $l$ с плоскостью $\alpha$ - пусть это точка $A(x, y, z)$.
+  2) Находим точку пересечения прямой $l$ с плоскостью $\alpha$ - пусть это точка $A(x_2, y_2, z_2)$.
   Из канонического уравнения прямой $l_1$ получим параметрическое уравнение:
   \begin{gather*}
     \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} = t \\
@@ -456,9 +458,9 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \begin{gather*}
     2t + 1 - t - 2 - 1 = 0 \\
     t = 2 \implies \begin{cases}
-      x = 5 \\
-      y = 2 \\
-      z = -1
+      x_2 = 5 \\
+      y_2 = 2 \\
+      z_2 = -1
     \end{cases} \implies A(5, 2, -1)
   \end{gather*}
 
@@ -486,14 +488,14 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   \begin{gather*}
     t + 1 + t + 4t - 2 = 0 \\
     t = \frac{1}{3} \implies \begin{cases}
-      x = \frac{4}{3} \\
-      y = -\frac{1}{3} \\
-      z = \frac{1}{3}
+      x_3 = \frac{4}{3} \\
+      y_3 = -\frac{1}{3} \\
+      z_3 = \frac{1}{3}
     \end{cases}
   \end{gather*}
 
   Составляем вектор $\overrightarrow{M_1O}$: \[
-  \overrightarrow{M_1O} = \{\frac{1}{3}, -\frac{1}{3}, \frac{2}{3}\} 
+  \overrightarrow{M_1O} = \left\{\frac{1}{3}, -\frac{1}{3}, \frac{2}{3}\right\} 
   \] 
 
   Пусть $M_2(x_2, y_2, z_2)$. Тогда:
@@ -501,16 +503,16 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
     \overrightarrow{OM_2} = \{x_2, y_2, z_2\} \\
     \overrightarrow{M_1O} = \overrightarrow{OM_2} \implies \begin{cases}
       x_2 - \frac{4}{3} = \frac{1}{3} \\
-      y + \frac{1}{3} = -\frac{1}{3} \\
-      z + \frac{1}{3} = \frac{2}{3}
+      y_2 + \frac{1}{3} = -\frac{1}{3} \\
+      z_2 + \frac{1}{3} = \frac{2}{3}
     \end{cases} \iff \begin{cases}
-      x = \frac{5}{3} \\
-      t = \frac{2}{3} \\
-      z = \frac{1}{3}
+      x_2 = \frac{5}{3} \\
+      y_2 = \frac{2}{3} \\
+      z_2 = \frac{1}{3}
     \end{cases}
   \end{gather*}
 
-  4) Составляем уравнение прямой, проходящей через точки $A(5, 2, -1)$ и $M_2(\frac{5}{3}, -\frac{2}{3}, \frac{1}{3})$:
+  4) Составляем уравнение прямой, проходящей через точки $A\left(5, 2, -1\right)$ и $M_2\left(\frac{5}{3}, -\frac{2}{3}, \frac{1}{3}\right)$:
   \begin{gather*}
     \frac{x - x_a}{x_1 - x_a} = \frac{y - y_a}{y_2 - y_a} = \frac{z - z_a}{z_2 - z_a} \\
     \frac{x - 5}{\frac{5}{3} - 5} = \frac{y - 2}{-\frac{2}{3} - 2} = \frac{z + 1}{\frac{1}{3} + 1}  \\
@@ -541,21 +543,21 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
       t = \frac{y - 4}{3} \\
       t = \frac{z + 2}{-2}
     \end{cases} \implies
-    \frac{x - 2}{2} = \frac{y - 4}{3} = \frac{z + 2}{-2} \\
+    \frac{x - 2}{2} = \frac{y - 4}{3} = \frac{z + 2}{-2} \implies \\
     M_1(2, 4, -2) \qquad \vec{s_1} = \{2, 3, -2\} 
-
+  \end{gather*}
+  \begin{gather*}
     l_2: \begin{cases}
       t = \frac{x - 1}{-3} \\
       t = \frac{y}{1} \\
       t = \frac{z + 4}{3}
     \end{cases} \implies
-    \frac{x - 1}{-3} = \frac{y - 4}{3} = \frac{z + 2}{-2}
+    \frac{x - 1}{-3} = \frac{y - 4}{3} = \frac{z + 2}{-2} \implies \\
     M_2(1, 4, -2) \qquad \vec{s_2} = \{-3, 1, 3\} 
   \end{gather*}
 
   Найдём вектор $\overrightarrow{M_1M_2}$:
   \begin{gather*}
-    M_1(2, 4, -2) \qquad M_2(1, 4, -2) \\
     \overrightarrow{M_1M_2} = \{0, -4, -2\} 
   \end{gather*}
 
@@ -572,10 +574,10 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
 
   2) Найдем направляющий вектор общего перпендикуляра к прямым $l_1$ и $l_2$.
   \begin{gather*}
-    \begin{rcase}
-      \vec{s} \perp \vec{s_1}
+    \begin{rcases}
+      \vec{s} \perp \vec{s_1} \\
       \vec{s} \perp \vec{s_2}
-    \end{rcase}
+    \end{rcases}
     \iff \vec{s} = \vec{s_1} \times \vec{s_2} \\
     \vec{s_1} \times \vec{s_2} = 
     \begin{vmatrix}
@@ -593,7 +595,7 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
   Вектора $\overrightarrow{M_1M}, \vec{s_1}, \vec{s}$ - компланарные, а следовательно: 
   \begin{gather*}
     \overrightarrow{M_1M} \vec{s_1} \vec{s} = 0 \\
-    \vec{M_1M} \vec{s_1} \vec{s} = 
+    \overrightarrow{M_1M} \vec{s_1} \vec{s} = 
     \begin{vmatrix}
       x - 2 & y - 4 & z + 2 \\
       2 & -3 & 2 \\
@@ -621,10 +623,10 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
     \boxed{\alpha_2: x + 6y - z - 6 = 0}
   \end{gather*}
 
-  5) Прямая $l$ пересекает плоскость $oXY$, т.е. $z = 0$. Тогда в системе уравнений:
+  5) Для начала, определим одну из координат точек. Прямая $l$ пересекает плоскость $oXY$, т.е. можем взять $z = 0$. Тогда в системе уравнений:
    \begin{gather*}
     \begin{cases}
-      -3x + 4y + 3z - 4 = 0
+      -3x + 4y + 3z - 4 = 0 \\
       x + 6y - z - 6 = 0
     \end{cases} \\
     \text{Полагаем, что } z = 0: \\
@@ -643,6 +645,5 @@ l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
     \frac{x - 0}{1} = \frac{y - 1}{0} = \frac{z - 0}{1} \\
     \boxed{\frac{x}{1} = \frac{y - 1}{0} = \frac{z}{1}}
   \end{gather*}
-ектора 
 \end{eg}
 
