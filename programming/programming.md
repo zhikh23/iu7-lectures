@@ -556,7 +556,7 @@ for i, el in enumerate(l):
 
 # Кортежи, множества и словари
 
-Функция `id` - идентификатор объекта. Определяте
+Функция `id` - идентификатор объекта. Идентификатор является адресом памяти объекта и будет отличаться при каждом запуске программы.
 
 ## Кортежи (`tuple`)
 
@@ -621,22 +621,19 @@ for i, el in enumerate(l):
 * *Создание*
   * `"some text"`
   * `'some text'`
-  * `"""a lot
-  
-    of text"""``
-
+  * `"""a lot of text"""`
   * `str(object)`
 
 ## Методы работы со строками
 
-* `capitalize()` - 
-* `casefold()`
-* `center()`
-* `count()`
-* `encode()`
-* `endswith()`
-* `expandtabs()`
-* `find()`
-* `format()`
+* `capitalize() example: 'string' -> 'STRING'`
+* `casefold() example: 'StRiNg' -> 'string'`
+* `center() example: 'sTrInG' -> '  sTrInG  '`
+* `count() example: 'rrrraaaa'.count('a') -> 4`
+* `encode() example: 'string' -> b'string'`
+* `endswith() example: 'string'.endswith('g') -> True`
+* `expandtabs() example: '\t\t'.endswith(n) -> '        ' (replace \t for n spaces)`
+* `find() example: 'string'.find('g') -> 5 return -1 if there is no element`
+* `format() example: '{} {} string'.format(1, 2) -> '1 2 string'`
 
 
