@@ -28,7 +28,7 @@
 
 \begin{definition}
   Число $a$ называется пределом функции $y = f(x)$ при $x \to + \infty$, если: \[
-  \lim_{x \to +\infty} f(x) = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N) \implies |f(x) - a| < \varepsilon)
+  \lim_{x \to +\infty} f(x) = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N \implies |f(x) - a| < \varepsilon)
   \] 
   где $N$ - большое число, $N > 0, N \in \R$.
 \end{definition}
@@ -43,14 +43,11 @@
 \begin{note}
  \begin{gather*}
   \lim_{x \to +\infty} f(x) = a \iff \\
-  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N) \implies |f(x) - a| < \varepsilon)
-
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N \implies |f(x) - a| < \varepsilon) \\
   \lim_{x \to -\infty} f(x) = a \iff \\
-  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x < -N) \implies |f(x) - a| < \varepsilon)
-
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x < -N) \implies |f(x) - a| < \varepsilon \\
   \lim_{x \to \infty} f(x) = a \iff \\
-  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x \in |x| > N) \implies |f(x) - a| < \varepsilon)
-
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x \in |x| > N \implies |f(x) - a| < \varepsilon)
 \end{gather*} 
 \end{note}
 
@@ -67,8 +64,8 @@
 \begin{note}
   \begin{gather*}
     \lim_{x \to x_0} f(x) = +\infty \iff
-    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies f(x) > M)
-
+    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies f(x) > M) 
+    \\
     \lim_{x \to x_0} f(x) = -\infty \iff
     (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies f(x) < -M)
   \end{gather*}
@@ -276,7 +273,7 @@
 
 \begin{corollary}
 \[
-  \lim_{x \to 0} \left( 1 + x \right)^\left( \frac{1}{x} \right) = e
+  \lim_{x \to 0} \left( 1 + x \right)^{\left( \frac{1}{x} \right)} = e
 \] 
 \end{corollary}
 \begin{proof}
