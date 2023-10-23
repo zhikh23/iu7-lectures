@@ -1,9 +1,8 @@
 \section{Сравнение бесконечно малых и бесконечно больших функций}
 
-Пусть даны функции $\alpha(x)$ и $\beta(x)$, которые являются б.м.ф. при $x \to x_0$.
-\begin{gather*}
+Пусть даны функции $\alpha(x)$ и $\beta(x)$, которые являются б.м.ф. при $x \to x_0$. \[
   \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
-\end{gather}
+\]
 
 Рассмотрим варианты:
 
@@ -13,46 +12,40 @@
       \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 0
   \] 
   \begin{center}
-    $\alpha(x)$ имеет более высокий порядок малости, чем $\beta(x)$.
-  \end{center}
-  \[
-    \boxed{\alpha(x) = o(\beta(x) \text{, при } x \to x_0}
-  \] 
-  \\
+    $\alpha(x)$ имеет более высокий порядок малости, чем $\beta(x)$. \\
+    $\boxed{\alpha(x) = o(\beta(x)) \text{, при } x \to x_0}$
+  \end{center} 
+  
   \item \[
   \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \infty
   \]
   \begin{center}
-    $\beta(x)$ имеет более высокий порядок малости, чем $\alpha(x)$.
-  \end{center}
-  \[
-  \boxed{\beta(x) = o(\alpha(x) \text{, при } x \to x_0}
-  \] 
-  \\
+    $\beta(x)$ имеет более высокий порядок малости, чем $\alpha(x)$. \\
+    \boxed{\beta(x) = o(\alpha(x)) \text{, при } x \to x_0}
+  \end{center} 
+
   \item \[
-  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
   \] 
   \begin{center}
-    $\alpha(x)$ и $\beta(x)$ - эквивалентны.
-  \end{center}
-  \[
+    $\alpha(x)$ и $\beta(x)$ - эквивалентны. \\
     \boxed{\alpha(x) \sim \beta(x) \text{, при } x \to  x_0}
-  \] 
-  \\
+  \end{center}
+
   \item \[
-  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const
   \] 
   \begin{center}
     $\alpha(x)$ и $\beta(x)$ - одного порядка малости.
   \end{center}
   \begin{gather*}
-  \boxed{
-    \begin{matrix}
-      \alpha(x) = O(\beta(x)) \\
-      \beta(x) = O(\alpha(x))
-    \end{matrix}
-    \text{, при } x \to  x_0
-  }
+    \boxed{
+      \begin{matrix}
+        \alpha(x) = O(\beta(x)) \\
+        \beta(x) = O(\alpha(x))
+      \end{matrix} \quad
+      \text{ при } x \to x_0
+    }
   \end{gather*}
   \\
   \item \[
@@ -111,7 +104,7 @@
 \end{proof}
 
 \begin{theorem}
-  \textit{Необходимое и достаточное условие экваивалентных бесконечно малых функий}. \\
+  \textit{Необходимое и достаточное условие экваивалентных \\ бесконечно малых функий.} \\
   Две функции $\alpha(x)$ и $\beta(x)$ эквивалентны тогда и только тогда, когда их разность имеет более высокий порядок малости по сравнению с каждой из них.
   \begin{gather*}
     \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0 \\
@@ -215,8 +208,8 @@
                               & $\log_a(1 + x) \sim \frac{x}{\ln a}$ \\
     $\arctg(x) \sim x$ при $x \to  0$
                               & $e^x$ ~ x \\
-    $1 - \cos(x) \sim \frac{x^2}{2}$ при $x \to  0$
-                              & $a^x$ - 1 \sim x \ln a \\
+    $1 - \cos(x) \sim \frac{x^2}{2}$ при $x \to 0$
+                              & $a^x - 1 \sim x \ln a$ \\
     $1 - \cos(x) \sim \frac{x^2}{2}$ при $x \to  0$
                               & \\
                               \\

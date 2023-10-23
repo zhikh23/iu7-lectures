@@ -23,11 +23,11 @@
     -1, x < 0
   \end{cases} \implies
   sgn \not \in C(0)
-  /]
+  \]
 \end{eg}
 
 \begin{definition}
-  Функция $y = f(x)$, определённая в некоторой окрестности точки $x_0$, называется непрерывной в этой точке, если в достаточно малой окрестности точки $x_0$ значение функции близки к $f(x_0)$.
+  Функция $y = f(x)$, определённая в некоторой \\ окрестности точки $x_0$, называется непрерывной в этой точке, если в достаточно малой окрестности точки $x_0$ значение функции близки к $f(x_0)$.
   \begin{gather*}
     y = f(x) \in C(x_0) \\
     \iff \\
@@ -130,7 +130,7 @@
 \end{definition}
 
 \begin{definition}
-  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и \textbf{не} существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$ или $\lim_{x \to x_0} f(x) = \infty$, то $x_0$ называется точкой разрыва II-го рода.
+  Если точка $x_0$ -- точка разрыва функции $y = f(x)$ и \textbf{не} существуют конечные пределы $\lim_{x \to x_0+} f(x)$ и $\lim_{x \to x_0-} f(x)$ или \\ $\lim_{x \to x_0} f(x) = \infty$, то $x_0$ называется точкой разрыва II-го рода.
 \end{definition}
 
 \begin{definition}
@@ -190,10 +190,10 @@
 
 \begin{theorem}
   Пусть функции: \[
-    \begin{rcase}
+    \begin{rcases*}
       y = f(x) \\
       y = g(x)
-    \end{rcase}
+    \end{rcases*}
     \in C(x_0)
   \] 
   Тогда:
@@ -211,11 +211,12 @@
   Рассмотрим:
   \begin{gather*}
     \lim_{x \to x_0} (f(x) + g(x)) = \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) + f(x_0) = g(x_0) \\
-    \implies f(x) + g(x) \in C(x_0) \\
-    
-    \lim_{x \to x_0} (f \cdot g)(x) = \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = f(x_0) \cdot g(x_0) \\
+    \implies f(x) + g(x) \in C(x_0) 
+    \\
+    \lim_{x \to x_0} (f \cdot g)(x) = \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x) = f(x_0) \cdot g(x_0) 
+    \\
     \implies (f \cdot g)(x) \in C(x_0)
-
+    \\
     \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x_0}
   \end{gather*}
 \end{proof}
