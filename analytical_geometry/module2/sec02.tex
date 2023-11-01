@@ -1,0 +1,287 @@
+\section{Матрицы}
+
+\begin{definition}
+  \textit{Матрицей} называется таблица чисел, в которой элементы расположены по строкам и столбцам.
+\end{definition}
+
+Обозначаются заглавными латинскими буквами: $A, B, C \ldots$
+Размерность матрицы определятся кол-вом строк $m$ и кол-вом столбцов  $n$, и обозначается $m \times n$.
+Элемент матрицы $a_{ij}$ -- элемент, который расположен в $i$-ой строку и  $j$-ом столбце.
+
+Матрицу можно записать таким образом:  \[
+A = 
+\begin{pmatrix}
+  a_{11} & a_{12} & \ldots & a_1m \\ 
+  a_{21} & a_{22} & \ldots & a_2m \\ 
+  \ldots & \ldots & \ldots & \ldots \\
+  a_{n1} & a_{n2} & \ldots & a_nm \\ 
+\end{pmatrix}
+\]
+
+\begin{definition}
+  Матрица называется \textit{квадратной} если кол-во строк равно кол-ву столбцов ($m = n$).
+\end{definition}
+
+\begin{definition}
+  Квадратная матрица называется \textit{диагональной} если все элементы матрицы, кроме элементов на главной диагонали, равны нулю. \[
+  A = \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 3
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Главной диагональю} называется диагональ матрицы, идущая из левого верхнего в правым нижний.
+\end{definition}
+
+\begin{definition}
+  \textit{Побочной диагональю} называется диагональ матрицы, идущая из левого верхнего в правым нижний.
+\end{definition}
+
+\begin{definition}
+  Квадратная матрица, у которой на главной диагонали все элементы равны единице, а остальные равны нулю, называют \textit{единичной}. \[
+  B = \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Нулевой матрицей} называется матрица, все элементы которой равные нулю. \[
+  \Theta = \begin{pmatrix}
+    0 & 0 & 0 \\
+    0 & 0 & 0
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Верхне-треугольной матрицей} называется квадратная матрица, у которой под главной диагональю равны нулю. \[
+  C = \begin{pmatrix}
+    1 & 2 & 3 \\
+    0 & 4 & 5 \\
+    0 & 0 & 6
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Нижне-треугольной матрицей} называется квадратная матрица, у которой под главной диагональю равны нулю. \[
+  D = \begin{pmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 0 \\
+    6 & 0 & 0
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+Две матрицы \textit{равны}, если они имеют одинаковую размерность, и их соответствующие элементы равны. 
+
+\subsection{Действия с матрицами}
+
+\begin{definition}
+  \textit{Суммой матриц} $A_{m \times n}$ и $B_{m \times n}$ называется матрица $C_{m \times n}$, элементы которой являются суммой соответствующих элементов матриц $A$ и $B$. \[
+  C = A + B = \begin{pmatrix}
+    1 & 2 \\
+    3 & 4
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+    -1 & -1 \\
+    -2 & 0
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    0 & 1 \\
+    1 & 4
+  \end{pmatrix}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Произведением матрицы} $A_{m \times n}$ на число $k = const$ называется матрица $C_{m \times n}$, элементы которой равны произведению соответствующего элемента матрицы на данное число $c_{ij} = k a_{ij}$.
+\end{definition}
+
+\subsubsection{Свойства сложения и произведения матриц на число}
+
+\begin{enumerate}
+  \item \[
+    A + B = B + A
+  \] 
+
+  \item \[
+   (A + B) + C = A + (B + C_
+    \]
+
+  \item Если $\Theta$ -- нулевая матрица, то: \[
+    A + \Theta = A
+  \] 
+
+  \item Найдётся такая матрица $B$, что:  \[
+    A + B = 0
+  \]  
+
+  \item \[
+  \lambda (A + B) = \lambda A + \lambda B
+  \] 
+
+  \item \[
+      (\lambda + \rho) A = \lambda A + \rho A
+  \] 
+
+ \item \[
+    (\lambda \rho) A = 
+ \] 
+\end{enumerate}
+
+\subsection{Транспонирование матрицы}
+
+\begin{definition}
+  \textit{Транспонированной матрицей} $A_{mn}$ называется матрица размерностью $n \times  m$, элементы которой:
+  \begin{gather*}
+    a^\tau_{ij} = a_{ji} \\
+    A_{n \times m}^\tau \text{ -- транспонированная матрица } A_{m \times n}
+  \end{gather*}
+  \begin{gather*}
+    A_{2 \times 3} = 
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      4 & 5 & 6
+    \end{pmatrix} \\
+    A^\tau_{3 \times 2} = 
+    \begin{pmatrix}
+      1 & 4 \\
+      2 & 5 \\
+      3 & 6
+    \end{pmatrix}
+  \end{gather*}
+\end{definition}
+
+\subsubsection{Свойства транспонированния}
+
+\begin{enumerate}
+  \item \[
+      (A + B)^\tau = A^\tau + B^\tau
+  \] 
+
+  \item \[
+    (\lambda A)^\tau = \lambda A^\tau
+\] 
+\end{enumerate}
+
+\subsection{Произведение матриц}
+
+\begin{definition}
+  \textit{Произведением матриц} $A$ и $B$ назвается матрица $C$, элементы которой определяются как: \[
+    c_{ij} = \sum_{l=1}^{k} a_{il} \cdot b_{lj}
+  \] 
+\end{definition}
+
+\begin{note}
+  Две матрицы можно перемножить, если количество столбцов одной матрицы равно количеству строк другой матрицы. Тогда результирующая матрица будет иметь количество строк одной матрицы и количеству столбцов другой матрицы. \[
+    C_{a \times b} = A_{a \times c} \cdot B_{c \times b}
+  \] 
+\end{note}
+
+\textit{Свойство антикомунитативности} произведения матриц. 
+\[
+  A \cdot B \neq B \cdot A
+\]
+
+\begin{note}
+  \textit{Исключения:} 
+  Когда $A = B$:  \[
+  
+    A \cdot B = A \cdot A = A^2
+  \]  
+  Когда матрица $B$ -- нулевая матрица:
+  \[
+    A \cdot \Theta = \Theta
+  \] 
+
+  Когда матрица  $B$ -- единичная матрица:
+  \[
+    A \cdot E = A
+  \] 
+
+  Когда матрица $B$ -- обратная матрица:
+  \[
+    A \cdot A^{-1} = E
+  \] 
+\end{note}
+
+\subsubsection{Свойства произведения матриц}
+
+\begin{enumerate}
+  \item Произведение матриц антикомунитативно. \[
+  A \cdot  B \neq  B \cdot A
+  \] 
+  \item \[
+  1 \cdot A = A
+  \] 
+
+  \item Ассоциативность \[
+      (A \cdot B) \cdot C = A \cdot (B \cdot C)
+  \]
+  Доказательство:
+  \begin{align*}
+    \left( A \cdot  B \right) C &= \\
+    &= \sum_{r=1}^{k} [(A \cdot B)]_{ir} \cdot [C]_{rj} = \\
+    &= \sum_{r=1}^{n} \left( \sum_{s=1}^{k} [A]_{is} \cdot [B]_{sn} \right) \cdot [C]_{rj} = \\
+    &= \sum_{n=1}^{n} \sum_{k=1}^{k} [A]_{is} \cdot [B]_{sn} \cdot [C]_{rj} = \\
+    &= \sum_{s=1}^{k} [A]_{is} \cdot  [\left( B \cdot C \right) ] =\\
+    &= A \cdot (B \cdot C)
+  \end{align*}
+
+  \item Дистрибутивность произведения матриц относительно сложения: \[
+      (A + B) \cdot C = A \cdot C + B \cdot C
+  \] 
+  Доказательство:
+  \begin{align*}
+    \left(A_{m \times k} + B_{m \times k}\right) \cdot C_{k \times n} &= \\
+    &= \sum_{r+1}^{k} [\left( A + B \right) ]_{ir} \cdot [C]_{ir} \\
+    &= \sum_{r=1}^{k} \left( [A]_{ir} + [B]_{ir} \right) \cdot [C]_{rj} \\
+    &= \sum_{r=1}^{k} \left( [A]_{ir} [C]_{rj} + [B]_{ir} \cdot [C]_{rj} \right) \\
+    &= \sum_{r=1}^{k} [A]_{ir} [C]_{ir} + \sum_{r=1}^{k} [B]_{ir} [C]_{ir} \\
+    &= A \cdot C + B \cdot C
+  \end{align*}
+
+\item Применение транспорирования к произведению матриц \[
+      (A \cdot B)^\tau = B^\tau \cdot A^\tau
+  \]  
+  Доказательство:
+  \begin{align*}
+    \left( A \cdot B \right)^\tau &= \\
+    &= [ \left( A \cdot B \right)^\tau ]_{ij} \\
+    &= [A B]_{ji} = \sum_{r=1}^{k} [A]_{jr} \cdot [B]_{ri} \\
+    &= \sum_{r=1}^{k} [A^\tau] \cdot  [B^\tau]_{ir} \\
+    &= \sum_{r=1}^{k} [B^\tau]_{ir} [A^\tau]_{rj} \\
+    &= [B^\tau \cdot A^\tau] \\
+    &=B^\tau \cdot A^\tau
+  \end{align*}
+\end{enumerate}
+
+\subsection{Элементарные преобразования матриц}
+
+\begin{enumerate}
+  \item Перестановка строк и столбцов.
+  \item Умножение элементов строк (столбцов) на число.
+  \item Прибавление к элементам одной строки соответствующий элементов другой строки (столбца), умноженного на число.
+\end{enumerate}
+
+Используя элементарные преобразования, можно привести любую матрицу к \textit{ступенчатому виду}.
+\begin{eg}
+  Пример ступенчатой матрицы для $3 \times 4$:
+  \[
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    0 & 3 & 4 & 5 \\
+    0 & 0 & 6 & 7
+  \end{pmatrix}
+  \] 
+\end{eg}
+
