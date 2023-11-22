@@ -1,0 +1,280 @@
+\section{Дифференцируемость функции в точке}
+
+\begin{definition}
+  Функция $y= f(x)$ называется \textit{дифференцируемой в точке} $x_0$, если существует константа $A$ такая, что приращение функции в этой точке представимо в виде: \[
+  \Delta y = A \cdot \Delta x + \alpha(\Delta x) \Delta x
+  \]
+  где $\alpha(x)$ -- бесконечно малая функция при $\Delta x \to 0$, $\Delta x > 0$.
+\end{definition}
+
+\begin{theorem}
+  \textit{Необходимое и достаточное условие дифференцируемости функции в точке}.\\ 
+  Функция $y = f(x)$ в точке  $x_0$ тогда и только тогда, когда она имеет в этой точке конечную производную.
+\end{theorem}
+\begin{proof}.\\
+  \textit{Необходимость.} \\
+  Дано: $y = f(x)$ -- дифференцируема в точке  $x_0$. \\
+  Доказать: $\exists  y'(x)$ -- конечное число \\
+  Т.к. $y = f(x)$, то  $\Delta y = A \cdot \Delta x + \alpha(\Delta x) \cdot \Delta x$, где $\alpha(\Delta x)$ -- бесконечно малая функция при $\Delta x \to 0$. \\
+  Вычислим предел: 
+  \begin{gather*}
+    \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{A \Delta x + \alpha(\Delta x) \cdot \Delta x}{\Delta x} = \lim_{\Delta x \to 0} \left( A + \alpha(\Delta x) \right)  = \\
+    A + \lim_{\Delta x \to 0} \alpha(\Delta x) = A + 0 = A \\
+    \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = y'(x_0) \text{ -- по определению} \\
+    \implies y'(x_0) = A = const \implies \exists  y'(x_0) \text{ -- конечное число}.
+  \end{gather*}
+
+  \textit{Достаточность}. \\
+  Дано: $\exists y'(x_0)$ -- конечное число. \\
+  Доказать: $y = f(x)$ -- дифференцируема в этой точке. \\
+  Доказательство: \\
+  Т.к. $\exists y'(x)$, то по определению производной  \[
+    y'(x_{0}) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+  \]
+  По теореме "О связи функции, её предела и некоторой бесконечно малой функции": \[
+  \frac{\Delta y}{\Delta x} = y'(x_0) + \alpha(\Delta x)
+  \] 
+  где $\alpha(x)$ -- бесконечно малая функция при $\Delta x \to 0$.
+  \begin{gather*}
+    \Delta y = y'(x_0) \Delta x + \alpha(\Delta x) \Delta x
+  \end{gather*}
+  где $A = y'(x_0) \implies y = f(x)$ дифференцируема в данной точке.
+\end{proof}
+
+\begin{corollary}
+  Формула, выражающая дифференцируемость функции $y = f(x)$ в точке $x_0$ примет вид: \[
+  \Delta y = y'(x_0) \Delta x + \alpha(\Delta x) \Delta x
+  \] 
+  где $\alpha(x)$ -- бесконечно малая функция при $\Delta x \to 0$
+\end{corollary}
+
+\begin{theorem}
+  \textit{Связь дифференцируемости и непрерывности функции}. \\
+  Если функция дифференцируема в точке $x_0$, то она в этой точке непрерывна. 
+\end{theorem}
+\begin{proof}
+  Т.к. $y = f(x)$ дифференцируема в точке $x_0$, то $\Delta y = y'(x_0) \Delta x + \alpha(\Delta x) \Delta x$, где $y'(x_0) = const$, $\alpha(\Delta x)$ -- бесконечно малая функция при  $\Delta x \to 0$. \\
+  Вычислим:
+  \begin{align*}
+    \lim_{\Delta x \to 0} \Delta y &= \lim_{\Delta x \to 0} (y'(x) \Delta x + \alpha(\Delta x) \Delta x) \\
+    &= y'(x_0) \lim_{\Delta x \to 0} \Delta x + \lim_{\Delta x \to 0} \alpha(\Delta x) \lim_{\Delta x \to 0} \Delta x \\
+    &= y'(x_0) \cdot 0 + 0 \cdot 0 = 0 \\
+  \end{align*}
+  По определению непрерывной функции $y = f(x)$ является непрерывной в точке $x_0$.
+\end{proof}
+
+\begin{note}
+  Если функция непрерывна, она не обязательно дифференцируема!
+\end{note}
+
+\subsection{Правила дифференцирования}
+
+\begin{theorem}
+  \textit{Арифметические операции}. \\
+  Пусть функции $u = u(x)$ и $v = v(x)$ дифференцируемы в точке $x$. Тогда в этой точке дифференцируемая их сумма, разность, произведение, частное (при условии знаменателя не равного нулю), справедливо равенство:
+  \begin{gather*}
+    (u \pm v)' = u' \pm v' \\
+    (u \cdot v)' = u'v + v'u \\
+    \left( \frac{u}{v} \right)' = \frac{u'v - v'u}{v^2} 
+  \end{gather*}
+\end{theorem}
+\begin{proof}
+  Распишем приращения каждой из функций:
+  \begin{gather*}
+    \begin{cases}
+      \Delta u = u(x + \Delta x) - u(x) \\
+      \Delta v = v(x + \Delta x) - v(x)
+    \end{cases} \implies
+    \begin{cases}
+      u(\Delta x + x) = \Delta u + u(\Delta x) \\
+      v(\Delta x + x) = \Delta v + v(\Delta x)
+    \end{cases}
+  \end{gather*}
+\end{proof}
+
+\begin{proof}
+  Пусть $y = uv$, тогда:
+  \begin{gather*}
+    \Delta  y = y(x + \Delta x) - y(x) = u(x + \Delta x) v(x + \Delta x) - u(x) v(x) = \\
+    = (\Delta u + u(x))(\Delta v + v(x)) - u(x) v(x) = \Delta u \Delta v + \Delta u v(x) + \\
+    + \Delta v u(x) + u(x) v (x) = \\
+    \Delta u \Delta v + \Delta u v(x) + \Delta v u(x).
+  \end{gather*}
+  Вычислим предел:
+  \begin{align*}
+    y'(x) &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} 
+           = \lim_{\Delta x \to 0}  \frac{ \Delta u \Delta v + \Delta  u v(x) + \Delta v u(x)}{\Delta x} = \\
+          &= \lim_{\Delta x \to 0} \left( \Delta u \frac{\Delta v}{\Delta x} + v(x) \frac{\Delta u}{\Delta x} + u(x) \frac{\Delta v}{\Delta x} \right) = \\
+          &= \underbrace{\lim_{\Delta x \to 0} \Delta u}_{0} \underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} + v(x) \underbrace{\lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}}_{u'(x)} + u(x)\underbrace{\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x}}_{v'(x)} = \\
+          &= v(x) u'(x) + v'(x) u(x) + v'(x) \cdot 0 = \\
+          &= \boxed{v(x) u'(x) + u(x) v('x)}
+  \end{align*}
+  Т.к. функции $u = u(x)$, $v = v(x)$ дифференцируемы в точке $x$, то по теореме о связи дифференцируемости и непрерывности функции  $\implies u = u(x)$ и $v = v(x)$ непрерывны в точке  $x \implies$ по определению непрерывности функции: \[
+     \begin{cases}
+       \lim_{\Delta x \to 0} \Delta u = 0 \\
+       \lim_{\Delta x \to 0} \Delta v = 0 \\
+     \end{cases}
+  \] 
+\end{proof}
+
+\begin{proof}
+  Пусть $y = \frac{u}{v}$, тогда:
+  \begin{align*}
+    \Delta y &= y(x + \Delta x) - y(x) = \\
+        &= \frac{u(x + \Delta x}{v(x + \Delta x} - \frac{u(x)}{v(x)} = \\
+        &= \frac{u(x + \Delta x)v(x) - u(x)v(x + \Delta x)}{v(x + \Delta x)v(x)} = \\
+        &= \frac{(u(x) + \Delta u)v(x) - u(x)(v(x) + \Delta v)}{(\Delta v + v(x))v(x)} = \\
+        &= \frac{u(x) + \Delta u v(x) - u(x)v(x) - u(x)\Delta v}{v^2(x) + v(x) \Delta v} = \\
+        &= \frac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}
+  \end{align*}
+  Вычислим предел:
+  \begin{align*}
+    y'(x) &= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \\
+          &= \lim_{\Delta x \to 0} \frac{\frac{\Delta u v(x) - \Delta v u(x)}{v^2(x) + v(x) \Delta v}}{\Delta x} = \\
+          &= \lim_{\Delta x \to 0} \frac{v(x) \frac{\Delta u}{\Delta x} - v(x_0 \frac{\Delta v}{\Delta x}}{v^2(x) + v(x) \Delta v} = \\
+          &= \frac{v(x) \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x} - u(x) \lim_{\Delta x \to 0}  \frac{\Delta v}{\Delta x}}{v^2(x) - v(x) \lim_{\Delta x \to 0} \Delta v} = \\
+          &= \boxed{\frac{v_(x) u'(x) - u(x) v'(x)}{v^2(x)}}
+  \end{align*}
+  Для доказательства использовали:
+  \begin{itemize}
+    \item $\lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x} = u'(x)$
+    \item $\lim_{\Delta x \to 0} \frac{\Delta v}{\Delta x} = v'(x)$
+    \item т.к $v(x)$ -- дифференцируема, то по теореме о связи дифференцируемости и непрерывности  $v(x)$ -- непрерывна,  $\implies $ по определению непрерывности $\lim_{\Delta x \to 0} \Delta v = 0$
+  \end{itemize}
+\end{proof}
+
+\begin{theorem}
+  Производная от постоянной равна нулю. \[
+    (c)' = 0, \quad c = const
+  \] 
+\end{theorem}
+\begin{corollary}
+  Константу можно выносить за знак производной. \[
+    (c \cdot f)' = c \cdot f', \quad c = const
+  \] 
+\end{corollary}
+\begin{corollary}
+  Производная функции $y = \frac{1}{v(x)}$ имеет вид: \[
+  \left( \frac{1}{v(x)} \right)' = -\frac{1}{v^2(x)}v'(x)
+  \]  
+\end{corollary}
+
+\begin{definition}
+  Функция $y = f(x)$ называется \textit{дифференцируемой на интервале}, если она дифференцируема в каждой точке этого интервала.
+\end{definition}
+
+\begin{theorem}
+  \textit{Производная сложной функции}. \\
+  Пусть функция $u = g(x)$ дифференцируема в точке $x = a$, а функция $y = f(u)$ дифференцируема в соответствующей точке  $b = g(a)$.
+  Тогда сложная функция $F(x) = f(g(x))$ дифференцируема в точке $x = a$. \[
+     F'(x) |_{x = a} = \left(f(g(x)))'\right|_{x = a} = f'_u(b) \cdot g'_x(a)
+  \]
+\end{theorem}
+\begin{proof}
+  Т.к. функция $u = g(x)$ дифференцируема в точке $x = a$, то по определению $\implies$\[
+    \Delta u = g'(a) \cdot \Delta x + \alpha(\Delta x) \cdot \Delta \tag{1}
+  \] 
+  где $\alpha(\Delta x)$ -- б.м.ф при $\Delta x \to 0$.
+  Т.к. функция $y = f(x)$ дифференцируема в точке  $b$, то по определению дифференцируемости  $\implies$ \[
+    \Delta y = f'(b) \cdot \Delta u + \beta(\Delta u) \cdot \Delta u \tag{2}
+  \] 
+  где $\beta(\Delta x)$ -- б.м.ф при $\Delta x \to 0$. \\
+  Подставим (1) в (2). Тогда:
+  \begin{gather*}
+    \Delta y = f'(b) \cdot \left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) + \beta(\Delta u)\left( g'(a) \Delta x + \alpha(\Delta x) \Delta x \right) = \\
+    = f'(b) \cdot  g'(a) \Delta x + \Delta x\left(f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(\Delta x)\right) = \Delta F
+  \end{gather*}
+  Обозначим: $\gamma(\Delta x) = f'(b) \alpha(\Delta x) + g'(a) \beta(\Delta u) + \beta(\Delta u) \alpha(x)$. В итоге получаем $\Delta F = f'(b)g'(a)\Delta x + \gamma(\Delta x)\Delta x$. \\
+  $f(b) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to 0$ (как производная постоянной на б.м.ф.). 
+  Т.к. $u = g(x)$ дифференцируема в точке $x = a$, то по теореме о связи дифференцируемости и непрерывности функции $u = g(x)$ непрерывна в точке $x = a$  $\implies$ по определению непрерывности $\lim_{\Delta x \to 0} \Delta u = 0$ или при $\Delta x \to 0$, $\Delta u \to 0$. $g'(a) \beta(\Delta u)$ -- б.м.ф при $\Delta x \to  0 (как производная на б.м.ф.)$. $\beta(\Delta u) \alpha(\Delta x)$ -- б.м.ф при $\Delta x \to  0$ (как производная двую б.м.ф).
+  Следовательно, $\gamma(x)$ -- б.м.ф при $x \to 0$ как сумма конечного числа б.м.ф. \\
+  Вычислим предел:
+  \begin{gather*}
+    \lim_{\Delta x \to 0} \frac{\Delta F}{\Delta x} = \lim_{\Delta x \to 0} \left( f'(b) g'(a) + \gamma(\Delta x) \right) = f(b)g'(a) + 0 = f'(b) g'(a).
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}
+  \textit{Производная обратной функции}. \\
+  Пусть функция $y = f(x)$ в точке $x = 0$ имеет конечную и отличную от нуля производную  $f'(a)$ и пусть для неё существует однозначная обратная функция $x = g(y)$, непрерывная в соответствующей точке $b = f(a)$.
+  Тогда существует производная обратной функции и она равна:  \[
+    \boxed{g'(b) = \frac{1}{f'(a)}}
+  \] 
+\end{theorem}
+\begin{proof}
+  Т.к. функция $x = g(y)$ однозначно определена, то соответственно при  $\Delta y \neq 0$, $\Delta x \neq 0$.
+  Т.к. функция $x = g(y)$ непрерывна в соответствующей точке $b$, то  $\lim_{\Delta y \to 0} \Delta x = 0$ или $\Delta x \to 0$ при $\Delta y \to 0$.
+  \begin{gather*}
+    g'(b) = \lim_{\Delta y \to 0} \frac{\Delta x}{\Delta y} = \lim_{\Delta y \to 0} \frac{1}{\frac{\Delta y}{\Delta x}} = \frac{1}{\lim_{\Delta y \to 0} \frac{\Delta y}{\Delta x}} = \\
+    = \frac{1}{\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}} = \frac{1}{f'(a)}
+  \end{gather*}
+\end{proof}
+
+\begin{eg}
+  \begin{gather*}
+    y = \arcsin(x), \quad x = \sin(y), y' = \frac{1}{x'} \\
+    y'= (\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}} \\
+    x' = \cos(y) \\
+    \cos^2(y) + \sin^2(y) = 1 \\
+    \cos^2(y) = 1 - \sin^2(y) \\
+    \cos(y) = \pmn \sqrt{1 - \sin^2(y)} \\
+    y = \arcsin(x) \\
+    D_f = [-1, 1], E_f = [-\frac{\pi}{2}, \frac{\pi}{2}] \\
+    y \in  [-\frac{\pi}{2}]
+  \end{gather*}
+\end{eg}
+
+\subsection{Производные высших порядков}
+
+Пусть $y = f(x)$ дифференцируема на  $(a, b)$. Тогда  $\forall x \in (a,b)$ существует производная $y'=f'(x)$. \\
+Функция: \[
+  $y'' = \left( y' \right)' = f''(x)
+\]
+называется \textit{производной второго порядка} или \textit{второй производной}.
+
+\begin{definition}
+  Производной n-ого порядка или n-производной функции $y = f(x)$ называется производная от (n - 1)-ой производной функции $y=f(x)$. \[
+    y^{(n)} = \left( y^{(n-1)} \right)'
+  \] 
+\end{definition}
+
+$C[a, b]$ -- множество непрерывных функций на [a,b] \\
+$C^1[a, b]$ -- множество функций непрерывных вместе со своей производной на $[a,b]$ или  \textit{непрерывно-дифференцируемых} функций. 
+
+\begin{definition}
+  Производная порядка выше первого называется \textit{производной высшего порядка}.
+\end{definition}
+
+\subsection{Дифференциал функции}
+
+Пусть функция $y = f(x)$ определена в окрестности точки $x_0$ и дифференцируема в этой точке. Тогда по определению дифференцируемой функции приращение: \[
+  \Delta y = f'(x_0) \Delta x + \alpha(\Delta x) \Delta x \tag{1}
+\] 
+где $\alpha(\Delta x)$ -- б.м.ф. при $\Delta x \to 0$.
+Если $f'(x_0) \neq 0$, то $f'(x_0) \Delta X$ -- имеет один порядок малости, то $\alpha(\Delta x) \Delta x$ -- б.м.ф более высокого порядка малости, чем $f'(x_0) \Delta x$. 
+Тогда по теореме о сумме б.м.ф разного порядка малости $\implies$ $\Delta  y \sim f'(x_0) \Delta x$ при $\Delta x \to 0$.
+По определению главной части $\implies$ $f'(x_0) \Delta x$ -- главная часть равенства (1) приращения функции $\Delta y$.
+
+\begin{definition}
+  \textit{Дифференциалом функции} $y = f(x_0)$ называется главная часть приращения функции $\Delta y$ или первое слагаемое в равенстве (1). \[
+    dy = f'(x_0) \Delta x \tag{2}
+  \] 
+\end{definition}
+
+Если $f'(x_0) = 0$, то $dy = 0$, но  $f'(x_0) \Delta x$ уже не является главной частью приращения функции $\Delta y$.
+
+Пусть $y = x$. Тогда по определению дифференциала получится $\implies$ $dy = (x)' \Delta x = 1 \Delta x$. С другой стороны, $y = x \implies dx = \Delta x$. Отсюда получаем вывод, что дифференциал независимой переменной равен её приращению.
+
+Подставляем $\Delta x = dx$ в (2) $\implies$ \[
+  \boxed{dy = f'(x_0) dx} \tag{3}
+\] 
+
+Если $y = f(x)$ дифференцируема на интервале  $(a, b)$, тогда:  \[
+  \forall x \in (a, b): \boxed{dy = f'(x) dx} \tag{4}
+\] 
+\[
+  \boxed{f'(x) = \frac{dy}{dx}} \tag{5}
+\]
+
+Вывод: производная функции представима в виде отношения дифференциалов функции и независимой переменной.
+
