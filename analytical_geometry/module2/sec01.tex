@@ -2,7 +2,7 @@
 
 Общее уравнение кривой второго порядка:
 \[
-  \boxed{x^2 + 2Bxy + Cy^2 + Dx + Ey + F = 0}
+  \boxed{Ax^2 + 2Bxy + Cy^2 + Dx + Ey + F = 0}
 \] 
 где:
 \begin{gather*}
@@ -29,7 +29,7 @@ $F_1, F_2$ - фокусы эллипса
 
 \subsubsection*{Уравнение эллипса}
 
-Расположим прямоугольную систему координат так, чтобы её начало совпадало с центром эллипса, а фокусы лежали на оси абцисс.
+Расположим декартову систему координат так, чтобы её начало совпадало с центром эллипса, а фокусы лежали на оси абцисс.
 
 $O$ -- центр эллипса \\
  $F_1, F_2$ -- фокусы эллипса \\
@@ -40,19 +40,18 @@ $F_1F_2 = 2c$  -- фокусное (фокальное) расстояние\\
   \overrightarrow{F_1M} = \{x + c, y\} \\
   \overrightarrow{F_2M} = \{x - c, y\}
 \end{gather*}
-Тогда:
-\begin{gather*}
-  |\overrightarrow{F_1M}| + |\overrightarrow{F_2M}| = 2a \\
-  \sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2a \\
-  \sqrt{(x + c)^2 + y^2} = 2a - \sqrt{(x - c)^2 + y^2} \\
-  (x + c)^2 + y^2 = 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + x^2 - 2xc + c^2 + y^2 \\
-  4a\sqrt{(x - c)^2 + y^2} = 4a^2 - 4xc \\
-  a\sqrt{(x - c)^2 + y^2} = a^2 - xc \\
-  x^2 a^2 - 2a^2xc + a^2y^2 = a^4 - 2a^2xc + x^2c^2 \\
-  x^2a^2 + x^2c^2 + a^2y^2 = a^4 - a^2c^2 \\
-  x^2(a^2 - c^2) + a^2y^2 = a^2(a^2 - c^2) \\
-  \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1
-\end{gather*} 
+\begin{align*}
+  |\overrightarrow{F_1M}| + |\overrightarrow{F_2M}| &= 2a \\
+  \sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} &= 2a \\
+  \sqrt{(x + c)^2 + y^2} &= 2a - \sqrt{(x - c)^2 + y^2} \\
+  (x + c)^2 + y^2 &= 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + x^2 - 2xc + c^2 + y^2 \\
+  4a\sqrt{(x - c)^2 + y^2} &= 4a^2 - 4xc \\
+  a\sqrt{(x - c)^2 + y^2} &= a^2 - xc \\
+  x^2 a^2 - 2a^2xc + a^2y^2 &= a^4 - 2a^2xc + x^2c^2 \\
+  x^2a^2 + x^2c^2 + a^2y^2 &= a^4 - a^2c^2 \\
+  x^2(a^2 - c^2) + a^2y^2 &= a^2(a^2 - c^2) \\
+  \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} &= 1
+\end{align*} 
 
 Обозначим $b^2 = a^2 - c^2$. Получаем \textit{каноническое уравнение эллипса}: \[
   \boxed{\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1}
@@ -67,7 +66,7 @@ $F_1F_2 = 2c$  -- фокусное (фокальное) расстояние\\
   \boxed{\varepsilon = \frac{c}{a}}
 \end{gather*}
 \begin{note}
-  Т.к. $a < c$, то $0 < \varepsilon < 1$
+  Т.к. $a > c$, то $0 < \varepsilon < 1$
 \end{note}
 
 Центриситет показывает степень "сжатия" эллипса.
@@ -127,21 +126,23 @@ $F_1(-c, 0), F_2(c, 0)$.
 
 Возьмём произвольную точку $M(x, y)$, принадлежащей гиперболе.
 \begin{gather*}
-  \overrightarrow{F_1M} = \{x + c, y\} \\
+  \overrightarrow{F_1M} = \{x + c, y\} \quad
   \overrightarrow{F_2M} = \{x - c, y\} \\
-  |\overrightarrow{F_1M}| - |\overrightarrow{F_2M}| = 2a \\
-  \sqrt{(x + c)^2 + y^2} - \sqrt{(x - c)^2 + y^2} = 2a \\
-  \sqrt{(x + c)^2 + y^2} = 2a + \sqrt{(x - c)^2 + y^2} \\
-  (x + c)^2 + y^2 = 4a^2 + 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2 \\
-  4a\sqrt{(x - c)^2 + y^2} = 4xc - 4a^2 \\
-  a\sqrt{(x - c)^2 + y^2} = xc - a^2 \\
-  x^2 a^2 - 2a^2xc + a^2y^2 = x^2c^2 - 2a^2xc + a^4 \\
-  x^2a^2 + x^2c^2 + a^2y^2 = a^4 - a^2c^2 \\
-  x^2(a^2 + c^2) + a^2y^2 = a^2(a^2 - c^2) \\
-  \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1
 \end{gather*}
+\begin{align*}
+  |\overrightarrow{F_1M}| - |\overrightarrow{F_2M}| &= 2a \\
+  \sqrt{(x + c)^2 + y^2} - \sqrt{(x - c)^2 + y^2} &= 2a \\
+  \sqrt{(x + c)^2 + y^2} &= 2a + \sqrt{(x - c)^2 + y^2} \\
+  (x + c)^2 + y^2 &= 4a^2 + 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2 \\
+  4a\sqrt{(x - c)^2 + y^2} &= 4xc - 4a^2 \\
+  a\sqrt{(x - c)^2 + y^2} &= xc - a^2 \\
+  x^2 a^2 - 2a^2xc + a^2c^2 + a^2y^2 &= x^2c^2 - 2a^2xc + a^4 \\
+  x^2a^2 - x^2c^2 + a^2y^2 &= a^4 - a^2c^2 \\
+  x^2(a^2 - c^2) + a^2y^2 &= a^2(a^2 - c^2) \\
+  \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} &= 1
+\end{align*}
 
-Обозначим $b^2 = a^2 - c^2$. Получаем \textit{каноническое уравнение эллипса}: \[
+Обозначим $b^2 = a^2 - c^2$. Получаем \textit{каноническое уравнение гиперболы}: \[
   \boxed{\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1}
 \]  
 

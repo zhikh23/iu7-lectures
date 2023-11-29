@@ -2,12 +2,14 @@
 
 \begin{definition}
   \textit{Системой линейных алгебраических уравнений} называется система уравнений вида:
-  \begin{align*}
-    &a_{11} x_1  + a_{12} x_2 + \ldots a_{1n} = b_1 \\
-    &a_{21} x_1  + a_{22} x_2 + \ldots a_{2n} = b_2 \\
-    &\ldots \\
-    &a_{m1} x_1  + a_{m2} x_2 + \ldots a_{mn} = b_m \\
-  \end{align*}
+  \begin{gather*}
+    \begin{cases}
+      a_{11} x_1  + a_{12} x_2 + \ldots a_{1n} = b_1 \\
+      a_{21} x_1  + a_{22} x_2 + \ldots a_{2n} = b_2 \\
+      \ldots \\
+      a_{m1} x_1  + a_{m2} x_2 + \ldots a_{mn} = b_m \\
+    \end{cases}
+  \end{gather*}
   где $a_{ij} = const$, $i=1..m$, $j=1..n$ -- коэффициенты СЛАУ, $b_i = const$ -- свободный член СЛАУ,  $x_{i}, i=1..n$ -- неизвестная переменная СЛАУ.
 \end{definition}
 
@@ -48,7 +50,7 @@
 \end{gather*}
 
 Тогда СЛАУ можно записать в виде: \[
-  \boxed{A \cdot X = B}
+  \boxed{A \times X = B}
 \] 
 
 \subsubsection*{Векторная форма записи}
@@ -120,42 +122,42 @@
 \subsection*{I}
 
 Для уравнения вида: \[
-A \cdot X = B
+A \times X = B
 \] 
 \begin{enumerate}
   \item Умножим обе части уравнения на обратную матрицу $A$ \textbf{слева}:
     \begin{align*}
-      A^{-1} \cdot A \cdot X &= A^{-1} \cdot B \\
-      E \cdot X &= A^{-1} \cdot B \\
-      X &= A^{-1} \cdot  B
+      A^{-1} \times A \times X &= A^{-1} \times B \\
+      E \times X &= A^{-1} \times B \\
+      X &= A^{-1} \times  B
     \end{align*}
 \end{enumerate}
 
 \subsection*{II}
 
 Для уравнений вида: \[
-X \cdot A = B
+X \times A = B
 \] 
 \begin{enumerate}
   \item Умножим обе части уравнения на обратную матрицу $A$ \textbf{справа}:
     \begin{align*}
-      X \cdot A \cdot A^{-1} &= B \cdot A^{-1} \\
-      X \cdot E &= B \cdot A^{-1} \\
-      X &= B \cdot A^{-1} \\
+      X \times A \times A^{-1} &= B \times A^{-1} \\
+      X \times E &= B \times A^{-1} \\
+      X &= B \times A^{-1} \\
     \end{align*}
 \end{enumerate}
 
 \subsection*{III}
 
 Для уранвения вида: \[
-A \cdot X \cdot C = B
+A \times X \times C = B
 \] 
 \begin{enumerate}
   \item Умножим обе части уравнения на обратную матрицу $A$ \textbf{слева} и на обратную матрицу $C$ \textbf{справа}:
   \begin{align*}
-    A^{-1} \cdot  A \cdot  X \cdot C \cdot C^{-1} &= A^{-1} \cdot B \cdot C^{-1} \\
-    E \cdot  X \cdot E &= A^{-1} \cdot B \cdot C^{-1} \\
-    X &= A^{-1} \cdot B \cdot C^{-1}
+    A^{-1} \times  A \times  X \times C \times C^{-1} &= A^{-1} \times B \times C^{-1} \\
+    E \times  X \times E &= A^{-1} \times B \times C^{-1} \\
+    X &= A^{-1} \times B \times C^{-1}
   \end{align*}
 \end{enumerate}
 
@@ -163,7 +165,7 @@ A \cdot X \cdot C = B
 
 Запишем СЛАУ в матричном виде: 
 \begin{gather*}
-  A \cdot X = B \qquad A_{n \times n} \\
+  A \times X = B \qquad A_{n \times n} \\
   A = \left( 
   \begin{matrix}
     a_{11} & a_{12} & \ldots & a_{1n} \\
@@ -234,4 +236,65 @@ A \cdot X \cdot C = B
 Если квадратная матрица невырожденная, то однородная СЛАУ имеет \textit{единственное решение}. 
 
 Если квадратная матрица вырожденная, то однородная СЛАУ имеет \textit{бесконечное количество решений}. 
+
+\begin{theorem}
+  \textit{Кронекера-капелли}. \\
+  Для того, чтобы СЛАУ была совместной, необходимо и достаточно, чтобы ранг матрицы $A$ был равен рангу матрицы A|B.
+\end{theorem}
+\begin{proof}
+  1) Необходимость. \\
+  Пусть: СЛАУ совместна, $Rg(a) = r$\\
+  Базисный минор  $r \times r$:
+  \begin{gather*}
+    M =
+    \begin{vmatrix} 
+      a_{11} & a_{12} & \ldots & a_{1r} \\ 
+      a_{21} & a_{22} & \ldots & a_{2r} \\ 
+      \ldots & \ldots & \ldots & \ldots \\
+      a_{r1} & a_{r2} & \ldots & a_{rr} \\ 
+    \end{vmatrix} 
+  \end{gather*}
+  Если использовать векторную форму записи, то если СЛАУ имеет решение $x_1, x_2, \ldots x_{n}$, то можно записать её в виде: \[
+      a_1x_1 + a_2x_2 + \ldots + a_r x_r + a_{r+1} x_{r+1} + \ldots + a_{n} x_{n} = b \tag{1}
+  \]
+  Согласно теореме о базисном миноре, любой столбец матрицы, который не входит в базисный минор, можно представить в виде линейной комбинации базисных столбцов:
+  \begin{gather*}
+    \begin{cases}
+      a_{r+1} = \lambda_{1,r+1} a_1 + \lambda_{2,r+1} a_2 + \ldots + \lambda_{r,r+1} a_r \\
+      a_{r+2} = \lambda_{2,r+2} a_1 + \lambda_{2,r+2} a_2 + \ldots + \lambda_{r,r+2} a_r \\
+      \ldots \\
+      a_{n} = \lambda_{2,n} a_1 + \lambda_{2,n} a_2 + \ldots + \lambda_{r,n} a_r
+    \end{cases} \tag{2} 
+  \end{gather*}
+  Подставим (2) в (1):
+  \begin{align*}
+    a_1 x_1 + &a_2 x_2 + \ldots + a_r x_r + \\
+            &+ (\lambda_{1,r+1} a_1 + \lambda_{2,r+1} a_2 \ldots + \lambda_{r,r+1} a_r) x_{r+1} + \\
+            &+ \ldots + \\
+            &+ (\lambda_{1,n} a_1 + \lambda_{2,n} a_2 \ldots + \lambda_{r,n} a_r) x_{n} = b
+  \end{align*}
+  \begin{align*}
+    (x_1 + &\lambda_{1,r+1} x_{r+1} + \ldots + \lambda_{1n} x_{n}) a_1 + \\
+          &+ (x_2 + \lambda_{2,r+1} x_{r+1} + \ldots + \lambda_{2n}) a_2 + \\
+          &+ \ldots + \\
+          &+ (x_r + \lambda_{r,r+1} x_{r+1} + \ldots + \lambda_{rn}) a_r = b \\
+          &\text{где } b = const, i=1 \ldots r
+  \end{align*}
+  В результате столбец свободных членов можно представить в виде линейной комбинации столбцов базисного минора. Отсюда следует, что базисный минор матрицы $A$ и будет базисным минором расширенной матрицы $A|B$.
+  
+  Т.к $M \neq 0$ и любой окаймляющий минор $M' = 0$, то мы получаем: \[
+  Rg(A) = Rg(A|B)
+  \] 
+
+  2) Достаточность. \\
+  Пусть: $Rg(A) = Rg(A|B) = r$, базисный минор $M$ будет содержать первые $r$ строк и первые  $r$ столбцов базисного минора $M$.
+  
+  Тогда столбец  $B$ можно представить в виде линейной комбинации столбцов базисного минора $M$:
+  \begin{align*}
+    &b = x_1^0 a_1 + x_2^0 a_2 + \ldots + x_r^0 a_r + 0 \cdot a_{r+1} + \ldots + 0 \cdot a_n \\
+    &x_1^0, x_2^0, \ldots x_r^0 \text{ -- коеффициенты линейной комбинации} \\
+    &x_i^0 = const, i=1..r
+  \end{align*}
+  и тут моя мысль кончается, пришлите пожалуйста продолжение\ldots
+\end{proof}
 

@@ -117,8 +117,8 @@ A =
    (A + B) + C = A + (B + C_
     \]
 
-  \item Если $\Theta$ -- нулевая матрица, то: \[
-    A + \Theta = A
+  \item Если $\theta$ -- нулевая матрица, то: \[
+    A + \theta = A
   \] 
 
   \item Найдётся такая матрица $B$, что:  \[
@@ -189,28 +189,28 @@ A =
 
 \textit{Свойство антикомунитативности} произведения матриц. 
 \[
-  A \cdot B \neq B \cdot A
+  A \times B \neq B \times A
 \]
 
 \begin{note}
   \textit{Исключения:} 
   Когда $A = B$:  \[
   
-    A \cdot B = A \cdot A = A^2
+    A \times B = A \times A = A^2
   \]  
   Когда матрица $B$ -- нулевая матрица:
   \[
-    A \cdot \Theta = \Theta
+    A \times \theta = \theta
   \] 
 
   Когда матрица  $B$ -- единичная матрица:
   \[
-    A \cdot E = A
+    A \times E = A
   \] 
 
   Когда матрица $B$ -- обратная матрица:
   \[
-    A \cdot A^{-1} = E
+    A \times A^{-1} = E
   \] 
 \end{note}
 
@@ -218,50 +218,50 @@ A =
 
 \begin{enumerate}
   \item Произведение матриц антикомунитативно. \[
-  A \cdot  B \neq  B \cdot A
+  A \times B \neq  B \times A
   \] 
   \item \[
-  1 \cdot A = A
+  1 \times A = A
   \] 
 
   \item Ассоциативность \[
-      (A \cdot B) \cdot C = A \cdot (B \cdot C)
+      (A \times B) \times C = A \times (B \times C)
   \]
   Доказательство:
   \begin{align*}
-    \left( A \cdot  B \right) C &= \\
-    &= \sum_{r=1}^{k} [(A \cdot B)]_{ir} \cdot [C]_{rj} = \\
+    \left( A \times  B \right) C &= \\
+    &= \sum_{r=1}^{k} [(A \times B)]_{ir} \times [C]_{rj} = \\
     &= \sum_{r=1}^{n} \left( \sum_{s=1}^{k} [A]_{is} \cdot [B]_{sn} \right) \cdot [C]_{rj} = \\
-    &= \sum_{n=1}^{n} \sum_{k=1}^{k} [A]_{is} \cdot [B]_{sn} \cdot [C]_{rj} = \\
-    &= \sum_{s=1}^{k} [A]_{is} \cdot  [\left( B \cdot C \right) ] =\\
-    &= A \cdot (B \cdot C)
+    &= \sum_{n=1}^{n} \sum_{k=1}^{k} [A]_{is} \times [B]_{sn} \times [C]_{rj} = \\
+    &= \sum_{s=1}^{k} [A]_{is} \times [\left( B \times C \right) ] =\\
+    &= A \times (B \times C)
   \end{align*}
 
   \item Дистрибутивность произведения матриц относительно сложения: \[
-      (A + B) \cdot C = A \cdot C + B \cdot C
+      (A + B) \times C = A \times C + B \times C
   \] 
   Доказательство:
   \begin{align*}
-    \left(A_{m \times k} + B_{m \times k}\right) \cdot C_{k \times n} &= \\
-    &= \sum_{r+1}^{k} [\left( A + B \right) ]_{ir} \cdot [C]_{ir} \\
-    &= \sum_{r=1}^{k} \left( [A]_{ir} + [B]_{ir} \right) \cdot [C]_{rj} \\
-    &= \sum_{r=1}^{k} \left( [A]_{ir} [C]_{rj} + [B]_{ir} \cdot [C]_{rj} \right) \\
+    \left(A_{m \times k} + B_{m \times k}\right) \times C_{k \times n} &= \\
+    &= \sum_{r+1}^{k} [\left( A + B \right) ]_{ir} \times [C]_{ir} \\
+    &= \sum_{r=1}^{k} \left( [A]_{ir} + [B]_{ir} \right) \times [C]_{rj} \\
+    &= \sum_{r=1}^{k} \left( [A]_{ir} [C]_{rj} + [B]_{ir} \times [C]_{rj} \right) \\
     &= \sum_{r=1}^{k} [A]_{ir} [C]_{ir} + \sum_{r=1}^{k} [B]_{ir} [C]_{ir} \\
-    &= A \cdot C + B \cdot C
+    &= A \times C + B \times C
   \end{align*}
 
 \item Применение транспорирования к произведению матриц \[
-      (A \cdot B)^\tau = B^\tau \cdot A^\tau
+      (A \times B)^\tau = B^\tau \times A^\tau
   \]  
   Доказательство:
   \begin{align*}
     \left( A \cdot B \right)^\tau &= \\
-    &= [ \left( A \cdot B \right)^\tau ]_{ij} \\
-    &= [A B]_{ji} = \sum_{r=1}^{k} [A]_{jr} \cdot [B]_{ri} \\
-    &= \sum_{r=1}^{k} [A^\tau] \cdot  [B^\tau]_{ir} \\
+    &= [ \left( A \times B \right)^\tau ]_{ij} \\
+    &= [A B]_{ji} = \sum_{r=1}^{k} [A]_{jr} \times [B]_{ri} \\
+    &= \sum_{r=1}^{k} [A^\tau] \times [B^\tau]_{ir} \\
     &= \sum_{r=1}^{k} [B^\tau]_{ir} [A^\tau]_{rj} \\
-    &= [B^\tau \cdot A^\tau] \\
-    &=B^\tau \cdot A^\tau
+    &= [B^\tau \times A^\tau] \\
+    &=B^\tau \times A^\tau
   \end{align*}
 \end{enumerate}
 
@@ -365,7 +365,7 @@ A =
 \subsection{Обратная матрица}
 
 \begin{definition}
-  \textit{Обратная матрица} квадратной матрицы A_{n x n} называется матрица $A^{-1}_{n x n}$ такая, что $A \cdot A^{-1} = A^{-1} \cdot A = E$.
+  \textit{Обратная матрица} квадратной матрицы A_{n x n} называется матрица $A^{-1}_{n x n}$ такая, что $A \times A^{-1} = A^{-1} \times A = E$.
 \end{definition}
 
 Обратная матрица вычисляется по формуле:
@@ -391,12 +391,12 @@ A =
 \end{theorem}
 \begin{proof}
   1) Пусть матрица A имеет обратную, тогда по определению: \[
-    A\cdot A^{-1} = E
+    A \times A^{-1} = E
   \]
   В таком случае:
   \begin{gather*}
-    det(A\cdot A^{-1}) = det(E) = 1 \\
-    det(A\cdot A^{-1}) = det(A) \cdot det(A^{-1}) = 1 \implies det A \neq 0
+    det(A \times A^{-1}) = det(E) = 1 \\
+    det(A \times A^{-1}) = det(A) \cdot det(A^{-1}) = 1 \implies det A \neq 0
   \end{gather*}
 
   2) Пусть $det A \neq 0$. Если матрицн разложить по строке или столбцу:
@@ -422,23 +422,25 @@ A =
   Получим: 
   \begin{gather*}
     \begin{rcases}
-      A \cdot B = E \\
-      B \cdot A = E
+      A \times B = E \\
+      B \times A = E
     \end{rcases} \implies \text{ по определению } B = A^{-1}
   \end{gather*}
 \end{proof}
 
 \begin{theorem}
   Пусть матрицы $A_{n x n}$ и  $B_{n x n}$ имеют обратные $A^{-1}_{n x n}$ и  $B^{-1}_{n x n}$, тогда: \[
-    (A \cdot B)^{-1} = B^{-1} \cdot A^{-1}
+    (A \times B)^{-1} = B^{-1} \times A^{-1}
   \]
 \end{theorem}
 \begin{proof}
   \begin{align*}
-    (A \cdot B) \cdot (A \cdot B)^{-1} &= (A \cdot B) \cdot (B^{-1} \cdot A^{-1}) \\ 
-                          &= A \cdot (B \cdot B^{-1}) \cdot A^{-1} = A \cdot E \cdot A^{-1} = A \cdot A^{-1} = E \\
-    (A \cdot B)^{-1} \cdot (A \cdot B) &= (A^{-1} \cdot B^{-1}) \cdot (B \cdot A) \\ 
-                          &= B^{-1} \cdot (A \cdot A^{-1}) \cdot B = B^{-1} \cdot E \cdot B = B^{-1} \cdot B = E \\
+    (A \times B) \times (A \times B)^{-1} &= (A \times B) \times (B^{-1} \times A^{-1}) \\ 
+                          &= A \cdot (B \cdot B^{-1}) \cdot A^{-1} \\
+                          &= A \cdot E \cdot A^{-1} = A \times A^{-1} = E \\
+    (A \times B)^{-1} \times (A \times B) &= (A^{-1} \times B^{-1}) \times (B \times A) \\ 
+                          &= B^{-1} \times (A \times A^{-1}) \times B \\
+                          &= B^{-1} \times E \times B = B^{-1} \times B = E
   \end{align*}
 \end{proof}
 
@@ -449,8 +451,8 @@ A =
 \end{theorem}
 \begin{proof}
   \begin{align*}
-    A^\tau \cdot (A^\tau)^{-1} &= A^\tau \cdot \left( A^{-1} \right)^\tau = (A \cdot A^{-1})^\tau = E^\tau = E \\
-    (A^\tau)^{-1} \cdot A^\tau &= \left( A^{-1} \right)^\tau \cdot A^\tau = (A^{-1} \cdot A)^\tau = E^\tau = E
+    A^\tau \times (A^\tau)^{-1} &= A^\tau \times \left( A^{-1} \right)^\tau = (A \times A^{-1})^\tau = E^\tau = E \\
+    (A^\tau)^{-1} \times A^\tau &= \left( A^{-1} \right)^\tau \times A^\tau = (A^{-1} \times A)^\tau = E^\tau = E
   \end{align*}
 \end{proof}
 

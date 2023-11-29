@@ -1,0 +1,320 @@
+\subsection{Однородные СЛАУ}
+
+Однородные СЛАУ можно записыватть в матричном виде следующим образом:
+\begin{gather*}
+  A \times X = \theta \\
+  \theta_{m \times 1} = 
+  \begin{pmatrix}
+    0 \\ 0 \\ \ldots \\ 0
+  \end{pmatrix}
+  \quad
+  X_{n \times 1} = 
+  \begin{pmatrix}
+    x_1 \\ x_2 \\ \ldots \\ x_{n}
+  \end{pmatrix}
+  \quad
+  A_{m \times n} = 
+  \begin{pmatrix}
+    a_{11} & a_{12} & \ldots & a_{1n} \\
+    a_{21} & a_{22} & \ldots & a_{2n} \\
+    \ldots & \ldots & \ldots & \ldots \\
+    a_{m1} & a_{m2} & \ldots & a_{mn}
+  \end{pmatrix}
+\end{gather*}
+
+\begin{theorem}
+  \textit{О свойствах решения однородных СЛАУ}. \\
+  Пусть $X^{(0)}, X^{(1)}, \ldots X^{(n)}$ -- решения однородных СЛАУ $A \times X = \theta$. Тогда их линейной комбинацией так же является решением однородной СЛАУ.
+\end{theorem}
+\begin{proof}
+  \begin{align*}
+    X &= \lambda_1 X^{(1)} + \lambda_2 X^{(2)} + \ldots + \lambda_k X^{(k)} \\
+      &= \sum_{i=1}^{k} \lambda_i X^{(i)}, \lambda_i = const
+  \end{align*}
+  \begin{align*}
+    A \times X &= A \cdot \sum_{i=1}^{k}\lambda_i X^{(i)} \\
+          &= \sum_{i=1}^{k} A \lambda_i X^{(i)} \\
+          &= \sum_{i=1}^{k} \lambda_i \cdot \cdot A \times X^{(i)} \\
+          &= \sum_{i=1}^{k} \lambda_i \cdot \theta \\
+          &= \theta \\
+  \end{align*}
+\end{proof}
+
+\begin{definition}
+  Набор решений однородной СЛАУ называется \textit{фундаментальной системой решений (ФСР)}.\[
+  k = n - r \quad r = Rg(A), n \text{ -- кол-во неизвестных СЛАУ}
+  \] 
+\end{definition}
+
+\begin{theorem}
+  \textit{О существовании ФСР однородной СЛАУ}. \\
+  Пусть имеется однородная СЛАУ $A \times X = \theta$ с $n$ неизвестных и $rg(A) = r$. \\
+  Тогда существует набор  $k = n - r$ решений однородной СЛАУ, которые образуют ФСР:  \[
+    X^{(1)}, X^{(2)}, \ldots X^{(k)}
+  \] 
+\end{theorem}
+\begin{proof}
+  Пусть базисный минор $M$ матрицы A состоит из первых $r$ строк и первых $r$ столбцов матрицы $A$.
+  Тогда любая строка $A$, от $r+1$ до $m$ будет линейной комбинацией строк базисного минора.
+
+  Если  $x_1, x_2, \ldots x_{n}$ удовлетворяют уравнениям СЛАУ соответветствующим строкам базисного минора то это решение будет удовлетворять и остальным уравнениям СЛАУ.
+  Поэтому исключим из системы уравнения после $r$-ой строки:
+  \begin{gather*}
+    \begin{cases}
+      a_{11} x_1 + a_{12} x_2 + \ldots + a_{1r} x_r + \ldots + a_{1n} x_{n} = 0 \\
+      a_{21} x_1 + a_{22} x_2 + \ldots + a_{2r} x_r + \ldots + a_{2n} x_{n} = 0 \\
+      \ldots \\
+      a_{r1} x_1 + a_{r2} x_2 + \ldots + a_{rr} x_r + \ldots + a_{rn} x_{n} = 0 \\
+    \end{cases} \tag{3} 
+  \end{gather*}
+
+  Переменные, соответствующие базисным столбцам, называют \textit{базисными}, остальные -- \textit{свободными}.
+
+  В системе (3) бащисными переменными являются переменные $x_1, x_2, \ldots x_r$; свободными являются переменные $x_{r+1}, x_{r+2}, \ldots x_n$.
+
+  Оставим в левой части слагаемые с базисными переменными, а в правой -- со свободными:
+  \begin{gather*}
+    \begin{cases}
+      a_{11} x_1 + a_{12} x_2 + \ldots a_{1r} x_r = a_{1,r+1} x_{r+1} + \ldots + a_{1n} x_{n} \\ 
+      a_{21} x_1 + a_{22} x_2 + \ldots a_{2r} x_r = a_{2,r+1} x_{r+1} + \ldots + a_{2n} x_{n} \\ 
+      \ldots \\
+      a_{r1} x_1 + a_{r2} x_2 + \ldots a_{rr} x_r = a_{r,r+1} x_{r+1} + \ldots + a_{rn} x_{n} \\ 
+    \end{cases} \tag{4} 
+  \end{gather*}
+
+  Если свободным переменным придавать различные значения, то определитель левой части (4) равен базисному минору $A (\neq 0)$, то (4) будет иметь единственное решение.
+
+  Возьмём $k$ наборов свободных переменных:
+   \begin{gather*}
+    \begin{matrix}
+      X^{(1)}_{r+1} & X^{(2)}_{r+1} & \ldots & X^{(k)}_{r+1} \\
+      X^{(1)}_{r+2} & X^{(2)}_{r+2} & \ldots & X^{(k)}_{r+2} \\
+      \ldots & \ldots & \ldots & \ldots \\
+      X^{(1)}_n = 0 & X^{(2)}_n = 0 & \ldots & X^{(k)}_n = 0 & 
+    \end{matrix}
+  \end{gather*}
+
+  В результате, при каждом наборе свободных переменных мы получаем $k$ решений однородной СЛАУ:
+   \begin{gather*}
+     X^{(i)} = 
+     \begin{pmatrix}
+       X^{(i)}_1 \\
+       X^{(i)}_2 \\
+       \ldots \\
+       X^{(i)}_r \\
+       \ldots \\
+       X^{(i)}_n
+     \end{pmatrix}
+  \end{gather*}
+
+  Пусть линейная комбинация решений равна 0:
+  \begin{gather*}
+    \lambda_1
+   \begin{pmatrix}
+       X^{(1)}_1 \\
+       X^{(1)}_2 \\
+       \ldots \\
+       X^{(1)}_r \\
+       \ldots \\
+       X^{(1)}_n
+     \end{pmatrix}
+     + \lambda_2
+   \begin{pmatrix}
+       X^{(2)}_1 \\
+       X^{(2)}_2 \\
+       \ldots \\
+       X^{(2)}_r \\
+       \ldots \\
+       X^{(2)}_n
+    \end{pmatrix}
+    + \ldots + \lambda_k
+   \begin{pmatrix}
+       X^{(k)}_1 \\
+       X^{(k)}_2 \\
+       \ldots \\
+       X^{(k)}_r \\
+       \ldots \\
+       X^{(k)}_n
+    \end{pmatrix}
+  = 
+  \begin{pmatrix}
+    0 \\ 0 \\ \ldots \\ 0 \\ \ldots \\ 0
+  \end{pmatrix} = \theta
+  \end{gather*}
+  
+  \begin{align*}
+    r+1: \quad &1 \cdot\lambda_1 + 0 \cdot \lambda_2 + \ldots + 0 \cdot \lambda_k = 0 \implies \lambda_1 = 0 \\
+    r+2: \quad &0 \cdot\lambda_1 + 1 \cdot \lambda_2 + \ldots + 0 \cdot \lambda_k = 0 \implies \lambda_2 = 0 \\
+          &\ldots \\
+     r: \quad &1 \lambda_1 + 0 \cdot \lambda_2 + \ldots + 1 \cdot \lambda_k = 0 \implies \lambda_k = 0
+  \end{align*}
+
+  Все коеффициенты равны нулю. Мы получили тривиальную равную нуля линейную комбинация решений однородной СЛАУ.
+\end{proof}
+
+\begin{definition}
+  Если в каждом столбце ФСР все свободные переменные равны нулю, кроме одного, равного единице, то такая ФСР называется \textit{нормальной} 
+\end{definition}
+
+\begin{theorem}
+  \textit{О стркутуре общего решения однородной СЛАУ}. \\
+  Пусть $X^{(1)}, X^{(2)}, \ldots X^{(k)}$ -- ФСР некоторой СЛАУ $A \times X = \theta$. Тогда общее решение однородной СЛАУ будет иметь вид: \[
+    X = c_1 X^{(1)} + c_2 X^{(2)} + \ldots + c_k X^{(k)}, \quad c_i = const
+  \] 
+\end{theorem}
+\begin{proof}
+  Пусть дана однородная СЛАУ:
+  \begin{align*}
+    \begin{cases}
+      a_{11} x_1 + a_{12} x_2 + \ldots + a_{1n} x_{n} = 0 \\
+      a_{21} x_1 + a_{22} x_2 + \ldots + a_{2n} x_{n} = 0 \\
+      \ldots \\
+      a_{m1} x_1 + a_{m2} x_2 + \ldots + a_{mn} x_{n} = 0
+    \end{cases} \tag{1}
+  \end{align*}
+  Пусть $X = \left( \begin{matrix} x_1 \\ x_2 \\ \ldots \\ x_{n} \end{matrix} \right) $ -- решение СЛАУ, и матрица A имеет ранг $rg A = r$. 
+  Тогда если $X$ является решением, то он ялвяется решением первых $r$ уравнений, соответствующих базисным строкам матрицы $A$.
+  Пусть базисный минор стоит из первых $r$ строк и первых $r$ столбцов данной матрицы, тогда если $X$ -- решение уравнений с нулевого по $r$, то он является решением уравнений с  $r+1$ по $m$, которые являются линейной комбинацией первых  $k$ уравнений, поэтому уравнения с  $r+1$ по $m$ можно исключить.
+  Т.к. базисный минор включает первые $r$ столбцов матрицы  $A$:
+  \begin{gather*}
+    M_r =
+    \begin{pmatrix}
+      a_{11} x_1 & a_{12} x_2 & \ldots & a_{1r} x_r \\
+      a_{21} x_1 & a_{22} x_2 & \ldots & a_{2r} x_r \\
+      \ldots & \ldots & \ldots & \ldots \\
+      a_{r1} x_1 & a_{r2} x_2 & \ldots & a_{rr} x_r \\
+      \ldots & \ldots & \ldots & \ldots \\
+      a_{m1} x_1 & a_{m2} x_2 & \ldots & a_{mr} x_r \\
+    \end{pmatrix}
+  \end{gather*}
+  то соответствующие этим столбцам переменные являются базисными (с $x_1$ по $x_{r}$), а остальные переменные (c $x_{r+1}$ по $ x_n$ ) -- свободными.
+
+  После исключения первых $r$ строк, получаем:
+  \begin{gather*}
+    \begin{cases}
+      a_{r1} x_1 + a_{r2} x_2 + \ldots + a_{rn} x_{n} = 0 \\
+      a_{r+1,1} x_1 + a_{r+1,2} x_2 + \ldots + a_{r+1,n} x_{n} = 0 \\
+      \ldots \\
+      a_{m1} x_1 + a_{m2} x_2 + \ldots + a_{mr} x_{r} + \ldots + a_{mn} x_{n} = 0
+    \end{cases} \tag{2}
+  \end{gather*}
+
+  Преобразуем уравнения так, что в левой части остались базисные переменные, а в правой -- свободные:
+  \begin{gather*}
+    \begin{cases}
+      a_{11} x_1 + a_{12} + x_2 + \ldots + a_{1r} x_{r} = a_{1r+1} x_{r+1} + \ldots + a_{1n} x_{n} = 0 \\
+      a_{21} x_1 + a_{22} + x_2 + \ldots + a_{2r} x_{r} = a_{2r+1} x_{r+1} + \ldots + a_{2n} x_{n} = 0 \\
+    \ldots \\
+      a_{m1} x_1 + a_{m2} + x_2 + \ldots + a_{mr} x_{r} = a_{mr+1} x_{r+1} + \ldots + a_{mn} x_{n} = 0 \tag{3}
+    \end{cases}
+  \end{gather*}
+  Задавая различные значения свободных переменных, мы получаем, что система (3) будет иметь единственное решение, т.к. главный определитель данной системы будет равен угловому минору, не равному нулю.
+  Решая эту систему получаем решение:
+  \begin{gather*}
+    \begin{cases}
+      x_1 = x_{r+1} \lambda_{1,r+1} + x_{r+2} \lambda_{1,r+2} + \ldots + x_{n} \lambda_{1, n} \\
+      x_2 = x_{r+1} \lambda_{2,r+1} + x_{r+2} \lambda_{2,r+2} + \ldots + x_{n} \lambda_{2, n} \\
+      \ldots \\
+      x_r = x_{r+1} \lambda_{r,r+1} + x_{r+2} \lambda_{r,r+2} + \ldots + x_{n} \lambda_{r, n} \tag{4}
+    \end{cases}
+  \end{gather*}
+  Т.к. $X^{(1)}, X^{(2)}, \ldots X^{(k)}$ образуют ФСР, то они удовлетворяют системе (4):
+  \begin{gather*}
+    \begin{cases}
+      X_1^{(i)} = X_{r+1}^{(i)} \lambda_{1,r+1} + X_{r+2}^{(i)} \lambda_{1,r+2} + \ldots + X_{n}^{(i)} \lambda_{1, n} \\
+      X_2^{(i)} = X_{r+1}^{(i)} \lambda_{2,r+1} + X_{r+2}^{(i)} \lambda_{2,r+2} + \ldots + X_{n}^{(i)} \lambda_{2, n} \\
+      \ldots \\
+      X_r^{(i)} = X_{r+1}^{(i)} \lambda_{n,r+1} + X_{r+2}^{(i)} \lambda_{n,r+2} + \ldots + X_{n}^{(i)} \lambda_{n, n} \tag{5}
+    \end{cases} \quad 
+    X^{(i)} = 
+    \begin{pmatrix}
+      x_1^{(i)} \\ x_2^{(i)} \\ \ldots \\ x_m^{(i)}
+    \end{pmatrix}
+  \end{gather*}
+
+  Составим матрицу $B$ из столбцов $X^{(i)}$ :
+  \begin{align*}
+    B =
+    \begin{pmatrix}
+      x_1 & x_1^{(1)} & x_1^{(2)} & \ldots & x_1^{(n)} \\
+      x_2 & x_2^{(1)} & x_2^{(2)} & \ldots & x_2^{(n)} \\
+      \ldots & \ldots & \ldots & \ldots & \ldots \\
+      x_r & x_r^{(1)} & x_r^{(2)} & \ldots & x_r^{(n)} \\
+      \ldots & \ldots & \ldots & \ldots & \ldots \\
+      x_n & x_n^{(1)} & x_n^{(2)} & \ldots & x_n^{(n)} \\
+    \end{pmatrix} \\
+    \begin{matrix}
+      X & X^{(1)} & X^{(2)} & \ldots & X^{(n)}
+    \end{matrix}
+  \end{align*} 
+
+  Вычтем из элементов первой строки соответствующие элементы строк с $r+1$ по $m$ с соответствующим коеффициентом  $\lambda_{1,r+1}, \lambda_{1,r+2}, \ldots \lambda_{1n}$:
+  \begin{gather*}
+    \begin{cases}
+      x_1^{(1)} - \lambda_{1,r+1} x_{r+1}^{(1)} - \lambda_{1,r+2} x_{r+2}^{(2)} - \ldots - \lambda_{1,n} x_{n}^{(1)} = 0 \\
+      x_1^{(2)} - \lambda_{1,r+1} x_{r+1}^{(2)} - \lambda_{1,r+2} x_{r+2}^{(2)} - \ldots - \lambda_{1,n} x_{n}^{(2)} = 0 \\
+      \ldots \\
+      x_1^{(k)} - \lambda_{1,r+1} x_{r+1}^{(k)} - \lambda_{1,r+2} x_{r+2}^{(k)} - \ldots - \lambda_{1,n} x_{n}^{(k)} = 0 \\
+      x_1 - \lambda_{1,r+1} x_{r+1} - \lambda_{1,r+2} x_{r+2} - \ldots - \lambda_{1,n} x_{n} = 0
+    \end{cases}
+  \end{gather*}
+
+  Аналогично вычитая из строк до r строки $r+1$ до $n$ с коеффициентами  $\lambda$.
+  В результате получаем, что в преобразованной матрице $B$ первые  $r$ строк будут нулевые:
+  
+  \begin{gather*}
+    B =
+    \begin{pmatrix}
+      0 & 0 & 0 & \ldots & 0 \\
+      0 & 0 & 0 & \ldots & 0 \\
+      \ldots & \ldots & \ldots & \ldots & \ldots \\
+      0 & 0 & 0 & \ldots & 0 \\
+      x_{r+1} & x_{r+1}^{(1)} & x_{r+1}^{(2)} & \ldots & x_{r+1}^{(n)} \\
+      \ldots & \ldots & \ldots & \ldots & \ldots \\
+      x_n & x_n^{(1)} & x_n^{(2)} & \ldots & x_n^{(n)} \\
+    \end{pmatrix}
+  \end{gather*} 
+
+  Поскольку элементарные преобразования не меняют ранга матрицы, получаем, что ранг матрицы $B$ будет равен $k = n - r$.
+  Так как по условию столбцы $X^{(1)}, X^{(2)}, \ldots X^{(k)}$ образуют ФСР, они являются линейно-независимыми. Поэтому первый столбец можно представить в виде линейной комбинации столбцов.
+\end{proof}
+
+\subsection{Неоднородные СЛАУ}
+
+\begin{theorem}
+  \textit{О связи решений неоднородной и соответствующей однородной СЛАУ}. \\
+  Пусть $X^{(0)}$ -- некоторое решение неоднордной СЛАУ $A \times X = B$. Произвольный стобец $X$ является решением СЛАУ $A \times X = B$ тогда и только тогда, когда его можно представить в виде:  \[
+    X = X^{(0)} + Y, \quad \text{ где } A \times Y = \theta
+  \] 
+\end{theorem}
+\begin{proof}
+  1) Необходимость. \\
+  Пусть $X$ -- решение СЛАУ $A \times X = B$. Обозначим $Y = X - X^{(0)}$
+  \begin{gather*}
+    A \times Y = A \times (X - X^{(0)}) = A \times X - A \times X^{(0)} = B - B = \theta
+  \end{gather*}
+  Значит $Y$ является решением соответствующей однородной СЛАУ  $A \times Y = \theta$.
+  
+  2) Достаточность. \\
+  Пусть $X$ можно представить в виде:  \[
+    X = X^{(0)} + Y, \quad \text{ где } A \times Y = 0
+  \]
+  Тогда:
+  \begin{gather*}
+  A \times X = A \times (X^{(0)} + Y) = A \times X^{(0) + A \times Y} = B + \theta = B
+  \end{gather*}
+  Отсюда делаем вывод, что $X$ является решением неоднородной СЛАУ.
+\end{proof}
+
+\begin{theorem}
+  \textit{О структуре общего решения неоднородной СЛАУ}. \\ 
+  Пусть $X^{(0)}$ -- некоторое частное решение неоднородной СЛАУ  $A \times X = B$.
+  Пусть  $X^{(1)} \ldots$ -- некоторая ФСР, соответствующая однородной СЛАУ $A \times X=\theta$.
+  Тогда общее решение неоднородной СЛАУ $A \times X = B$ будет иметь вид :  \[
+    X_o = X^{(0)} + c_1 X^{(1)} + c_2 X^{(2)} + \ldots + c_n X^{(n)}, \quad c_i = const
+  \] 
+\end{theorem}
+\begin{proof}
+  Аналогично как доказательство 7 теоремы.
+\end{proof}
+
