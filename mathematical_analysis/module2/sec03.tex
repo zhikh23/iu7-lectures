@@ -448,7 +448,26 @@ x - независимая переменная.
 \end{theorem}
 \begin{proof}
   Рассмотрим вспомогательную функцию: \[
-  F(x) = f(x) - f(a) - \frac{f(b) - f(a)}{\varphi(a) - \varphi(b)}(\varphi(x) - \varphi(a)
-  \] 
+    F(x) = f(x) - f(a) - \frac{f(b) - f(a)}{\varphi(a) - \varphi(b)}(\varphi(x) - \varphi(a)
+  \]
+  Докажем применимость Теоремы Ролля:
+  \begin{enumerate}
+    \item $F(x)$ непрервына на $[a, b]$ как линейная комбинация непрерывных функций.
+    \item  $F(x)$ дифференцируема на $[a, b]$ как линейная комбинация дифференцируемых функций.
+    \item  $F(a) = F(b)$:
+      \begin{align*}
+        F(a) &= f(a) - f(a) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)}\left( \varphi(a) - \varphi(a) \right) = 0 \\ 
+        F(b) &= f(b) - f(a) - \frac{f(b) - f(a)}{\cancel{\varphi(b) - \varphi(a)}}\cancel{\left( \varphi(b) - \varphi(a) \right)} = 0 \\ 
+      \end{align*}
+    Значит, функция $F(x)$ удовлетворяет условию теоремы Ролля, $\implies \exists  c \in (a, b) : F'(c) = 0$. Вычислим:
+    \begin{align*}
+      F'(x) &= f'(x) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(x) \\ 
+      F'(c) &= f'(c) - \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(c) = 0
+    \end{align*}
+    \begin{align*}
+      \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} \varphi'(c) &= f'(c) \\
+      \frac{f(b) - f(a)}{\varphi(b) - \varphi(a)} &= \frac{f'(c)}{\varphi'(c)}
+    \end{align*}
+  \end{enumerate}
 \end{proof}
 
