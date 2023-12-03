@@ -44,12 +44,15 @@ $F_1F_2 = 2c$  -- фокусное (фокальное) расстояние\\
   |\overrightarrow{F_1M}| + |\overrightarrow{F_2M}| &= 2a \\
   \sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} &= 2a \\
   \sqrt{(x + c)^2 + y^2} &= 2a - \sqrt{(x - c)^2 + y^2} \\
-  (x + c)^2 + y^2 &= 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + x^2 - 2xc + c^2 + y^2 \\
-  4a\sqrt{(x - c)^2 + y^2} &= 4a^2 - 4xc \\
-  a\sqrt{(x - c)^2 + y^2} &= a^2 - xc \\
-  x^2 a^2 - 2a^2xc + a^2y^2 &= a^4 - 2a^2xc + x^2c^2 \\
-  x^2a^2 + x^2c^2 + a^2y^2 &= a^4 - a^2c^2 \\
-  x^2(a^2 - c^2) + a^2y^2 &= a^2(a^2 - c^2) \\
+  (x + c)^2 + y^2 &= 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 +y^2 \\
+  \cancel{x^2} + 2cx + \cancel{c^2} + \cancel{y^2} - \cancel{x^2} + 2cx - \cancel{c^2} - \cancel{y^2} - 4a^2 &= -4a\sqrt{(x - c)^2 + y^2} \\
+  4cx - 4a^2 &= -4a\sqrt{(x - c)^2 + y^2} \\
+  a^2 - cx &= a\sqrt{(x - c)^2 + y^2} \\
+  a^4 - 2a^2cx + c^2x^2 &= a^2(x - c)^2 + a^2y^2 \\
+  a^4 - \cancel{2a^2cx} + c^2x^2 &= a^2x^2 - \cancel{2a^2cx} + a^2c^2 + a^2y^2 \\
+  c^2x^2 - a^2x^2 - a^2y^2 &= - a^4 + a^2c^2 \\
+  x^2(c^2 - a^2) - y^2a^2 &= -a^2(a^2 - c^2) \\
+  x^2(a^2 - c^2) + y^2a^2 &= a^2(a^2 - c^2) \\
   \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} &= 1
 \end{align*} 
 
@@ -133,20 +136,22 @@ $F_1(-c, 0), F_2(c, 0)$.
   |\overrightarrow{F_1M}| - |\overrightarrow{F_2M}| &= 2a \\
   \sqrt{(x + c)^2 + y^2} - \sqrt{(x - c)^2 + y^2} &= 2a \\
   \sqrt{(x + c)^2 + y^2} &= 2a + \sqrt{(x - c)^2 + y^2} \\
-  (x + c)^2 + y^2 &= 4a^2 + 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2 \\
-  4a\sqrt{(x - c)^2 + y^2} &= 4xc - 4a^2 \\
-  a\sqrt{(x - c)^2 + y^2} &= xc - a^2 \\
-  x^2 a^2 - 2a^2xc + a^2c^2 + a^2y^2 &= x^2c^2 - 2a^2xc + a^4 \\
-  x^2a^2 - x^2c^2 + a^2y^2 &= a^4 - a^2c^2 \\
-  x^2(a^2 - c^2) + a^2y^2 &= a^2(a^2 - c^2) \\
-  \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} &= 1
+  (x + c)^2 + y^2 &= 4a^2 + 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 +y^2 \\
+  \cancel{x^2} + 2cx + \cancel{c^2} + \cancel{y^2} - \cancel{x^2} + 2cx - \cancel{c^2} - \cancel{y^2} - 4a^2 &= 4a\sqrt{(x - c)^2 + y^2} \\
+  4cx - 4a^2 &= 4a\sqrt{(x - c)^2 + y^2} \\
+  cx - a^2 &= a\sqrt{(x - c)^2 + y^2} \\
+  c^2x^2 - 2a^2cx + a^4 &= a^2(x - c)^2 + a^2y^2 \\
+  c^2x^2 - \cancel{2a^2cx} + a^4 &= a^2x^2 - \cancel{2a^2cx} + a^2c^2 + a^2y^2 \\
+  c^2x^2 - a^2x^2 - a^2y^2 &= - a^4 + a^2c^2 \\
+  x^2(c^2 - a^2) - y^2a^2 &= a^2(c^2 - a^2) \\
+  \frac{x^2}{a^2} - \frac{y^2}{c^2 - a^2} &= 1
 \end{align*}
 
-Обозначим $b^2 = a^2 - c^2$. Получаем \textit{каноническое уравнение гиперболы}: \[
+Обозначим $b^2 = c^2 - a^2$. Получаем \textit{каноническое уравнение гиперболы}: \[
   \boxed{\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1}
 \]  
 
-\textit{Центриситетом эллипса} называется: \[
+\textit{Центриситетом гиперболы} называется: \[
 \varepsilon = \frac{2c}{2a} = \frac{c}{a}
 \] 
 \begin{note}
