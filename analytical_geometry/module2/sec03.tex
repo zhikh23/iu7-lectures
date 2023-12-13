@@ -93,6 +93,10 @@
 
 Тогда вектор $\vec{b}$, координаты которого являются свободные члены, можно представить в виде линейной комбинаций векторов $\vec{a}$, координаты которых соответствуют элементам столбцов матрицы.
 
+\begin{gather*}
+  \vec{a_1} x_1 + \vec{a_2} x_2 + \ldots + \ldots \vec{a_n} x_{n} = \vec{b}
+\end{gather*}
+
 \begin{definition}
   СЛАУ, имеющая решение, назыается \textit{совместной}.
 \end{definition}
@@ -149,7 +153,7 @@ X \times A = B
 
 \subsection*{III}
 
-Для уранвения вида: \[
+Для уравнения вида: \[
 A \times X \times C = B
 \] 
 \begin{enumerate}
@@ -217,16 +221,15 @@ A \times X \times C = B
   = \frac{A_{i1}b_1 + A_{i_2}b_2 + \ldots + A_{in}b_n}{det A}
 \end{gather*}
 
-Заметим, что числитель последнего выражения это ничто иное, как:
+Заметим, что числитель последнего выражения это определитель матрицы.
 \begin{gather*}
-  \Delta_1 = 
+  x_i = \frac{1}{det A}
   \begin{vmatrix} 
-    b_1 & a_{12} & a_{13} & \ldots a_{1n} \\
-    b_2 & a_{22} & a_{23} & \ldots a_{2n} \\
-    \ldots \\
-    b_n & a_{2n} & a_{n3} & \ldots a_{nn} \\
-  \end{vmatrix} \\
-  \text{ для } i = 1
+    a_{11} & a_{12} & \ldots & a_{1,i-1} & b_1 & a_{1,i+1} & \ldots & a_{1n} \\
+    a_{21} & a_{22} & \ldots & a_{2,i-1} & b_2 & a_{2,i+1} & \ldots & a_{2n} \\
+    \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+    a_{n1} & a_{n2} & \ldots & a_{n,i-1} & b_n & a_{n,i+1} & \ldots & a_{nn} \\
+  \end{vmatrix} 
 \end{gather*}
 
 \begin{note}
@@ -238,7 +241,7 @@ A \times X \times C = B
 Если квадратная матрица вырожденная, то однородная СЛАУ имеет \textit{бесконечное количество решений}. 
 
 \begin{theorem}
-  \textit{Кронекера-капелли}. \\
+  \textit{Критерий Кронекера-Капелли}. \\
   Для того, чтобы СЛАУ была совместной, необходимо и достаточно, чтобы ранг матрицы $A$ был равен рангу матрицы A|B.
 \end{theorem}
 \begin{proof}
@@ -295,6 +298,6 @@ A \times X \times C = B
     &x_1^0, x_2^0, \ldots x_r^0 \text{ -- коеффициенты линейной комбинации} \\
     &x_i^0 = const, i=1..r
   \end{align*}
-  и тут моя мысль кончается, пришлите пожалуйста продолжение\ldots
+  Поэтому $X = \left( x_1^0, x_2^0, \ldots x_r^0 \right) $ является решением $AX=B$, т.е. СЛАУ совместимая.
 \end{proof}
 
