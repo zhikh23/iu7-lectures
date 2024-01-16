@@ -1,0 +1,155 @@
+{
+	"alpha": {
+		"prefix": "alp",
+		"body": [
+			"\\alpha"
+		],
+	},
+	
+	"beta": {
+		"prefix": "beta",
+		"body": [
+			"\\beta"
+		],
+	},
+	
+	"gamma": {
+		"prefix": "gamma",
+		"body": [
+			"\\gamma"
+		],
+	},
+	
+	"delta": {
+		"prefix": "del",
+		"body": [
+			"\\delta"
+		],
+	},
+	
+	"epsilon": {
+		"prefix": "eps",
+		"body": [
+			"\\epsilon"
+		],
+	},
+
+	"zeta": {
+		"prefix": "zeta",
+		"body": [
+			"\\zeta"
+		],
+	},
+	
+	"eta": {
+		"prefix": "eta",
+		"body": [
+			"\\eta"
+		],
+	},
+	
+	"theta": {
+		"prefix": "theta",
+		"body": [
+			"\\theta"
+		],
+	},
+	
+	"iota": {
+		"prefix": "iota",
+		"body": [
+			"\\iota"
+		],
+	},
+	
+	"kappa": {
+		"prefix": "kappa",
+		"body": [
+			"\\kappa"
+		],
+	},
+	
+	"lambda": {
+		"prefix": "lam",
+		"body": [
+			"\\lambda"
+		],
+	},
+	
+	"mu": {
+		"prefix": "mu",
+		"body": [
+			"\\mu"
+		],
+	},
+	
+	"nu": {
+		"prefix": "nu",
+		"body": [
+			"\\nu"
+		],
+	},
+	
+	"pi": {
+		"prefix": "pi",
+		"body": [
+			"\\pi"
+		],
+	},
+	
+	"rho": {
+		"prefix": "rho",
+		"body": [
+			"\\rho"
+		],
+	},
+	
+	"sigma": {
+		"prefix": "sigma",
+		"body": [
+			"\\sigma"
+		],
+	},
+	
+	"tau": {
+		"prefix": "tau",
+		"body": [
+			"\\tau"
+		],
+	},
+	
+	"upsilon": {
+		"prefix": "ups",
+		"body": [
+			"\\upsilon"
+		],
+	},
+	
+	"phi": {
+		"prefix": "phi",
+		"body": [
+			"\\phi"
+		],
+	},
+	
+	"chi": {
+		"prefix": "chi",
+		"body": [
+			"\\chi"
+		],
+	},
+	
+	"psi": {
+		"prefix": "psi",
+		"body": [
+			"\\psi"
+		],
+	},
+	
+	"omega": {
+		"prefix": "omega",
+		"body": [
+			"\\omega"
+		],
+	},
+}

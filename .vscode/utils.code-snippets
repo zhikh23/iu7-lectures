@@ -1,0 +1,42 @@
+{
+	"New snippet": {
+		"prefix": "snippet",
+		"body": [
+			"\"$1\": {"
+				"\t\"prefix\": \"$2\",",
+				"\t\"body\": [",
+					"\t\t\"$3\"",
+				"\t],",
+			"},",
+			"$0",
+		],
+	},
+
+	"Symbol snippet": {
+		"prefix": "symsnip",
+		"body": [
+			"\"$1\": {"
+				"\t\"prefix\": \"$2\",",
+				"\t\"body\": [",
+					"\t\t\"\\\\\\\\$1\"",
+				"\t],",
+			"},",
+			"$0",
+		],
+	},
+
+    "Wrapper snippet": {
+		"prefix": "wrapsnippet",
+		"body": [
+			"\"$1\": {"
+				"\t\"prefix\": \"$3\",",
+				"\t\"body\": [",
+					"\t\t\\begin{$2}",
+						"\t\t\t\$0"
+					"\t\t\\eng{$2}"
+				"\t],",
+			"},",
+			"$0",
+		],
+	},
+}

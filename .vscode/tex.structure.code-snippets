@@ -1,0 +1,160 @@
+{
+	"begin{} / eng{}": {
+		"prefix": "beg",
+		"body": [
+			"\\begin{$1}",
+				"\t$0"
+			"\\eng{$1}"
+		],
+	},
+
+	"Section*": {
+		"prefix": "sec*",
+		"body": [
+			"\\begin{section*}",
+				"\t$0",
+			"\\end{section*}",
+		],
+	},
+
+	"Subsection*": {
+		"prefix": "ssec*",
+		"body": [
+			"\\begin{subsection*}",
+				"\t$0",
+			"\\end{subsection*}",
+		],
+	},
+
+	"Subsubsection*": {
+		"prefix": "sssec*",
+		"body": [
+			"\\begin{subsection*}",
+				"\t$0",
+			"\\end{subsection*}",
+		],
+	},
+
+	"Section": {
+		"prefix": "sec",
+		"body": [
+			"\\begin{section}",
+				"\t$0",
+			"\\end{section}",
+		],
+	},
+
+	"Subsection": {
+		"prefix": "ssec",
+		"body": [
+			"\\begin{subsection}",
+				"\t$0",
+			"\\end{subsection}",
+		],
+	},
+
+	"Subsubsection": {
+		"prefix": "sssec",
+		"body": [
+			"\\begin{subsection}",
+				"\t$0",
+			"\\end{subsection}",
+		],
+	},
+
+	"List": {
+		"prefix": "list",
+		"body": [
+			"\\begin{itemize}",
+				"\t\\item $0",
+			"\\eng{itemize}",
+		],
+	},
+
+	"Enumerate": {
+		"prefix": "enum",
+		"body": [
+			"\\begin{enumerate}",
+				"\t\\item $0",
+			"\\eng{enumerate}",
+		],
+	},
+
+	"Item": {
+		"prefix": "item",
+		"body": [
+			"\\item",
+		],
+	},
+
+	"Definition": {
+		"prefix": "def",
+		"body": [
+			"\\begin{definition}",
+				"\t$0",
+			"\\end{definition}",
+		],
+	},
+
+	"Theorem": {
+		"prefix": "theorem",
+		"body": [
+			"\\begin{theorem}",
+				"\t$0",
+			"\\end{theorem}",
+		],
+	},
+
+	"Proof": {
+		"prefix": "proof",
+		"body": [
+			"\\begin{proof}",
+				"\t$0",
+			"\\end{proof}",
+		],
+	},
+
+	"Corollary": {
+		"prefix": "corollary",
+		"body": [
+			"\\begin{corollary}",
+				"\t$0",
+			"\\end{corollary}",
+		],
+	},
+
+	"Inline math": {
+		"prefix": "mk",
+		"body": [
+			"\$$1\$ $0"
+		],
+	},
+
+	"Signle-line math": {
+		"prefix": "dm",
+		"body": [
+			"\\[",
+			"\t$1".
+			"\\]",
+			"$0".
+		],
+	},
+
+	"Gather": {
+		"prefix": "gat",
+		"body": [
+			"\\begin{gather*}",
+				"\t$0",
+			"\\end{gather*}",
+		],
+	},
+
+	"Align": {
+		"prefix": "ali",
+		"body": [
+			"\\begin{align*}",
+				"\t$0",
+			"\\end{align*}",
+		],
+	},
+}

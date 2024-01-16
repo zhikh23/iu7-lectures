@@ -1,0 +1,248 @@
+{
+	"Fraction": {
+		"prefix": "//",
+		"body": [
+			"\\frac{$1}{$2}$0"
+		],
+	},
+
+	"Braces": {
+		"prefix": "lr",
+		"body": [
+			"\\left($1\\right) $0"
+		],
+	},
+
+	"Tag": {
+		"prefix": "tag",
+		"body": [
+			"\\tag{$0}"
+		],
+	},
+
+	"Text": {
+		"prefix": "tt",
+		"body": [
+			"\\text{$1} $0"
+		],
+	},
+
+	"Cases": {
+		"prefix": "case",
+		"body": [
+			"\\begin{case*}",
+				"\t$0",
+			"\\end{case*}",
+		],
+	},
+
+	"Vector": {
+		"prefix": "vec",
+		"body": [
+			"\\vec{$1}$0"
+		],
+	},
+
+	"Long-named vector": {
+		"prefix": "Vec",
+		"body": [
+			"\\overrightarrow{$1}$0"
+		],
+	},
+
+	"Group": {
+		"prefix": "gr",
+		"body": [
+			"{$1}$0"
+		],
+	},
+
+	"Power": {
+		"prefix": "pow",
+		"body": [
+			"^{$1}$0"
+		],
+	},
+
+	"Infinity": {
+		"prefix": "oo",
+		"body": [
+			"\\infty"
+		],
+	},
+
+	"Implies": {
+		"prefix": "=>",
+		"body": [
+			"\\implies"
+		],
+	},
+
+	"Equivalent": {
+		"prefix": "iff",
+		"body": [
+			"\\iff"
+		],
+	},
+	
+	"Limit": {
+		"prefix": "lim",
+		"body": [
+			"\\lim_{${1:x} \\to ${2|\\infty,0,+\\infty,-\\infty,0+,0-|}} $0"
+		],
+	},
+
+	"Integral": {
+		"prefix": "int",
+		"body": [
+			"\\int_{${1:-\\infty}}^{${2:\\infty}} $0"
+		],
+	},
+	
+	"Delta": {
+		"prefix": "dd",
+		"body": [
+			"\Delta $0"
+		],
+	},
+	
+	"Square root": {
+		"prefix": "sq",
+		"body": [
+			"\\sqrt{$1} $0"
+		],
+	},
+	
+	"Square": {
+		"prefix": "sr",
+		"body": [
+			"^2"
+		],
+	},
+	
+	"Cube": {
+		"prefix": "cb",
+		"body": [
+			"^3"
+		],
+	},
+	
+	"Less or equal": {
+		"prefix": "<=",
+		"body": [
+			"\\le"
+		],
+	},
+	
+	"Greate or equal": {
+		"prefix": ">=",
+		"body": [
+			"\\ge"
+		],
+	},
+	
+	"For all": {
+		"prefix": "AA",
+		"body": [
+			"\\forall"
+		],
+	},
+
+	"sin": {
+		"prefix": "sin",
+		"body": [
+			"\\sin($1)$0"
+		],
+	},
+	
+	"cos": {
+		"prefix": "cos",
+		"body": [
+			"\\cos($1)$0"
+		],
+	},
+	
+	"tg": {
+		"prefix": "tg",
+		"body": [
+			"\\tg($1)$0"
+		],
+	},
+	
+	"ctg": {
+		"prefix": "ctg",
+		"body": [
+			"\\ctg($1)$0"
+		],
+	},
+	
+	"mul": {
+		"prefix": "**",
+		"body": [
+			"\\cdot"
+		],
+	},
+
+	"to": {
+		"prefix": "to",
+		"body": [
+			"->"
+		],
+	},
+	
+	"in": {
+		"prefix": "in",
+		"body": [
+			"\\in"
+		],
+	},
+	
+	"Q": {
+		"prefix": "QQ",
+		"body": [
+			"\Q"
+		],
+	},
+
+	"Real": {
+		"prefix": "RR",
+		"body": [
+			"\\R"
+		],
+	},
+
+	"Z": {
+		"prefix": "ZZ",
+		"body": [
+			"\\Z"
+		],
+	},
+
+	"Abs": {
+		"prefix": "abs",
+		"body": [
+			"|$1|$0"
+		],
+	},
+	
+	"Parallel": {
+		"prefix": "pll",
+		"body": [
+			"\\parallel"
+		],
+	},
+	
+	"Perpendicular": {
+		"prefix": "prp",
+		"body": [
+			"\\perp"
+		],
+	},
+	
+	"Math ring of S": {
+		"prefix": "soo",
+		"body": [
+			"\\mathring{S}"
+		],
+	},
+}

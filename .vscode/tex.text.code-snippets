@@ -1,0 +1,29 @@
+{
+    "Bold": {
+		"prefix": "bf",
+		"body": [
+			"\\bf{$1} $0"
+		],
+	},
+
+	"Italic": {
+		"prefix": "it",
+		"body": [
+			"\\it{$1} $0"
+		],
+	},
+
+	"Underline": {
+		"prefix": "ul",
+		"body": [
+			"\\underline{$1} $0"
+		],
+	},
+
+	"Ldots": {
+		"prefix": "...",
+		"body": [
+			"\\ldots"
+		],
+	},
+}
