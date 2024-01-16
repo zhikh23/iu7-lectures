@@ -1,0 +1,206 @@
+\section{Прямая на плоскости}
+
+\subsection{Способы задания прямой}
+
+\subsubsection{Каноническое уравнение}
+
+Пусть прямая $l$ проходит через точку $M_0(x_0, y_0)$ и задана направляющим вектором $\vec{S} = \{m, n\}$ (т.е. вектор паралеллен прямой). Выберем на прямой $l$ произвольную точку $M$.
+Составим $\overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\}$. 
+\[
+  \overrightarrow{M_0M} \parallel \vec{s} \implies \boxed{\frac{x - x_0}{m} = \frac{y - y_0}{n}}
+\]
+
+\subsubsection{Параметрическое уравнение}
+
+Пусть прямая $l$ задана каноническим уравнением: \[
+\frac{x - x_0}{m} = \frac{y - y_0}{n}
+\] 
+Обозначим коеффициент пропорциональности через $t$. Тогда:
+\begin{gather*}
+  \begin{matrix}
+    \frac{x - x_0}{m} = t \\
+    \frac{y - y_0}{n} = t
+  \end{matrix} \implies \boxed{\begin{cases}
+    x = x_0 + mt \\
+    y = y_0 + nt
+  \end{cases}}
+\end{gather*}
+ 
+\subsubsection{Через две точки}
+
+Пусть прямая $l$ проходит через точки $M_0(x_0, y_0)$ и $M(x, y)$. Выберем на прямой $l$ произвольную точку $M_1(x_1, y_1)$. Составим два вектора $\overrightarrow{M_0M}$, $\overrightarrow{M_0, M_1}$.
+\begin{gather*}
+  \overrightarrow{M_0M} = \{x - x_0, y - y_0\} \\
+  \overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0\}
+\end{gather*}
+
+Т.к. вектора коллинеарны, то и соответствующие координаты пропорциональны:
+ \[
+  \boxed{\frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0}}
+\]
+
+\subsubsection{В отрезках}
+
+% Рисуночек
+Пусть прямая $l$ отсекает от координатного угла отрезки $a$ и $b$. 
+Тогда прямая $l$ проходит через точки $A(0, a)$ и  $B(b, 0)$.
+\begin{gather*}
+  \frac{x - a}{0 - a} = \frac{y - 0}{b - 0} \implies \boxed{\frac{x}{a} + \frac{y}{b} = 1}
+\end{gather*}
+
+\subsubsection{С угловым коеффициентом}
+
+Пусть прямая $l$ проходит через точку $M_0(x_0, y_0)$. 
+Выберем произвольную точку $M(x, y)$. 
+Тогда из прямоугольного треугольника $\triangle M_0AM$:
+\begin{gather*}
+  \triangle M_0AM: \tg \varphi = \frac{y - y_0}{x - x_0} \\
+  \text{Пусть } \tg \varphi = k \\
+  k = \frac{y - y_0}{x - x_0} \\
+  y - yo = kx - x_0 \\
+  y = kx - kx_0 + y_0\\
+  -kx_0 + y_0 = const = b\\
+  \boxed{y = kx + b}
+\end{gather*}
+
+\subsubsection{Общего вида}
+
+Пусть прямая $l$ проходит через точку $M_0(x_0, y_0)$, а также дан перпендикулярный ей вектор $\vec{n} = \{A, B\}$.
+Выберем произвольную точку $M(x, y)$. 
+Тогда:
+\begin{gather*}
+  \vec{n} = \{A, B\} \qquad \overrightarrow{M_0M} = \{x - x_0, y - y_0\} \\
+  \vec{n} \perp \overrightarrow{M_0M} \implies \vec{n} \cdot \overrightarrow{M_0M} = 0 \\
+  A(x - x_0) + B(y - y_0) = 0 \\
+  Ax + By + (-Ax_0 - By_0) = 0
+\end{gather*}
+Обозначим: $-Ax_0 - By_0 = const = C$. Получаем: \[
+  \boxed{Ax + By + C = 0}
+\] 
+
+\subsection{Угол между прямыми}
+
+\subsubsection{Прямые, заданные каноническими уравнениями}
+
+\begin{gather*}
+  l_1: \frac{x - 0}{m_1} = \frac{y - y_0}{n_1} \\
+  l_2: \frac{x - \widetilde{x}_0}{m_2} = \frac{y - \widetilde{y}_0}{n_2} \\
+\end{gather*}
+
+Угол между прямыми $l_1, l_2$ соответствует углу между направляющими векторами $\vec{S_1}, \vec{S_2}$ для соответствующий прямых.
+\begin{gather*}
+  \widehat{(l_1, l_2)} = \widehat{(\vec{S_1}, \vec{S_2})} = \varphi \\
+  \cos \varphi = \frac{|\vec{S_1} \cdot \vec{S_2}|}{|\vec{S_1}| \cdot |\vec{S_2}|} \\
+  \boxed{\cos \varphi = \frac{|m_1 \cdot m_2 + n_1 \cdot n_2|}{\sqrt{m_1^2 + n_1^2} \cdot \sqrt{m_2^2 + n_2^2}}}
+\end{gather*}
+
+\subsubsection{Прямые, заданные общими уравнениями}
+\begin{gather*}
+  l_1: A_1 x + B_1 y + C_1 = 0 \\
+  l_2: A_2 x + B_2 y + C_2 = 0 \\
+  \vec{n_1} = \{A_1, B_1\} \\
+  \vec{n_2} = \{A_2, B_2\} 
+\end{gather*}
+
+Угол между прямыми $l_1, l_2$ соответствует углу между нормалями $\vec{n_1}, \vec{n_2}$ к соответствующим прямым.
+\begin{gather*}
+  \widehat{(l_1, l_2)} = \widehat{(\vec{n_1}, \vec{n_2})} = \varphi \\
+  \cos \varphi = \frac{\vec{n_1} \cdot \vec{n_2}}{|\vec{n_1}| \cdot |\vec{n_2}| } \\
+  \boxed{ \cos \varphi = \frac{|A_1 A_2 + B_1 B_2| }{ \sqrt{A_1^2 + B_1^2} \cdot \sqrt{A_2^2 + B_2^2}} }
+\end{gather*}
+
+
+\subsubsection{Прямые, заданные угловыми коеффициентами}
+
+\begin{gather*}
+  \begin{cases}
+    l_1: y = k_1 x + b_1, \quad k_1 = \tg \varphi_1 \\
+    l_2: y = k_2 x + b_2, \quad k_2 = \tg \varphi_2
+  \end{cases}
+  \implies \varphi = \varphi_2 - \varphi_1 \\
+  \tg \varphi = \tg \varphi_2 - \tg \varphi_1 = \frac{\tg \varphi_2 - \tg \varphi_1}{1 + \tg \varphi_1 \tg \varphi 2} =\\
+  = \frac{k_2 - k_1}{1 + k_1 k_2} \\
+  \implies \boxed{\varphi = arctg \frac{k_2 - k_1}{1 + k_1 k_2}}
+\end{gather*}
+
+
+\subsection{Условие параллельности прямых}
+
+\subsubsection{Прямые, заданные каноническими уравнениями}
+
+Если $l_1 \parallel l_2$, то $\vec{s_1} \parallel \vec{s_2} \implies$ \[
+  \boxed{\frac{m_1}{m_2} = \frac{n_1}{n_2}}
+\] 
+
+\subsubsection{Прямые, заданные общими уравнениями}
+
+Если $l_1 \parallel l_2$, то $\vec{n_1} \parallel \vec{n_2} \implies$ \[
+  \boxed{\frac{A_1}{A_2} = \frac{B_1}{B_2}}
+\] 
+
+\subsubsection{Прямые, заданные угловыми коеффициентами}
+
+Если $l_1 \parallel l_2$, то $\varphi = 0 \implies tg \varphi = 0 \implies k_2 - k_1 = 0 \implies$ \[
+  \boxed{k_2 = k_1}
+\] 
+
+\subsection{Условие перпендикулярности прямых}
+
+\subsubsection{Прямые, заданные каноническими уравнениями}
+
+Если $l_1 \perp l_2$, 
+то $\vec{S_1} \perp \vec{S_2} \implies \vec{S_1} \cdot \vec{S_2} = 0 \implies$ \[
+  \boxed{m_1 m_2 + n_1 n_2 = 0}
+\] 
+
+\subsubsection{Прямые, заданные общими уравнениями}
+
+Если $l_1 \perp l_2$, 
+то $\vec{n_1} \perp \vec{n_2} \implies$ \[
+  \boxed{\frac{A_1}{A_2} + \frac{B_1}{B_2} = 0}
+\] 
+
+\subsubsection{Прямые, заданные угловыми коеффициаентами}
+
+Если $l_1 \perp l_2$, то:
+\begin{gather*}
+  \varphi = \frac{\pi}{2} \quad \implies \quad \not\exists \tg \varphi \quad \implies \quad 1 + k_1 k_2 =0 \quad \implies \quad k_1 k_2 = -1 \implies
+\end{gather*} \[
+  \boxed{k_2 = -\frac{1}{k_1}}
+\] 
+
+\subsection{Расстояние от точки до прямой}
+
+Пусть прямая $l$ задана общим уравнением:  \[
+l: Ax + By + C = 0 \implies \vec{n} = \{A, B\} 
+\] 
+
+Требуется найти расстояние от точки $M_0\left(x_0, y_0  \right)$ до прямой $l$.
+
+Возьмём на прямой $l$ произвольную точку $M$. Тогда расстояние от точки $M_0$ будет равно проекции вектора $\overrightarrow{M M_0}$ на направление вектора нормали прямой $l$.
+\begin{gather*}
+  \rho (M_0, l) = np_{\vec{n}} \overrightarrow{M M_0} \\
+  \overrightarrow{M M_0} = \{x_0 - x, y_0 - y\} 
+\end{gather*}
+\begin{gather*}
+  \vec{n} \cdot \overrightarrow{M M_0} = |\vec{n}| \cdot |M M_0| \cdot \cos \varphi = |\vec{n}| \cdot np_{\vec{n}} \overrightarrow{M M_0} \\
+  \implies np_{\vec{n}} \overrightarrow{M M_0} = \frac{|\vec{n} \cdot \overrightarrow{M M_0}|}{\vec{n}} = \frac{A(x_0 - x) + B(y_0 - y)}{\sqrt{A^2 + B^2}} = \\
+  = \frac{A x_0 + B y_0 + (-Ax - By)}{\sqrt{A^2 + B^2} }
+\end{gather*}
+
+Из общего уравнения прямой $l$:
+\begin{gather*}
+  -Ax - By = C \\
+  \boxed{\rho(M_0, l) = \frac{|A x_0 + B y_0 + C|}{\sqrt{A^2 + B^2}}}
+\end{gather*}
+
+\begin{eg}
+  Найти расстояние от точки $M_0 (1, -2)$ до прямой $l: y = 3x - 1$.
+  \begin{gather*}
+    3x - y - 1 = 0 \text{ - общее уравнение прямой} \\
+    Ax + By + C = 0 \\
+    \\
+    \rho (M_0, l) = \frac{|3 \cdot (-1) + (-1) \cdot (-2) - 1|}{\sqrt{3^2 + (-1)^2} } = \frac{4}{\sqrt{10} }
+  \end{gather*}
+\end{eg}
+

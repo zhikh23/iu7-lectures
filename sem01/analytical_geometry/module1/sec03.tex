@@ -1,0 +1,115 @@
+\section{Базис}
+
+\begin{definition}
+  \textbf{Базис} - упорядоченный набор векторов.
+\end{definition}
+
+Введём обозначения:
+\begin{itemize}
+  \item $V_1$ - пространство всех коллинеарных векторов
+  \item $V_2$ - пространство всех компланарных векторов
+  \item $V_3$ - пространство всех свободных векторов
+\end{itemize}
+
+\subsubsection*{Пространство $V_1$}
+Пусть $\vec{e} \neq \vec{0} \in V_1$, тогда $\forall \vec{x} \in V_1$ ($\vec{x} = \lambda \vec{e}$, т.к. $\vec{x} \parallel \vec{e}$). Тогда $\vec{x} = \lambda \vec{e}$ называется разложением $\vec{x}$ по базису $\vec{e}$ в $V_1$, а  $\lambda$ - координаты $\vec{x}$ в этом базисе.
+
+\subsubsection*{Пространство $V_2$}
+Любая упорядоченная пара неколлинеарных векторов в $V_2$ является базисом $V_2$. \\
+Пусть в $V_2$ $\vec{e_1} \not \parallel \vec{e_2}$, тогда эти вектора можно рассматривать как базис $V_2, \vec{x} \in V_2 \implies \vec{e_1}, \vec{e_2}, \vec{x}$ - линейная зависимость. 
+\[
+  \vec{x} = \lambda_1 \vec{e_1} + \lambda_2 \vec{e_2}
+\]
+- разложение вектора $\vec{x}$ по базису $\vec{e_1}, \vec{e_2}$. $\lambda_1$ и $\lambda_2$ называются координатами $\vec{x}$ в этом базисе.
+Базис в $V_2$ называется ортогональным, если базисные вектора лежат на перпендикулярных прямых.
+
+\subsubsection*{Пространство $V_3$}
+Любая упорядоченная тройка некомпланарных векторов в $V_3$ называется базисом в $V_3$.\\
+Пусть $\vec{e_1}, \vec{e_2}, \vec{e_3}$ - упорядоченная тройка векторов в $V_3$, $\vec{x} \in V_3$. Тогда система векторов линейно зависима (по теореме 7). По теореме 4:
+\[
+  \vec{x} = \lambda_1 \vec{e_1} + \lambda_2 \vec{e_2} + \lambda_3 \vec{e_3}
+\] 
+Данное выражение называется разложением $\vec{x}$ по базису $\vec{e_1}, \vec{e_2}, \vec{e_3}$ в $V_3$, а $\lambda_1, \lambda_2, \lambda_3$ называются корординатами $\vec{x}$ в базисе. \\
+Базис в $V_3$, если базисные вектора лежат на взаимно перпендикулярных прямых.
+
+\begin{definition}
+  \textbf{Ортонормированный базис} - ортогональный базис из $\vec{e}$ векторов.
+\end{definition}
+
+\begin{theorem}
+  \textit{О разложении вектора по базису} \\
+  Любой вектор можно разложить по базису и при этом единственным образом.
+\end{theorem}
+\begin{proof}
+  Пусть в пространстве $V_3$ зафиксирован базис $\vec{e_1}, \vec{e_2}, \vec{e_3}$. Возьмём вектор $\vec{x}$. Тогда система векторов $\vec{x}, \vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно зависима, если вектор $\vec{x}$ можно представить в виде линейной комбинации векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$: \[
+  \vec{x} = \lambda_1 \vec{e_1} + \lambda_2 \vec{e_2} + \lambda_3 + \vec{e_3} \tag{1}
+\]
+  Предположим, что разложение вектора $\vec{x}$ - не единственное. \[
+  \vec{x} = \rho \vec{e_1} + \rho \vec{e_2} + \rho \vec{e_3} \tag{2}
+\]
+  Вычтем из (1) уранвение (2). Тогда: \[
+    \vec{0} = \left( \lambda_1 - \rho_1 \right) \vec{e_1} + \left( \lambda_2 - \rho_2 \right) \vec{e_2} + \left( \lambda_3 - \rho_3 \right) \vec{e_3} \tag{3}
+\]
+Поскольку базисные вектора $\vec{e_1}, \vec{e_2}, \vec{e_3}$ - линейно независимы, то выражение (3) представляет собой тривиальную линейную комбинацию векторов $\vec{e_1}, \vec{e_2}, \vec{e_3}$, равную нулю. Тогда получаем:
+  \begin{gather*}
+    \begin{matrix}  
+      \lambda_1 - \delta_1 = 0 \\
+      \lambda_2 - \delta_2 = 0 \\
+      \lambda_3 - \delta_3 = 0 \\
+    \end{matrix}
+    \quad \implies \quad
+    \begin{matrix}
+      \lambda_1 = \delta_1 \\
+      \lambda_2 = \delta_2 \\
+      \lambda_3 = \delta_3 \\
+    \end{matrix}
+  \end{gather*}
+  Коэффициенты равны, что и требовалось доказать.
+\end{proof}
+\begin{eg}
+  Пусть в пространстве $V_2$ зафиксирован базис $\vec{i}, \vec{j}$.
+  \begin{gather*}
+    |\vec{i}| = 1, \quad |\vec{j}| = 1 \\
+    \vec{a} = \overrightarrow{OA} + \overrightarrow{OB} \\
+    \overrightarrow{OA} \parallel \vec{i} \implies \overrightarrow{OA} = x_a \vec{i} \\
+    \overrightarrow{OB} \parallel \vec{j} \implies \overrightarrow{OB} = y_a \vec{j} \\
+    \implies \vec{a} = x_a \vec{i} + y_a \vec{j}
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  Пусть в пространстве $V_3$ зафиксирован ортонормированный базис $\vec{i}, \vec{j}, \vec{k}$
+  Тогда:
+  \begin{gather*}
+    \vec{a} = \{x_a, y_a, z_a\} \\
+    \vec{a} = x_a \vec{i} + y_a \vec{j} + z_a \vec{k}
+  \end{gather*}
+\end{eg}
+
+\exercise{}
+Разложить $\vec{a}$ по векторам $\vec{b}, \vec{c}$. \\
+Дано:
+\begin{gather*}
+  \vec{a} = 3 \vec{i} - 4 \vec{j} \\
+  \vec{b} = 2 \vec{i} -   \vec{j} \\
+  \vec{c} = - \vec{i} - 5 \vec{j}
+\end{gather*}
+Решение:
+\begin{gather*}
+  \vec{a} = \alpha \vec{b} + \beta \vec{c} \\
+  3 \vec{i} - 4 \vec{j} = \alpha(2 \vec{i} + \vec{j}) + \beta (- \vec{i} + 5 \vec{j}) \\
+  3 \vec{i} - 4 \vec{j} = (2 \alpha - \beta) \vec{i} + (\alpha + 5 \beta) \vec{j} \implies \\
+  \begin{cases}
+    3 = 2 \alpha - \beta \\
+    -4 = \alpha + 5 \beta
+  \end{cases} 
+  \implies 
+  \begin{cases}
+    \beta = -1 \\
+    \alpha - 1
+  \end{cases}
+\end{gather*}
+
+\begin{note}
+  Два вектора равны, если равны соответствующие координаты.
+\end{note}
+

@@ -1,0 +1,649 @@
+\section{Прямая в пространстве}
+
+\subsection{Способы задания прямой в пространстве}
+
+\subsubsection{Каноническое уравнение прямой}
+
+Пусть прямая $l$ проходит через точку $M_0\left(x_0, y_0, z_0 \right)$ и имеет направляющий вектор $\vec{S} = \{m, n, p\}$.
+Возьмём на прямой $l$ произвольную точку $M(x, y, z)$.
+Составим вектор: \[
+\overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\} 
+\] 
+Отсюда:
+\begin{gather*}
+  \overrightarrow{M_0M} \parallel \vec{S} \implies \boxed{\frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}}
+\end{gather*}
+
+\subsubsection{Параметрическое уравнение}
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} = (t)
+\] 
+Отсюда:
+\begin{gather*}
+  \begin{cases}
+  \frac{x - x_0}{m} = t \\
+  \frac{y - y_0}{n} = t \\
+  \frac{z - z_0}{p} = t \\
+  \end{cases} \implies \boxed{
+  \begin{cases}
+    x = x_0 + mt \\
+    y = y_0 + nt \\
+    z = z_0 + pt \\
+  \end{cases}}
+\end{gather*}
+
+\subsubsection{Через две точки}
+
+Пусть прямая $l$ проходит через точки $M_0(x_0, y_0, z_0)$ и $M_1(x_1, y_1, z_1)$.
+Возьмём на прямой $l$ точку  $M(x, y, z)$.
+Составим два вектора:
+\begin{gather*}
+  \overrightarrow{M_0M} = \{x - x_0, y - y_0, z - z_0\} \\ 
+  \overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0, z_1 - z_0\}
+\end{gather*}
+Отсюда:
+\begin{gather*}
+  \overrightarrow{M_0M} \parallel  \overrightarrow{M_0M_1} \implies \\
+  \boxed{
+    \frac{x - x_0}{x_1 - x_0} = \frac{y - y_0}{y_1 - y_0} = \frac{z - z_0}{z_1 - z_0}
+  }
+\end{gather*}
+
+\subsubsection{Общее уравнение}
+
+Пусть плоскости $\alpha_1$ и $\alpha_2$ заданы общими уравнениями:
+\begin{gather*}
+  \alpha_1: A_1x + B_1y + C_1z + D_1 = 0 \\
+  \alpha_2: A_2x + B_2y + C_2z + D_2 = 0 \\
+\end{gather*}
+Если $\alpha_1 \not \parallel \alpha_2$, то они пересекаются по прямой $l$.
+Тогда $\forall M(x, y, z) \in l$ будет выполнятся система:
+\begin{gather*}
+  \boxed{
+    \begin{cases}
+      A_1x + B_1y + C_1z + D_1 = 0 \\
+      A_2x + B_2y + C_2z + D_2 = 0 \\
+    \end{cases}
+  }
+\end{gather*}
+
+\begin{eg}
+  Составить уравнение прямой, являющейся пересечением плоскостей:
+  \begin{gather*}
+    \alpha_1: 2x + y - z + 4 = 0 \\
+    \alpha_2: 3x + 2y + z - 6 = 0
+  \end{gather*}
+
+Для того, чтобы содать уравнение прямой $l$, нужно знать  $M_0(x_0, y_0, z_0)$ направляющий вектор $\vec{S} = \{m, n, p\}$.
+
+\begin{gather*}
+  \text{Из (1) } \implies \vec{n_1} = \{2, 1, -1\} \\ 
+  \text{Из (2) } \implies \vec{n_2} = \{3, 2, 1\} \\
+  \alpha_1 \neq \alpha_2
+\end{gather*}
+
+Найдем точку $M_0$.
+Пусть $z_0 = 0$ (прямая обязательно пересечёт плоскость oXY):
+
+\begin{gather*}
+  \begin{cases}
+    2x_0 + y_0 + 4 = 0 \\
+    3x_0 + 2y_0 - 6 = 0
+  \end{cases} \implies 
+  \begin{cases}
+    4x_0 + 2y_0 + 8 = 0 \\
+    3x_0 + 2y_0 + - 6 = 0
+  \end{cases} \implies
+  \begin{cases}
+    x_0 = -14 \\
+    y_0 = 24
+  \end{cases} \\
+  \\
+  \implies M_0(-14, 24, 0)
+\end{gather*}
+
+Найдем направляющий вектор $\vec{S}$
+\begin{align*}
+  \vec{s} &= \vec{n_2} \cdot \vec{n_1} \\
+          &= 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    3 & 2 & 1 \\
+    2 & 1 & -1
+  \end{vmatrix} = -3 \vec{i} + 5 \vec{j} - \vec{k}
+\end{align*}
+\begin{gather*}
+  \implies \vec{S} = \{-3, 5, 1\} 
+\end{gather*}
+
+Составим каноническое уравнение прямой:
+\begin{gather*}
+  \frac{x + 14}{-3} = \frac{y - 24}{5} = \frac{z}{-1}
+\end{gather*}
+\end{eg}
+
+\subsection{Расстояние от точки до прямой в пространстве}
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p}
+\] \[
+\vec{S} = \{m, n, p\} 
+\] 
+Задана точка $M_1(x_1, y_1, z_1) \not \in l$.
+Составим вектор:  \[
+\overrightarrow{M_0M_1} = \{x_1 - x_0, y_1 - y_0, z_1 - z_0\} 
+\] 
+Построим на векторах $\vec{S}$ и $\overrightarrow{M_0M}$ параллелограмм.
+Тогда высота этого параллелограмма из точки $M_1$ и есть искомое расстояние от точки $M_1$ до прямой $l$.
+\begin{gather*}
+  S_{par} = h \cdot |\vec{S}| \\
+  h = \frac{S_{par}}{|\vec{S}|} \\
+  S_{par} = |\overrightarrow{M_0M_1} \times \vec{S}| 
+\end{gather*}
+Тогда:
+\begin{gather*}
+  \overrightarrow{M_0M_1} \times \vec{S} = 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    x_1 - x_0 & y_1 - y_0 & z_1 - z_0 \\
+    m & n & p
+  \end{vmatrix} = \\
+  = \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix} \cdot \vec{i} -
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix} \cdot \vec{j} + 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix} \cdot \vec{k} \implies \\
+  \\
+  \overrightarrow{M_0M_1 \times \vec{S}} = 
+  \left\{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix},
+   - \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}, 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}
+  \right\} \implies \\
+  \\
+  |\overrightarrow{M_0M_1 \times \vec{S}}| = 
+  \sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2 + 
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  } \implies \\
+  \rho(M_1, l) = 
+  \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \boxed{\frac{\sqrt{
+  \begin{vmatrix}
+    y_1 - y_0 & z_1 - z_0 \\
+    n & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & z_1 - z_0 \\
+    m & p
+  \end{vmatrix}^2 +
+  \begin{vmatrix}
+    x_1 - x_0 & y_1 - y_0 \\
+    m & n
+  \end{vmatrix}^2
+  }}{\sqrt{m^2 + n^2 + p^2} }} 
+\end{gather*}
+
+\subsubsection{Расстояние между параллельными прямыми}
+
+Пусть прямые заданы каноническими уравнениями:
+\begin{gather*}
+  l_1: \frac{x - x_0}{m_1} = \frac{y - y_0}{n_1} = \frac{z - z_0}{p_1} \implies M_0(x_0, y_0, z_0), \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_0}{m_2} = \frac{y - y_0}{n_2} = \frac{z - z_0}{p_2} \implies M_0(x_0, y_0, z_0), \vec{S_2} = \{m_2, n_2, p_2\} \\
+  l_1 \parallel l_2 \implies \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2}
+\end{gather*}
+
+Построим параллелограмм на векторах $\overrightarrow{S_1}$ и $\overrightarrow{M_1M_2}$.
+Тогда расстояние между прямыми $l_1$ и $l_2$ будет высота данного параллелограмма.
+\begin{gather*}
+  \rho(l_1, l_2) = \frac{|\overrightarrow{M_1M_0} \times \vec{S}|}{|\vec{S}|} = \\
+  \boxed{\frac{\sqrt{
+  \begin{vmatrix}
+    y_2 - y_1 & z_2 - z_1 \\
+    n_1 & p_1
+  \end{vmatrix}^2,
+  \begin{vmatrix}
+    x_2 - x_1 & z_2 - z_1 \\
+    m_1 & p_1
+  \end{vmatrix}^2, 
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 \\
+    m_1 & n_1
+  \end{vmatrix}^2
+}}{\sqrt{m_1^2 + n_1^2 + p_1^2} }}
+\end{gather*}
+
+\subsubsection{Расстояние между скрещивающимися прямыми}
+
+Пусть прямые заданы каноническими уравнениями:
+\begin{gather*}
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \quad \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \quad \vec{S_2} = \{m_2, n_2, p_2\}
+\end{gather*}
+
+Составим вектор $\overrightarrow{M_1M_2}$: \[
+\overrightarrow{M_1M_2} = \{x_2 - x_1, y_2 - y_1, z_2 - z_1\} 
+\] 
+
+Вектора $\vec{S}$ и $\overrightarrow{M_1M_2}$ не компланарны. 
+Поэтому на этих векторах можно построить параллелепипед.
+Тогда расстояние между прямыми $l_1$ и $l_2$ будет равно высоте этого параллелепипеда.
+
+\begin{gather*}
+  V = |\overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2}| \\
+  V= h \cdot S
+\end{gather*}
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{s_1} \cdot \vec{s_2} = 
+  \begin{vmatrix}
+    x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2
+  \end{vmatrix}
+\end{gather*}
+\begin{align*}
+  S = |\vec{s_1} \times \vec{s_2}| &= 
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    m_1 & n_1 & p_1 \\
+    m_2 & n_2 & p_2 \\
+  \end{vmatrix} \\
+  &=
+  \vec{i} \cdot 
+  \begin{vmatrix}
+    n_1 & p_1 \\
+    n_2 & p_2
+  \end{vmatrix} - \vec{j} \cdot 
+  \begin{vmatrix}
+    m_1 & p_1 \\
+    m_2 & p_2
+  \end{vmatrix} + \vec{k} \cdot 
+  \begin{vmatrix}
+    m_1 & n_1 \\
+    m_2 & n_2
+  \end{vmatrix} \\
+\end{align*}
+\begin{gather*}
+  \implies \boxed{\rho(l_2, l_1) = 
+  \frac{
+    \left|
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & x_2 - x_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix}
+    \right| 
+  }{
+  \sqrt{
+    \begin{vmatrix}
+      n_1 & p_1 \\
+      n_2 & p_2
+    \end{vmatrix}^2 +
+    \begin{vmatrix}
+      m_1 & p_1 \\
+      m_2 & p_2
+    \end{vmatrix}^2 +  
+    \begin{vmatrix}
+      m_1 & n_1 \\
+      m_2 & n_2
+    \end{vmatrix}^2 
+  } 
+  }}
+\end{gather*}
+  
+
+\subsection{Взаимное расположение прямых в пространстве}
+
+Пусть прямые $l_1$ и $l_2$ заданы каноническими уравнениями:
+\begin{gather*}  
+  l_1: \frac{x - x_1}{m_1} = \frac{y - y_1}{n_1} = \frac{z - z_1}{p_1} \implies M_1(x_1, y_1, z_1), \vec{S_1} = \{m_1, n_1, p_1\} \\
+  l_2: \frac{x - x_2}{m_2} = \frac{y - y_2}{n_2} = \frac{z - z_2}{p_2} \implies M_2(x_2, y_2, z_2), \vec{S_2} = \{m_2, n_2, p_2\}
+\end{gather*}
+
+Составим вектор $\overrightarrow{M_1M_2}$.
+
+\subsubsection{Совпадают}
+Если прямые $l_1$ и $l_2$ \textbf{совпадают}, то:
+\begin{gather*}
+    \frac{m_1}{m_2} = \frac{n_1}{n_1} = \frac{p_1}{p_1} \\
+    \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{n_1} = \frac{z_2 - z_1}{p_1}
+\end{gather*}
+
+\subsubsection{Параллельны}
+Если прямые $l_1$ и $l_2$ \textbf{параллельны} то: 
+\begin{gather*}
+  \frac{m_1}{m_2} = \frac{n_1}{n_2} = \frac{p_1}{p_2} \\
+\end{gather*}
+\begin{center}
+  И \textbf{не} выполняется условие:
+\end{center}
+\begin{gather*}
+  \frac{x_2 - x_1}{m_1} = \frac{y_2 - y_1}{n_1} = \frac{z_2 - z_1}{p_1}
+\end{gather*}
+
+\subsubsection{Пересекаются}
+Если прямые $l_1$ и $l_2$ \textbf{пересекаются}, они лежат в одной плоскости.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - компланарны:
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} = 0 \\
+  \boxed{
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix} = 0
+  }
+\end{gather*}
+
+\subsubsection{Скрещиваются}
+Если прямые $l_1$ и $l_2$ \textbf{скрещиваются}, то они не лежат в одной плоскости.
+В таком случае вектора $\overrightarrow{M_1M_2}, \vec{s_1}, \vec{s_2}$ - некомпланарны:
+\begin{gather*}
+  \overrightarrow{M_1M_2} \cdot \vec{S_1} \cdot \vec{S_2} \neq 0 \\
+  \boxed{
+    \begin{vmatrix}
+      x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\
+      m_1 & n_1 & p_1 \\
+      m_2 & n_2 & p_2
+    \end{vmatrix} \neq 0
+  }
+\end{gather*}
+
+
+\subsection{Угол между прямой и плоскостью}
+
+Пусть плоскость задана общим уравнением: \[
+\alpha: Ax + By + Cz + D = 0
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+Обозначим угол $\varphi$ - между прямой плоскостью, и $\beta$ - между прямой и нормалью.
+Тогда:
+\begin{gather*}
+  \cos \beta = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \beta = 90 - \varphi \\
+  \cos(90 - \varphi) = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \sin(\varphi) = \frac{\vec{n} \cdot \vec{s}}{|\vec{n}|\cdot|\vec{s}|} \\
+  \boxed{\sin \varphi = \frac{|Am + Bn + Cp|}{\sqrt{A^2 + B^2 + C^2} \cdot \sqrt{m^2 + n^2 + p^2} }}
+\end{gather*}
+
+\subsubsection{Условие параллельности прямой и плоскости}
+
+Пусть плоскость задана общим уравнением: \[
+  \alpha: Ax + By + Cz + D = 0 \qquad \vec{n} = \{A, B, C\} 
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+\begin{gather*}
+  l \parallel \alpha \implies \vec{n} \perp \vec{s} \implies \vec{n} \cdot \vec{s} = 0 \\
+  \boxed{Am + Bn + Cp = 0}
+\end{gather*}
+
+\subsubsection{Условие перпендикулярности прямой и плоскости}
+
+Пусть плоскость задана общим уравнением: \[
+  \alpha: Ax + By + Cz + D = 0 \qquad \vec{n} = \{A, B, C\} 
+\] 
+
+Пусть прямая $l$ задана каноническим уравнением:  \[
+  l: \frac{x - x_0}{m} = \frac{y - y_0}{n} = \frac{z - z_0}{p} \qquad \vec{s} = \{m, n, p\} 
+\] 
+\begin{gather*}
+  l \perp \alpha \implies \vec{n} \parallel \vec{s} \implies
+  \boxed{\frac{A}{m} = \frac{B}{n} = \frac{C}{p}}
+\end{gather*}
+
+\subsubsection{Примеры задач}
+
+\begin{eg}
+  Задача: \textit{составить уравнение прямой $l_2$ симметричной прямой $l_1$, которая задана каноническим уравнением}: \[
+  \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} \qquad \vec{s} = \{2, 1, 0\} 
+  \] 
+  относительно плоскости $\alpha$: \[
+    \alpha: x - y + 2z - 1 = 0 \qquad \vec{n} = \{1, -1, 2\} 
+  \] 
+  Решение:
+  (1) Проверим, является ли прямая $l_1$ параллельной плоскости $\alpha$:
+  \begin{gather*}
+    \vec{s} \cdot \vec{n} = 2 \cdot 1 + 1 \cdot (-1) + 0 \cdot 2 = 2 - 1 = 1 \neq 0 \implies l_1 \not \parallel \alpha
+  \end{gather*}
+
+  (2) Находим точку пересечения прямой $l$ с плоскостью $\alpha$ - пусть это точка $A(x_2, y_2, z_2)$.
+  Из канонического уравнения прямой $l_1$ получим параметрическое уравнение:
+  \begin{gather*}
+    \frac{x - 1}{2} = \frac{y}{1} = \frac{z + 1}{0} = t \\
+    \begin{cases}
+      \frac{x - 1}{2} = t \\
+      \frac{y}{1} = t \\
+      \frac{z + 1}{0} = t
+    \end{cases} \implies
+    \begin{cases}
+      x = 2t + 1 \\
+      y = t \\
+      z = -1
+    \end{cases}
+  \end{gather*}
+  Т.к. точка $A$ принадлежит и прямой, и плоскости, то её координаты удовлетворяют и параметрическому уравнению прямой, и общему уравнению плоскости:
+  \begin{gather*}
+    2t + 1 - t - 2 - 1 = 0 \\
+    t = 2 \implies \begin{cases}
+      x_2 = 5 \\
+      y_2 = 2 \\
+      z_2 = -1
+    \end{cases} \implies A(5, 2, -1)
+  \end{gather*}
+
+  (3) Из канонического уравнения прямой возьмем точку $M_1(1, 0, -1) \in l_1$. 
+  Найдем ей симметричную относительно плоскости $\alpha$ точку $M_2(x_2, y_2, z_2)$
+  Составим уравнение прямой $l_3$, проходящей через точку $M_1$ и с направляющим вектором $\vec{n}$. \[
+    \frac{x - 1}{1} = \frac{y}{-1} = \frac{z + 1}{2}
+  \] 
+  Найдём точку пересечения $O(x_3, y_3, z_3)$ прямой $l_3$ с плоскостью $\alpha$. 
+  Составим параметрическое уравнение прямой $l_3$:
+  \begin{gather*}
+    \frac{x - 1}{1} = \frac{y}{-1} = \frac{z + 1}{2} = t \\
+    \begin{cases}
+      \frac{x - 1}{1} = t \\
+      \frac{y}{-1} = t \\
+      \frac{z + 1}{2} = t
+    \end{cases} \implies
+    \begin{cases}
+      x = t + 1 \\
+      y = -t \\
+      z = 2t - 1
+    \end{cases}
+  \end{gather*}
+  Т.к. точка $O$ принадлежит и прямой, и плоскости, то её координаты удовлетворяют и параметрическому уравнению прямой, и общему уравнению плоскости:
+  \begin{gather*}
+    t + 1 + t + 4t - 2 = 0 \\
+    t = \frac{1}{3} \implies \begin{cases}
+      x_3 = \frac{4}{3} \\
+      y_3 = -\frac{1}{3} \\
+      z_3 = \frac{1}{3}
+    \end{cases}
+  \end{gather*}
+
+  Составляем вектор $\overrightarrow{M_1O}$: \[
+  \overrightarrow{M_1O} = \left\{\frac{1}{3}, -\frac{1}{3}, \frac{2}{3}\right\} 
+  \] 
+
+  Пусть $M_2(x_2, y_2, z_2)$. Тогда:
+  \begin{gather*}
+    \overrightarrow{OM_2} = \{x_2, y_2, z_2\} \\
+    \overrightarrow{M_1O} = \overrightarrow{OM_2} \implies \begin{cases}
+      x_2 - \frac{4}{3} = \frac{1}{3} \\
+      y_2 + \frac{1}{3} = -\frac{1}{3} \\
+      z_2 + \frac{1}{3} = \frac{2}{3}
+    \end{cases} \iff \begin{cases}
+      x_2 = \frac{5}{3} \\
+      y_2 = \frac{2}{3} \\
+      z_2 = \frac{1}{3}
+    \end{cases}
+  \end{gather*}
+
+  4) Составляем уравнение прямой, проходящей через точки $A\left(5, 2, -1\right)$ и $M_2\left(\frac{5}{3}, -\frac{2}{3}, \frac{1}{3}\right)$:
+  \begin{gather*}
+    \frac{x - x_a}{x_1 - x_a} = \frac{y - y_a}{y_2 - y_a} = \frac{z - z_a}{z_2 - z_a} \\
+    \frac{x - 5}{\frac{5}{3} - 5} = \frac{y - 2}{-\frac{2}{3} - 2} = \frac{z + 1}{\frac{1}{3} + 1}  \\
+    \frac{x - 5}{-\frac{10}{3}} = \frac{y - 2}{-\frac{8}{3}} = \frac{z + 1}{\frac{4}{3}} \\
+    \boxed{\frac{x - 5}{-5} = \frac{y - 2}{-4} = \frac{z + 1}{4}}
+  \end{gather*}
+\end{eg}
+
+\begin{eg}
+  Задача: \textit{Составить каноническое уравнение общего перпендикуляра к прямым $l_1$ и $l_2$, заданными параметрическими уравнениями}:
+  \begin{gather*}
+    l_1: \begin{cases}
+      x = t + 2 \\
+      y = 3t + 4 \\
+      z = -2t - 2
+    \end{cases} \qquad
+    l_2: \begin{cases}
+      x = -3t + 2 \\
+      y = t \\
+      z = 3t - 4
+    \end{cases}
+  \end{gather*}
+  Решение: \\
+  1) Составим канонические уравнения прямых для $l_1$ и $l_2$:
+  \begin{gather*}
+    l_1: \begin{cases}
+      t = \frac{x - 2}{2} \\
+      t = \frac{y - 4}{3} \\
+      t = \frac{z + 2}{-2}
+    \end{cases} \implies
+    \frac{x - 2}{2} = \frac{y - 4}{3} = \frac{z + 2}{-2} \implies \\
+    M_1(2, 4, -2) \qquad \vec{s_1} = \{2, 3, -2\} 
+  \end{gather*}
+  \begin{gather*}
+    l_2: \begin{cases}
+      t = \frac{x - 1}{-3} \\
+      t = \frac{y}{1} \\
+      t = \frac{z + 4}{3}
+    \end{cases} \implies
+    \frac{x - 1}{-3} = \frac{y - 4}{3} = \frac{z + 2}{-2} \implies \\
+    M_2(1, 4, -2) \qquad \vec{s_2} = \{-3, 1, 3\} 
+  \end{gather*}
+
+  Найдём вектор $\overrightarrow{M_1M_2}$:
+  \begin{gather*}
+    \overrightarrow{M_1M_2} = \{0, -4, -2\} 
+  \end{gather*}
+
+  Проверим, являются ли прямые $l_1$ и $l_2$ скрещивающимися или параллельными. Найдём смешанное произведение $\overrightarrow{M_1M_2} \vec{s_1} \vec{s_2}$:
+  \begin{gather*}
+    \overrightarrow{M_1M_2} \vec{s_1} \vec{s_2} = 
+    \begin{vmatrix}
+      0 & -4 & -2 \\
+      2 & 3 & -2 \\
+      -3 & 1 & 3
+    \end{vmatrix} = -22 \neq 0
+  \end{gather*}
+  Значит, прямые не лежат в одной плоскости, следовательно, они скрещивающиеся.
+
+  2) Найдем направляющий вектор общего перпендикуляра к прямым $l_1$ и $l_2$.
+  \begin{gather*}
+    \begin{rcases}
+      \vec{s} \perp \vec{s_1} \\
+      \vec{s} \perp \vec{s_2}
+    \end{rcases}
+    \iff \vec{s} = \vec{s_1} \times \vec{s_2} \\
+    \vec{s_1} \times \vec{s_2} = 
+    \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      2 & 3 & -2 \\
+      -3 & 1 & 3
+    \end{vmatrix} = 11 \vec{i} + 11 \vec{k} \implies \vec{s} = \{1, 0, 1\} \\ 
+  \end{gather*}
+
+  3) Составим уравнение плоскости $\alpha_1$, проходящей через точки $M_1$ и вектора $\vec{s_1} \vec{s}$. 
+  Возьмём произвольную точку $M(x, y, z) \in \alpha_1$.
+  Составим вектор $\overrightarrow{M_1M}$: \[
+  \overrightarrow{M_1M} = \{x - 2, y - 4, z + 2\} 
+  \]
+  Вектора $\overrightarrow{M_1M}, \vec{s_1}, \vec{s}$ - компланарные, а следовательно: 
+  \begin{gather*}
+    \overrightarrow{M_1M} \vec{s_1} \vec{s} = 0 \\
+    \overrightarrow{M_1M} \vec{s_1} \vec{s} = 
+    \begin{vmatrix}
+      x - 2 & y - 4 & z + 2 \\
+      2 & -3 & 2 \\
+      1 & 0 & 1
+    \end{vmatrix} = 
+    -3x + 4y + 3z  - 4\\
+    \boxed{\alpha_1: -3x + 4y + 3z - 4 = 0}
+  \end{gather*}
+
+  4) Составим плоскость $\alpha_2$ через точку $M_2$  и вектора $\vec{s_1}$ и $\vec{s_2}$.
+  Возьмём произвольную точку $M(x, y, z) \in \alpha_2$.
+  Составим вектор $\overrightarrow{M_2M}$: \[
+  \overrightarrow{M_2M} = \{x - 2, y, z + 4\} 
+  \] 
+  Вектора $\overrightarrow{M_2M}, \vec{s_2}, \vec{s}$ - компланарные, а следовательно: 
+  \begin{gather*}
+    \overrightarrow{M_2M} \vec{s_2} \vec{s} = 0 \\
+    \vec{M_2M} \vec{s_2} \vec{s} = 
+    \begin{vmatrix}
+      x - 2 & y & z + 4 \\
+      -3 & 1 & 3 \\
+      1 & 0 & 1
+    \end{vmatrix} = 
+    x + 6y - z - 6 \\
+    \boxed{\alpha_2: x + 6y - z - 6 = 0}
+  \end{gather*}
+
+  5) Для начала, определим одну из координат точек. Прямая $l$ пересекает плоскость $oXY$, т.е. можем взять $z = 0$. Тогда в системе уравнений:
+   \begin{gather*}
+    \begin{cases}
+      -3x + 4y + 3z - 4 = 0 \\
+      x + 6y - z - 6 = 0
+    \end{cases} \\
+    \text{Полагаем, что } z = 0: \\
+    \begin{cases}
+      -3x + 4y - 4 = 0 \\
+      x + 6y - 6 = 0
+    \end{cases} \implies \begin{cases}
+      x = 0 \\
+      y = 1 
+    \end{cases} \implies A(0, 1, 0)
+  \end{gather*}
+  где точка $A \in \alpha_1, \alpha_2, l$.
+  
+  Составляем каноническое уравнение прямой $l$, проходящей через точку $A$, и с направляющим вектором $\vec{s}$.
+  \begin{gather*}
+    \frac{x - 0}{1} = \frac{y - 1}{0} = \frac{z - 0}{1} \\
+    \boxed{\frac{x}{1} = \frac{y - 1}{0} = \frac{z}{1}}
+  \end{gather*}
+\end{eg}
+
