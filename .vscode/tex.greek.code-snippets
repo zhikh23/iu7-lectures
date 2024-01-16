@@ -128,7 +128,7 @@
 	"phi": {
 		"prefix": "phi",
 		"body": [
-			"\\phi"
+			"\\varphi"
 		],
 	},
 	
