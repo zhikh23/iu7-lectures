@@ -1,0 +1,228 @@
+\section{Сравнение бесконечно малых и бесконечно больших функций}
+
+Пусть даны функции $\alpha(x)$ и $\beta(x)$, которые являются б.м.ф. при $x \to x_0$. \[
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
+\]
+
+Рассмотрим варианты:
+
+\begin{itemize}
+
+  \item \[
+      \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 0
+  \] 
+  \begin{center}
+    $\alpha(x)$ имеет более высокий порядок малости, чем $\beta(x)$. \\
+    $\boxed{\alpha(x) = o(\beta(x)) \text{, при } x \to x_0}$
+  \end{center} 
+  
+  \item \[
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \infty
+  \]
+  \begin{center}
+    $\beta(x)$ имеет более высокий порядок малости, чем $\alpha(x)$. \\
+    \boxed{\beta(x) = o(\alpha(x)) \text{, при } x \to x_0}
+  \end{center} 
+
+  \item \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+  \] 
+  \begin{center}
+    $\alpha(x)$ и $\beta(x)$ - эквивалентны. \\
+    \boxed{\alpha(x) \sim \beta(x) \text{, при } x \to  x_0}
+  \end{center}
+
+  \item \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const
+  \] 
+  \begin{center}
+    $\alpha(x)$ и $\beta(x)$ - одного порядка малости.
+  \end{center}
+  \begin{gather*}
+    \boxed{
+      \begin{matrix}
+        \alpha(x) = O(\beta(x)) \\
+        \beta(x) = O(\alpha(x))
+      \end{matrix} \quad
+      \text{ при } x \to x_0
+    }
+  \end{gather*}
+  \\
+  \item \[
+  \not\exists \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
+  \] 
+  \begin{center}
+    $\alpha(x)$ и $\beta(x)$ - несравнимы.
+  \end{center}
+\end{itemize}
+
+\begin{definition}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются одного порядка малости, если: \[
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = const \neq 0
+  \] 
+\end{definition}
+
+\begin{definition}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{несравнимыми} , если: \[
+  \not \exists \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)}
+  \] 
+\end{definition}
+
+\begin{definition}
+  Две б.м.ф. $\alpha(x)$ и $\beta(x)$ называются \textit{эквивалентными} , если: \[
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1
+  \] 
+\end{definition}
+
+
+\begin{definition}
+  Если: \[
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 0
+  \]
+  где $\alpha(x)$ и $\beta(x)$ -- б.м.ф. при $x \to x_0$, то говорят, что функция $\alpha(x)$ имеет более высокий порядок малости, чем $\beta(x)$.
+\end{definition}
+
+\begin{definition}
+  Б.м.ф. $\alpha(x)$ имеет порядок малости $k$ относительно функции б.м.ф.  $\beta(x)$, если: \[
+    \lim_{x \to x_0} \frac{\alpha(x)}{[\beta(x)]^k} = const \neq 0
+  \]
+  где $k$ -- порядок малости.
+\end{definition}
+
+\subsection{Свойства эквивалентных бесконечно малых функций}
+
+\begin{theorem}
+  Если $\alpha(x) \sim \beta(x)$, а $\beta(x) \sim \gamma(x)$, при $x \to x_0$, то $\alpha(x) \sim \gamma(x)$ при $x \to x_0$.
+\end{theorem}
+\begin{proof}
+  \begin{gather*}
+    \lim_{x \to x_0} \frac{\alpha(x)}{\gamma(x)} = \lim_{x \to x_0} \frac{\alpha(x) \cdot \beta(x)}{\gamma(x) \cdot \beta(x)}
+    = \lim_{x \to 0} \frac{\alpha(x)}{\beta(x)} \cdot \frac{\beta(x)}{\gamma(x)}
+    = 1 \cdot 1 = 1 \\
+    \implies \alpha(x) \sim \gamma(x) \text{, при } x \to x_0
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}
+  \textit{Необходимое и достаточное условие экваивалентных \\ бесконечно малых функий.} \\
+  Две функции $\alpha(x)$ и $\beta(x)$ эквивалентны тогда и только тогда, когда их разность имеет более высокий порядок малости по сравнению с каждой из них.
+  \begin{gather*}
+    \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0 \\
+    \alpha(x) \sim \beta(x) \iff 
+    \begin{matrix}
+    \alpha(x) - \beta(x) = o(\alpha(x)) \\
+    \alpha(x) - \beta(x) = o(\beta(x))
+    \end{matrix}
+    \quad \text{при } x \to x_0
+  \end{gather*}
+\end{theorem}
+\begin{proof}
+  Необходимость. \\
+  Дано: \[
+  \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0
+  \] 
+  Доказать: \[
+  \alpha(x) - \beta(x) = o(\alpha(x)) \text{, при } x \to x_0
+  \] 
+  Доказательство:
+  \begin{align*}
+    \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\alpha(x)} &= \lim_{x \to x_0} \left( 1 - \frac{\beta(x)}{\alpha(x)} \right) \\
+    &= 1 - \lim_{x \to x_0} \frac{\beta(x)}{\alpha(x)} \\
+    &= 1 - \frac{1}{1} = 0
+  \end{align*}
+
+  Достаточность. \\
+  Дано: \[
+  \alpha(x) - \beta(x) = o(\beta(x)) \text{, при } x \to x_0
+  \]
+  Доказать: \[
+  \alpha(x) \sim \beta(x) \text{, при } x \to x_0
+  \] 
+  Доказательство:
+  \begin{align*}
+    \lim_{x \to x_0} \frac{\alpha(x) - \beta(x)}{\beta(x)} &= \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} - 1 \right)  \\
+    &= \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} - 1 = 0
+  \end{align*}
+  \begin{gather*}
+    \implies \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = 1 \\
+    \implies \alpha(x) \sim \beta(x) \text{, при } x \to x_0 
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}
+  \textit{О суммы бесконечно малых разного порядка}. \\
+  Сумма бесконечно малых функций разных порядком малости эквивалентно слагаемому низшего порядка малости.
+  \begin{gather*}
+    \begin{rcases}
+      \alpha(x), \beta(x) \text{ - б.м.ф при } x \to x_0 \\
+      \alpha(x) = o(\beta(x)) \text{, при } x \to x_0
+    \end{rcases} 
+    \implies \alpha(x) + \beta(x) \sim \beta(x) \text{, при } x \to x_0
+  \end{gather*}
+\end{theorem}
+\begin{proof}
+  Рассмотрим предел: 
+  \begin{align*}
+    \lim_{x \to x_0} \frac{\alpha(x) + \beta(x)}{\beta(x)} &= \lim_{x \to x_0} \left( \frac{\alpha(x)}{\beta(x)} + 1 \right)  \\
+    &= \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} + 1 \\
+    &= 0 + 1 = 1
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  Сумма б.б.ф. разного порядка роста эквивалентна слагаемому высшего порядка роста. 
+\end{corollary}
+
+\begin{theorem}
+  \textit{О замене функции на эквивалентную под знаком предела}. \\ 
+  Предел \textbf{отношения} двух б.м.ф. (б.б.ф) не изменится, если заменить эти функции на эквивалентные. \[
+  \begin{rcases}
+    \alpha(x), \beta(x) \text{ - б.м.ф. при } x \to x_0 \\
+    \alpha(x) \sim \alpha_0(x) \\
+    \beta(x) \sim \beta_0(x)
+  \end{rcases} \implies 
+  \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} = \frac{\alpha_0(x)}{\beta(x)} 
+  \] 
+\end{theorem}
+\begin{proof}
+  Рассмотрим предел:
+  \begin{align*}
+    \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} &= \lim_{x \to x_0} \frac{\alpha(x) \cdot \alpha_0(x) \cdot \beta_0(x)}{\beta(x) \cdot \alpha_0(x) \cdot \beta_0(x)} \\
+    &= \lim_{x \to x_0} \frac{\alpha(x)}{\alpha_0(x)} \cdot \lim_{x \to x_0} \frac{\beta_0(x)}{\beta(x)} \cdot \lim_{x \to x_0} \frac{\alpha_0(x)}{\beta_0(x)} \\
+    &= 1 \cdot  1 \cdot 1 \cdot \lim_{x \to x_0} \frac{\alpha(x)}{\beta(x)} \\
+  \end{align*}
+\end{proof}
+
+\begin{table}[htpb]
+  \centering
+  \caption{Таблица эквивалентных б.м.ф}
+  \label{tab:label}
+  \begin{tabular}{ c  c }
+    1-ый замечательный предел & 2-ой замечательный предел \\
+    \\
+    $\sin(x) \sim x$ при $x \to  0$ 
+                              & \\
+    $\tg(x) \sim x$ при $x \to 0$
+                              & $\ln(1+x) \sim x$ \\
+    $\arcsin(x) \sim x$ при $x \to  0$
+                              & $\log_a(1 + x) \sim \frac{x}{\ln a}$ \\
+    $\arctg(x) \sim x$ при $x \to  0$
+                              & $e^x$ ~ x \\
+    $1 - \cos(x) \sim \frac{x^2}{2}$ при $x \to 0$
+                              & $a^x - 1 \sim x \ln a$ \\
+    $1 - \cos(x) \sim \frac{x^2}{2}$ при $x \to  0$
+                              & \\
+                              \\
+    \multicolumn{2}{ c }{
+      Сумма б.м.ф. и б.б.ф.
+    } \\
+    \\
+    \multicolumn{2}{ c }{
+      $a_0 + a_1x + a_2x^2 + \ldots + a_n x^n \sim a_n x^n$ при $x \to \infty$
+    } \\
+    \multicolumn{2}{ c }{
+      $a_1x + a_2x^2 + \ldots + a_n x^n \sim a_1x$ при $x \to 0$
+    } \\
+  \end{tabular}
+\end{table}
+

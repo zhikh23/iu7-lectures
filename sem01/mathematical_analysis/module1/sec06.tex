@@ -1,0 +1,355 @@
+\section{Односторонние пределы}
+
+\begin{definition}
+  Число $A_1$ называется пределом функции $y = f(x)$ в точке $x_0$ \textbf{слева}, если: \[
+  \lim_{x \to x_0-} f(x) = A_1 \iff 
+  (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in (x_0 - \delta, x_0) \implies |f(x) - A_1| < \varepsilon)
+  \] 
+\end{definition}
+
+\begin{definition}
+  Число $A_2$ называется пределом функции $y = f(x)$ в точке $x_0$ \textbf{справа}, если: \[
+  \lim_{x \to x_0+} f(x) = A_2 \iff
+  (\forall \varepsilon > 0)(\exists \delta > 0)(\forall x \in (x_0, x_0 + \delta) \implies |f(x) - A_2| < \varepsilon)
+  \] 
+\end{definition}
+
+Пределы справа и слева называют \textit{односторонними пределами}.
+
+\begin{theorem}
+  \textit{О существовании предела функции в точке}. \\
+  Функция $y = f(x)$ в точке  $x_0$ имеет конечный предел тогда и только тогда, когда существуют пределы справа и слева и они равны между собой.
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = \lim_{x \to x_0+} f(x) = \lim_{x \to x_0-} f(x) 
+  \end{gather*}
+\end{theorem}
+
+\subsection{Пределы на бесконечности}
+
+\begin{definition}
+  Число $a$ называется пределом функции $y = f(x)$ при $x \to + \infty$, если: \[
+  \lim_{x \to +\infty} f(x) = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N \implies |f(x) - a| < \varepsilon)
+  \] 
+  где $N$ - большое число, $N > 0, N \in \R$.
+\end{definition}
+
+\begin{definition}
+  Число $a$ называется пределом функции $y = f(x)$ при $x \to - \infty$, если: \[
+  \lim_{x \to -\infty} f(x) = a \iff (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x < -N) \implies |f(x) - a| < \varepsilon)
+  \] 
+  где $N$ - большое число, $N > 0, N \in \R$.
+\end{definition}
+
+\begin{note}
+ \begin{gather*}
+  \lim_{x \to +\infty} f(x) = a \iff \\
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x > N \implies |f(x) - a| < \varepsilon) \\
+  \lim_{x \to -\infty} f(x) = a \iff \\
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x < -N) \implies |f(x) - a| < \varepsilon \\
+  \lim_{x \to \infty} f(x) = a \iff \\
+  (\forall \varepsilon > 0)(\exists N(\varepsilon) > 0)(\forall x \in |x| > N \implies |f(x) - a| < \varepsilon)
+\end{gather*} 
+\end{note}
+
+\subsection{Бесконечные пределы}
+
+\begin{definition}
+  Функция $y = f(x)$ имеет бесконечный предел при $x \to x_0$, если: \[
+  \lim_{x \to x_0} f(x) = \infty \iff
+  (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)| > M)
+  \] 
+  где $M$ - большое число, $M > 0, M \in \R$,
+  а $\delta$ - малое число.
+\end{definition}
+\begin{note}
+  \begin{gather*}
+    \lim_{x \to x_0} f(x) = +\infty \iff
+    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies f(x) > M) 
+    \\
+    \lim_{x \to x_0} f(x) = -\infty \iff
+    (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies f(x) < -M)
+  \end{gather*}
+\end{note}
+\begin{eg}
+  \begin{gather*}
+    y = \arctg(x), \qquad x \to \infty \\
+    \lim_{x \to +\infty} \arctg(x) = \frac{\pi}{2} \\
+    \lim_{x \to -\infty} \arctg(x) = -\frac{\pi}{2} \\
+  \end{gather*}  
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = \ln(x), \qquad x \to 0 \\
+    \lim_{x \to 0-} = \not\exists  \\
+    \lim_{x \to 0+} = -\infty
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = \sqrt{-x}, \qquad x \to 0 \\
+    \lim_{x \to 0+} = \not\exists \\
+    \lim_{x \to 0-} = 0
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = \frac{1}{|x - 2|}, \qquad x \to 2 \\
+    \lim_{x \to 2+} \frac{1}{|x - 2|} = +\infty \\
+    \lim_{x \to 2-} \frac{1}{|x - 2|} = +\infty \\
+  \end{gather*}
+\end{eg}
+
+\begin{definition}
+  Функция $y = f(x)$ называется \textbf{бесконечно большой функцией} (далее - \textbf{б.б.ф.} если: \[
+  \lim_{x \to x_0} f(x) = \infty
+  \] 
+\end{definition}
+
+\subsubsection*{Бесконечный предел на бесконечности}
+\[
+  \lim_{x \to \infty} = \infty \iff (\forall M > 0)(\exists N(M) > 0)(\forall x \in |x| > N \implies |f(x)| > M) 
+\] 
+\subsection{Сравнение бесконечно малых и бесконечно больших функцих}
+
+\begin{theorem}
+  \textit{О связи бесконечно малой и бесконечно большой функции}. \\
+  Если $\alpha(x)$ - бесконечно большая функция при $x \to x_0$, то $\frac{1}{\alpha(x)}$ - бесконечно малая функция при $x \to x_0$.
+\end{theorem}
+\begin{proof}
+  По условию $\alpha(x)$ - б.б.ф при $x \to x_0$. По определению:
+  \begin{gather*}
+    \lim_{x \to x_0} \alpha(x) = \infty \iff (\forall M > 0)(\exists \delta(M) > 0)(\forall x \in \mathring{S}(x_0, \delta) \implies |f(x)| > M)
+  \end{gather*}
+
+  Рассмотрим неравенство: \[
+    |\alpha(x)| > M, \forall x \in \mathring{S}(x_0, \delta)
+  \]
+
+  Обозначим $\varepsilon = \frac{1}{M}$.
+  \begin{gather*}
+    |\alpha(x) > M| \implies \frac{1}{|\alpha(x)|} < \frac{1}{M} \\
+    \implies |\frac{1}{\alpha(x)}| < \frac{1}{M} < \varepsilon \\
+  \end{gather*}
+
+  В итоге получаем:
+  \begin{gather*}
+    \forall x \in \mathring{s}(x_0, \delta) \implies |\frac{1}{\alpha(x)}| < \varepsilon 
+  \end{gather*}
+
+  Что по определению является бесконечно малой функцией.
+\end{proof}
+
+\subsubsection*{1-ый замечательный предел}
+
+\begin{theorem}
+  \[
+    \boxed{\lim_{x \to 0} \frac{\sin(x)}{x} = 1}
+  \]  
+\end{theorem}
+\begin{proof}
+  Рассмотрим $\lim_{x \to 0+} \frac{\sin(x)}{x} = 1$. Потом $\lim_{x \to 0-} \frac{\sin(x)}{x} = 1$. 
+  
+  Пусть $\alpha$ - угол в радианах, $x \to 0, x \in (0, \frac{\pi}{2})$.
+
+  Тут должен быть рисунок, но его пока нет :(.
+
+  Окружность $R = 1$.\\
+  Отложим луч $OK$ под углом к оси $oX$ равным $x$, где $O(0, 0), K \in $ окружности. \\
+  $KH \perp OA$.
+
+  Рассмотрим $\triangle OKH$. $OA = 1$ как радиус. $\sin(x) = \frac{KH}{OA} = KH$. \\
+  Рассмотрим $\triangle OLA$. $OA = 1$ как радиус. $\tg(x) = \frac{LA}{OA} = LA$. \\
+  Из геометрических построений (да будут они когда-нибудь\ldots): \[
+    S_{\triangle OKA} < S_{sec OKA} < S_{\triangle OLA}
+  \] 
+  \begin{gather*}
+    S_{\triangle OKA} = \frac{1}{2} OA \cdot KH = \frac{1}{2} \sin(x) = \frac{\sin(x)}{2} \\
+    S_{sec OKA} = \frac{1}{2} OA \cdot OK \cdot KA = \frac{1}{2} \cdot x = \frac{x}{2} \\
+    S_{\triangle OLa} = \frac{1}{2} OA \cdot LA = \frac{1}{2} \cdot 1 \cdot \tg(x) = \frac{tg(x)}{2}
+  \end{gather*}
+  \begin{gather*}
+    \frac{\sin(x)}{2} < \frac{x}{2} < \frac{\tg(x)}{2} \quad | \cdot 2 \\
+    \begin{rcases}
+      \sin(x) < x < tg(x) \\
+      x \to 0+ \implies \begin{cases}
+        \sin(x) > 0 \\
+        \tg(x) > 0
+      \end{cases}
+    \end{rcases} \implies 
+    \sin(x) < x < \tg(x) \quad | : \sin(x) \\
+    1 < \frac{x}{\sin(x)} < \frac{1}{\cos(x)} \\
+    \cos(x) < \frac{\sin(x)}{x} < 1
+  \end{gather*}
+   По теореме о предельном переходе в неравенстве: \[
+   \lim_{x \to 0+} \cos(x) \le \lim_{x \to 0+} \frac{\sin(x)}{x} \le 1
+   \] 
+
+   По теореме о промежуточной функции: \[
+    \lim_{x \to 0+} \cos(x) = 1 \implies \lim_{x \to 0+} \frac{\sin(x)}{x} = 1 
+   \] 
+
+   Аналогично для $\lim_{x \to 0-} \frac{\sin(x)}{x} = 1$. Т.к. односторонние пределы равны: \[
+   \lim_{x \to 0+} \frac{\sin(x)}{x} = \lim_{x \to 0-} \frac{\sin(x)}{x} = 1 \iff \lim_{x \to x_0} \frac{\sin(x)}{x} = 1
+   \] 
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\tg(x)}{x} = 1 
+  \]
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\tg(x)}{x} &= \frac{\sin(x)}{\cos(x)} \\
+    &= \lim_{x \to 0} \frac{\sin(x)}{x} \cdot \frac{x}{\cos(x)} \\
+    &= \lim_{x \to 0} \frac{1}{\cos(x)} \\
+    &= 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\arcsin(x)}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\arcsin(x)}{x} &= 
+    \begin{vmatrix}
+      t = \arcsin(x) \\
+      x \to 0, t \to 0
+    \end{vmatrix} \\
+    &= \lim_{t \to 0} \frac{t}{\sin(t)} \\
+    &= \lim_{t \to 0} \frac{1}{\frac{\sin(t)}{t}} \\
+    &= \frac{1}{1} = 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{\arctg(x)}{x}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\arctg(x)}{x} &= 
+    \begin{vmatrix}
+      x = \tg(t) \\
+      x \to 0, t \to\infty
+    \end{vmatrix}
+    \\
+    &= \lim_{t \to \infty} \frac{t}{\tg(t)} \\
+    &= \lim_{t \to \infty} \frac{1}{\frac{tg(t)}{t}} \\
+    &= \frac{1}{1} = 1 \\
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+  \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} &= 
+    \begin{vmatrix}
+      \sin^2 \frac{x}{2} = \frac{1 - \cos(x)}{2} \\
+      1 - \cos(x) = 2 \sin^2 \frac{x}{2}
+    \end{vmatrix}
+    \\
+    &= \lim_{x \to 0} \frac{2\sin^2 x-2}{x^2} \\
+    &= 2 \lim_{x \to 0} \frac{\sin^2 \frac{x}{2}}{(\frac{x}{2})^2} \cdot \frac{(\frac{x}{2})^2}{x^2} \\
+    &= 2 \cdot \frac{1}{4} = \frac{1}{2} \\
+  \end{align*}
+\end{proof}
+
+\subsubsection*{Второй замечательный предел}
+
+\begin{theorem}
+  \[
+    \boxed{\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e}
+  \] 
+\end{theorem}
+
+\begin{corollary}
+\[
+  \lim_{x \to 0} \left( 1 + x \right)^{\left( \frac{1}{x} \right)} = e
+\] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} (1 + x)^{\frac{1}{x}} &= 
+    \begin{vmatrix}
+      x = \frac{1}{t} \\
+      x \to 0, t \to \infty
+    \end{vmatrix} \\
+    &= \lim_{t \to \infty} \left( 1 + \frac{1}{t} \right) ^ t \\
+    &= e
+  \end{align*}
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\ln(1 + x)}{x} &= \lim_{x \to 0} \frac{1}{x}\ln(1 + x) \\
+      &= \lim_{x \to 0} \ln \left( 1 + x \right) ^ {\frac{1}{x}} \\
+      &= \ln e = 1\\
+  \end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{\log_a(1 + x)}{x} = \frac{1}{\ln a}
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{\log_a(1 + x}{x} &= \frac{1}{x} \log_a(1 + x) \\
+      &= \lim_{x \to 0} \log_a(1 + x)^{\frac{1}{x}} \\
+      &= \log_a e = \frac{1}{\ln a} \\
+  \end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+     \lim_{x \to 0} \frac{e^x - 1}{x} = 1
+  \] 
+\end{corollary}
+\begin{proof}
+\begin{align*}
+    \lim_{x \to 0} \frac{e^x - 1}{x} &= 
+    \begin{vmatrix}
+      e^x - 1 = t \\
+      x = \ln(t + 1) \\
+      x \to 0, t \to  0
+    \end{vmatrix}
+    \\
+    &= \lim_{t \to 0} \frac{t}{\ln(1 + t)} \\
+    &= \frac{1}{\lim_{t \to 0} \frac{\ln(1 + t)}{t} }\\
+    &= \frac{1}{1} = 1 \\
+\end{align*} 
+\end{proof}
+
+\begin{corollary}
+  \[
+    \lim_{x \to 0} \frac{a^x - 1}{x} = \ln a
+  \] 
+\end{corollary}
+\begin{proof}
+  \begin{align*}
+    \lim_{x \to 0} \frac{a^x - 1}{x} &= 
+    \begin{vmatrix}
+      a^x - 1 = t \\
+      x = \log_a(1 + t) \\
+      x \to 0, t \to 0
+    \end{vmatrix} \\
+    &= \lim_{t \to 0} \frac{t}{\log_a(1 + t)} \\
+    &= \frac{1}{\lim_{t \to 0} \frac{\log_a(1 + t)}{t}} \\
+    &= \frac{1}{\frac{1}{\ln a}} = \ln a \\
+  \end{align*}
+\end{proof}
+
