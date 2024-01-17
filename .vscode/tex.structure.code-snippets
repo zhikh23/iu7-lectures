@@ -8,57 +8,51 @@
 		],
 	},
 
-	"Section*": {
+		"Section*": {
 		"prefix": "sec*",
 		"body": [
-			"\\begin{section*}",
-				"\t$0",
-			"\\end{section*}",
+			"\\section*{$1}",
+			"$0",
 		],
 	},
 
 	"Subsection*": {
 		"prefix": "ssec*",
 		"body": [
-			"\\begin{subsection*}",
-				"\t$0",
-			"\\end{subsection*}",
+			"\\subsection*{$1}",
+			"$0",
 		],
 	},
 
 	"Subsubsection*": {
 		"prefix": "sssec*",
 		"body": [
-			"\\begin{subsection*}",
-				"\t$0",
-			"\\end{subsection*}",
+			"\\subsubsection*{$1}",
+			"$0",
 		],
 	},
 
 	"Section": {
 		"prefix": "sec",
 		"body": [
-			"\\begin{section}",
-				"\t$0",
-			"\\end{section}",
+			"\\section{$1}",
+			"$0",
 		],
 	},
 
 	"Subsection": {
 		"prefix": "ssec",
 		"body": [
-			"\\begin{subsection}",
-				"\t$0",
-			"\\end{subsection}",
+			"\\subsection{$1}",
+			"$0",
 		],
 	},
 
 	"Subsubsection": {
 		"prefix": "sssec",
 		"body": [
-			"\\begin{subsection}",
-				"\t$0",
-			"\\end{subsection}",
+			"\\subsection{$1}",
+			"$0",
 		],
 	},
 
