@@ -1,6 +1,11 @@
+\usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{cancel}
 \usepackage[none]{hyphenat}
+
+% IGNORE USELESS WARNINGS ===========================================
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
 
 % HEADER AND FOOTER =================================================
 \def\@header{}
@@ -13,6 +18,7 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\setlength{\headheight}{22.54279pt}
 
 \fancyhead[R]{\@header}
 \fancyhead[R]{}
