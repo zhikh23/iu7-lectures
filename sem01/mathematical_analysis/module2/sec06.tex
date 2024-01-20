@@ -1,0 +1,416 @@
+\subsection{Лекция 13.12.23}
+
+4. $f(x) = (1+x)^\alpha$, $\alpha \in \R$.
+\begin{gather*}
+  f'(x) = \alpha(1+x)^{\alpha-1} \\
+  f''(x) = \alpha(\alpha - 1)(1+x)^{\alpha-2} \\
+  f'''(x) = \alpha(\alpha - 1)(\alpha - 2)(1+x)^{\alpha-3} \\
+  \ldots \\
+  f^{(n)} = \alpha(\alpha - 1)\ldots(\alpha - (n - 1))(1 + x)^{\alpha - n} \\
+  f^{(n+1)} = \alpha(\alpha - 1)\ldots(\alpha - n)(1 + x)^{\alpha - (n + 1)} \\
+\end{gather*}
+\begin{gather*}
+  f(0) = 1 \\
+  f'(0) = \alpha \\
+  f''(0) = \alpha (\alpha - 1) \\
+  f'''(0) = \alpha (\alpha - 1)(\alpha - 2) \\
+  \ldots \\
+  f^{(n)} = \alpha(\alpha - 1) \ldots (\alpha - (n-1))
+\end{gather*}
+\begin{gather*}
+  f(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(x)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^{n} + R_n(x) \\
+  (1 + x)^{\alpha} = 1 + \frac{\alpha}{1!}x + \frac{\alpha(\alpha - 1)}{2!}x^2 + \ldots + \frac{\alpha(\alpha - 1)\ldots (\alpha - (n-1))}{n!}x^{n} + R_n(x) \\
+  R_n(x) = o(x^n) \\
+  R_n(x) = \{ \frac{f^{(n+1)} \theta x}{(x + 1)!}x^{(n+1)} \} \\
+    = \frac{\alpha(\alpha - 1) \ldots (\alpha - n)}{(n+1)!} (1 + \theta x)^{\alpha + 1}x^{n+1} \\
+\end{gather*}
+
+5. $y = f(x) = \ln(1 + x)$
+\begin{gather*}
+  f'(x) = \frac{1}{1+x} = (1 + x)^{-1} \\
+  f''(x) = -1 \cdot \frac{1}{(1+x)^2} = -1 \cdot (1 + x)^{-2} \\
+  f'''(x) = -1 \cdot (-2) \cdot \frac{1}{(1+x)^3} = -1 \cdot (-2) \cdot (1 + x)^{-3} \\
+  \ldots \\
+  f^{(n)} = (-1)^{n+1}(n-1)!(1-x)^{-n} 
+\end{gather*}
+\begin{gather*}
+  f'(0) = 1 = 0! \\
+  f''(0) = -1 = (-1) 1! \\
+  f'''(0) = 2 = 2! \\
+  f''(0) = (-1) 3! \\
+  \ldots \\
+  f^{(n)} = (-1)^{n+1}(n-1)!(1+x)^{-n}
+\end{gather*}
+\begin{gather*}
+  \ln(1+x) = 0 + \frac{0!}{1!} x - \frac{1}{2!} x^2 + \frac{2!}{3!} x^{3} - \frac{3!}{4!} x^{4} + \ldots + \frac{(-1)^{n+1}(n-1)!}{n!} + R_n(x) \\
+  \ln(1+x) = \frac{1}{1}x - \frac{1}{2}x^2 + \frac{1}{3}x^{3} - \ldots + \frac{(-1)^{n+1}}{n}x^n + R_n(x) \\
+  R_n(x) = o(x^{n}) \\
+  R_n(x) = \{ \frac{f^{(n+1)}(\theta x)}{(n+1)!}x^{n+1} \} = \\
+  = \frac{(-1)^{n+1}n! (1 + \theta x)^{-(n+1)}}{(n+1)!}x^{n+1} = \\
+  = \frac{(-1)^{n+2}(1+\theta x)^{-(n+1)}}{n+1} x^{n+1}
+\end{gather*}
+
+\section{Вертикальные, наклонные, горизонтальные ассимптоты}
+
+\begin{definition}
+  \textit{Ассимптотой} графика функции $y = f(x)$ называется прямая расстояние до которой от точки, лежащей на графике, стремится к нулю при удалении от начала координат.
+\end{definition}
+
+\begin{definition}
+  Прямая $x = a$ называется \textit{вертикальной ассимптотой} графика функции $y = f(x)$, если хотя бы один из пределов $\lim_{x \to a+} f(x)$, $\lim_{x \to a-} f(x)$ равен $\infty$.
+\end{definition}
+\begin{eg}
+  \begin{gather*}
+    y = \frac{1}{x - a} \\
+    \lim_{x \to a-} \frac{1}{x-a} = -\infty \\
+    \lim_{x \to a+} \frac{1}{x-a} = +\infty
+  \end{gather*}
+  $x = a$ -- вертикальная ассимптота.
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = \ln x, \quad D_f = (0, +\infty) \\
+    \lim_{x \to 0+} \ln x = -\infty 
+  \end{gather*}
+  $x = 0$ -- вертикальная ассимптота правая.
+\end{eg}
+
+Вывод: вертикальные ассимптоты ищем среди точек разрыва функции и граничных точек.
+
+\begin{definition}
+  Прямая $y = kx + b$ называется наклонной ассимптотой графика функции  $y=f(x)$ при $x \to  \pm\infty$, если сама функция представима в виде $f(x) = kx + b + \alpha(x)$, где $\alpha(x)$ -- б.м.ф при $x \to \pm\infty$.
+\end{definition}
+
+\begin{theorem}
+  \textit{Необходимое и достаточной условие существования наклонной ассимптоты}. \\ 
+   График функции $y = f(x)$ имеет при  $x \to \pm\infty$ наклонную ассимптоту тогда и только тогда, когда существуют два конечных предела:
+   \begin{align*}
+     \begin{cases}
+        &\lim_{x \to \pm\infty} \frac{f(x)}{x} \\
+        &\lim_{x \to \pm\infty} (f(x) - kx)
+     \end{cases} \tag{*} 
+   \end{align*}
+\end{theorem}
+\begin{proof}
+  \textit{Необходимость}. \\
+  Дано $y = kx + b$ наклонная ассимптота. Доказать  $\exists $ пределы (*).\\
+  По условию $y = kx + b$ -- наклонная ассимптота  $\implies $ по определению $f(x) = kx + b + \alpha(x)$, где $\alpha(x)$ -- б.м.ф. при $x \to  \pm \infty$.
+  Рассмотрим:
+  \begin{align*}
+    \lim_{x \to \pm\infty} \frac{f(x)}{x} &= \lim_{x \to \pm\infty} \frac{kx + b + \alpha(x)}{x} = \\
+    &= \lim_{x \to \pm\infty} (k + b \cdot \frac{1}{x} + \frac{1}{x} \alpha(x)) \\
+    &= k + b \lim_{x \to \pm\infty} \frac{1}{x} + \lim_{x \to \pm\infty}\frac{1}{x} \alpha(x) \\
+    &= k + b\cdot 0 + 0 = k \\
+  \end{align*}
+  Рассмотрим выражение:
+  \begin{align*}
+    f(x) - kx = kx + b + \alpha(x) - kx = b + \alpha(x) \\
+    \lim_{x \to \pm\infty} (f(x) - kx)) = \lim_{x \to \pm\infty} (b + \alpha(x)) = b 
+  \end{align*}
+
+  \textit{Достаточность}. \\ 
+  Дано $\exists $ конечные пределы (*). Доказать $y = kx + b$ -- наклонная ассимптота. \\
+
+   $\exists $ конечный предел $\lim_{x \to \pm\infty} (f(x) - kx) = b$
+   По теореме о связи функции, её предела и б.м.ф. $\implies$ \[
+   f(x) - kx = b + \alpha(x)
+   \]  при $x \to \pm\infty$. Выразим $f(x)$:  \[
+   f(x) = kx + b + \alpha(x)
+   \] где $\alpha(x)$ б.м.ф при $x \to \pm\infty$.
+   По определению $\implies y = kx + b$ -- наклонная ассимптота к графику функции $y = f(x)$
+\end{proof}
+
+\begin{definition}
+  Прямая $y = b$ нельзя горизонтальной ассимптотой графика функции  $y = f(x)$ x, если $\lim_{x \to \pm\infty} f(x) = b$.
+\end{definition}
+\begin{corollary}
+  Горизонтальные ассимптоты являются частным случаем наклонных при $k = 0$.
+\end{corollary}
+
+\section{Исследование по первой производной}
+
+\begin{definition}
+  Функция $y = f(x)$, определённая на интервале $(a, b)$ \textit{возрастает} (\textit{убывает}) на этом интервале, если для любых  $x_1, x_2 \in (a, b)$ таких что $x_2 > x_1 \implies f(x_2) > f(x_1) \quad (f(x_2) < f(x_1))$.
+\end{definition}
+
+\begin{definition}
+  Функция $y = f(x)$, определённая на интервале $(a, b)$ \textit{не убывает} (\textit{не возрастает} ) на этом интервале, если для любых  $x_1, x_2 \in (a, b)$ таких что $x_2 > x_1 \implies f(x_2) \ge f(x_1) \quad (f(x_2) \le f(x_1))$.
+\end{definition}
+
+\begin{definition}
+  Возрастающая + убывающая функция -- называются \textit{строго монотонными} .
+\end{definition}
+
+\begin{definition}
+  Невозрастающая + неубывающая функция -- называются \textit{монотонными}.
+\end{definition}
+
+\begin{theorem}
+  \textit{Необходимое и достаточное условие невозрастания (неубывания) дифференцируемой функции}. \\
+  Дифференцируемая на интервале $(a, b)$ не возрастает (не убывает) на этом интервале тогда и только тогда, когда  $f'(x) \le 0$ $\left( f'(x) \ge 0 \right)$ $\forall x \in (a, b)$.
+\end{theorem}
+\begin{proof}
+  \textit{Необходимость}. \\
+  Дано: $y=f(x)$ не возрастает на $(a, b)$. \\
+  Доказать:  $\forall x \in (a, b) \quad f'(x) \le 0$. \[
+  \forall x \in (a, b)
+  \] 
+  $\Delta x$ -- приращение аргумента
+  \begin{gather*}
+    x \to  x + \Delta x \\
+    \Delta  y = y(x + \Delta x) - y(x)
+  \end{gather*}
+  -- приращение функции.
+
+  1 случай: $\Delta x > 0$: \\
+  т.к. $y = f(x)$ не возрастает на  $a, b$.  \[
+  y(x + \Delta x) \le  y(x)
+  \] \[
+  \Delta  y = y(x + \Delta x) - y(x) \le 0.
+  \] 
+  Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{+}{-} \right) \le 0$. \\
+
+  2 случай: $\Delta  x < 0$: 
+  т.к. $y = f(x)$ не возрастает на  $a, b$.  \[
+  y(x + \Delta x) \ge y(x)
+  \] \[
+  \Delta  y = y(x + \Delta x) - y(x) \ge 0.
+  \] 
+  Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{+}{-} \right) \le 0$. \\
+
+  По теореме о предельном перехорде в неравенстве: 
+  \begin{gather*}
+    \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \le 0 
+  \end{gather*}
+  По определению производной $f'(x) \le 0$
+
+  \textit{Достаточность}. \\
+  Дано: $\forall x \in (a, b) \quad f'(x) \le 0$.
+  Доказать: $y = f(x)$ не возрастает на  $a, b$.
+   \begin{gather*}
+    \forall x_1, x_2 \in (a,b) : x_2 > x_1
+  \end{gather*}
+  Рассмотрим $[x_1, x_2]$. Функция на отрезке $[x_1, x_2]$ удовлетворяет условиям теоремы Лагранжа:
+  \begin{enumerate}
+    \item Непрерывность на $[x_1, x_2]$. \\
+      По условию $y = f(x)$ дифференцируема на интервале  $(a, b)$. По теореме о связи дифференцируемости и непрерывности функции  $\implies y=f(x)$ -- непрерывна на $[x_1, x_2]$.
+    \item дифференцируемость на $(x_1, x_2)$ т.к. функция по условию дифференцируема на отрезке $[x_1, x_2]$.
+  \end{enumerate}
+  По теореме Лагранжа $\exists c \in (x_1, x_2)$: \[
+  f(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+  \] 
+  Т.к. $x_2 > x_1 \implies x_2 - x_1 > 0$. По условию $f'(x) \le  0, \forall x \in  (a, b) \implies f'(c) \le 0$. \\
+  Тогда:
+  \begin{gather*}
+    f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \le 0 \\
+    \implies f(x_2) - f(x_1) \le  0 \text{ при } x_2 > x_1 \\
+    f(x_2) \le  f(x_1) \text{ при } x_2 > x_1
+  \end{gather*}
+  $\implies$ по определению функция $y = f(x)$ не возрастает на $(a, b)$.
+\end{proof}
+Для неубывающей функции:
+\begin{proof}
+  \textit{Необходимость}. \\
+  Дано: $y=f(x)$ не убывает на $(a, b)$. \\
+  Доказать:  $\forall x \in (a, b) \quad f'(x) \ge 0$. \[
+  \forall x \in (a, b)
+  \] 
+  $\Delta x$ -- приращение аргумента
+  \begin{gather*}
+    x \to  x + \Delta x
+    \Delta  y = y(x + \Delta x) - y(x)
+  \end{gather*}
+  -- приращение функции.
+
+  1 случай: $\Delta x > 0$: \\
+  т.к. $y = f(x)$ не убывает на  $a, b$.  \[
+  y(x + \Delta x) \ge  y(x)
+  \] \[
+  \Delta  y = y(x + \Delta x) - y(x) \le 0.
+  \] 
+  Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{-}{+} \right) \ge 0$. \\
+
+  2 случай: $\Delta  x < 0$: 
+  т.к. $y = f(x)$ не возрастает на  $a, b$.  \[
+  y(x + \Delta x) \le y(x)
+  \] \[
+  \Delta  y = y(x + \Delta x) - y(x) \le 0.
+  \] 
+  Тогда $\frac{\Delta y}{\Delta x} = \left( \frac{-}{+} \right) \ge 0$. \\
+
+  По теореме о предельном перехорде в неравенстве: 
+  \begin{gather*}
+    \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \le 0 
+  \end{gather*}
+  По определению производной $f'(x) \le 0$
+
+  \textit{Достаточность}. \\
+  Дано: $\forall x \in (a, b) \quad f'(x) \ge 0$.
+  Доказать: $y = f(x)$ не убывает на  $a, b$.
+   \begin{gather*}
+    \forall x_1, x_2 \in (a,b) : x_2 > x_1
+  \end{gather*}
+  Рассмотрим $[x_1, x_2]$. Функция на отрезке $[x_1, x_2]$ удовлетворяет условиям теоремы Лагранжа:
+  \begin{enumerate}
+    \item Непрерывность на $[x_1, x_2]$. \\
+      По условию $y = f(x)$ дифференцируема на интервале  $(a, b)$. По теореме о связи дифференцируемости и непрерывности функции  $\implies y=f(x)$ -- непрерывна на $[x_1, x_2]$.
+    \item Дифференцируемость на $(x_1, x_2)$ т.к. функция по условию дифференцируема на отрезке $[x_1, x_2]$.
+  \end{enumerate}
+  По теореме Лагранжа $\exists c \in (x_1, x_2)$: \[
+  f(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+  \] 
+  Т.к. $x_2 > x_1 \implies x_2 - x_1 > 0$. По условию $f'(x) \ge  0, \forall x \in  (a, b) \implies f'(c) \ge 0$. \\
+  Тогда:
+  \begin{gather*}
+    f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \ge 0 \\
+    \implies f(x_2) - f(x_1) \ge  0 \text{ при } x_2 > x_1 \\
+    f(x_2) \ge  f(x_1) \text{ при } x_2 > x_1
+  \end{gather*}
+  $\implies$ по определению функция $y = f(x)$ не убывает на $(a, b)$.
+\end{proof}
+
+\begin{theorem}
+  \textit{Необходимое услоивие строгой монотонности}. \\
+  Если дифференцируемая на интервале $(a, b)$ функция $y=f(x)$ возрастает (убывает) на это м интервале, то $\forall x \in (a, b)$ верно неравенство $f'(x) \ge 0$ ($f'(x) \le 0$).
+\end{theorem}
+
+\begin{theorem}
+  \textit{Достаточное условие строгой монотонности}. \\
+  Если для дифференцируемой на интервале $(a, b)$ функции  $y=f(x)$ выполнены условия:
+  \begin{enumerate}
+    \item $f'(x) \ge 0$ ($f'(x) \le 0)$ $\forall x \in (a, b)$.
+    \item $f'(x)$ не обращается в ноль ни на каком промежутке  $I \subseteq (a, b) $, то функция $y = f(x)$ возрастает (убывает) на $(a, b)$.
+  \end{enumerate}
+\end{theorem}
+
+\subsection{Экстремумы функции}
+
+\begin{definition}
+  Пусть $y=f(x)$ определана на интервале $(a, b), \quad x_0 \in (a, b)$. Тогда: 
+  \begin{enumerate}
+    \item Если $\exists \mathring{S}(x_0), \quad \forall x \in  \mathring{S}(x_0), \quad f(x) \le  f(x_0)$, то $x_0$ -- точка локального максимумаю $y = y(x_0)$ -- локальный максимум.
+    \item Если $\exists  \mathring{S}(x_0) : \forall x \in \mathring{S}(x_0), f(x) \ge  f(x_0)$, то $x_0$ -- точка локального минимума. $y=y(x_0)$ -- локальный максимум.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  Точки локального максимума и минимума называются \textit{точками экстремума}.
+\end{definition}
+
+\begin{definition}
+  Локальный максимум и локальный минимум называются \textit{экстремума}.
+\end{definition}
+
+\begin{theorem}
+  \textit{Необходимое условие существования экстремума}. \\
+  Если $y=f(x)$ дифференцируема на интервале $(a, b)$ и  $x_0 \in (a, b)$ существует экстремум, то $f'(x_0) = 0$.
+\end{theorem}
+\begin{eg}
+  \begin{gather*}
+    y = x^2, \quad x_0 = 0 \\
+    y' = 2x \quad y'(0) = 0
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = x^{3}, \quad x_0 = 0 \text{ -- не явл. т. экстремума!} \\
+    y' = 3x^2 \quad y'(0) = 0
+  \end{gather*}
+\end{eg}
+
+\begin{definition}
+  Точки, в которых производная функции обращается в ноль называются \textit{стационарными}. \[
+  f'(x_0) = 0 \implies x_0 \text{ -- стационарная точка}
+  \] 
+\end{definition}
+
+\begin{definition}
+  Точки, в которых производная функции обращается в ноль или не существует, называются \textit{критическими точками первого порядка}.
+\end{definition}
+
+\begin{eg}
+  \begin{gather*}
+    y = |x|, x_0 = 0 \text{ -- точка минимума} \\
+    \text{ но } \not\exists y'
+  \end{gather*}
+\end{eg}
+\begin{eg}
+  \begin{gather*}
+    y = x^{\frac{2}{3}}, \quad x_0 = 0 \text{ -- точка минимума} \\
+    y' = \frac{2}{3x^{-\frac{1}{3}}} = \frac{2}{3\sqrt{x}}, \quad \not\exists y'(x_0)
+  \end{gather*}
+\end{eg}
+
+Вывод: точки экстремума могут быть двух видов:
+\begin{enumerate}
+  \item $f'(x) = 0$ -- гладкий экстремум.
+  \item  $\not\exists f'(x)$ -- острый экстремум.
+\end{enumerate}
+
+\begin{theorem}
+  \textit{Первый достаточный признак локального экстремума}. \\
+  Пусть функция $y=f(x)$ непрерывна в $S(x_0)$, где $x_0$ -- критическая точка первого порядка; функция дифференцируема в $\mathring{S}(x_0)$. Тогда если проивзодная функции меняет свой знак при переходе черех точку $x_0$, то эта точка $x_0$ -- точка экстремума. Причём:
+  \begin{enumerate}
+    \item Если при $x < x_0$ $f'(x) > 0$, а при  $x > x_0$ $f'(x) < 0$, то  $x_0$ -- точка максимума.
+    \item Если при $x < x_0$ $f'(x) < 0$, а при  $x > x_0$ $f'(x) > 0$, то  $x_0$ -- точка минимума.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  $\forall x \in S(x_0)$. Пусть $x > x_0$, тогда рассматриваем отрезок $[x_0, x]$. Тогда функция $y = f(x)$ удовлетворяет условиям теоремы Лагранжа:
+  \begin{enumerate}
+    \item Непрерывна на $[x_0, x]$, т.к. по условию функция непрерывна в $S(x_0)$, а следовательно $y=f(x)$ будет непрерывна и на меньшем промежутке $[x_0, x]$.
+    \item Дифференцируема на $(x_0, x)$, т.к. по условия функция непрерывна в $\mathring{S}(x_0) \implies y = f(x)$ дифференцируема на $(x_0, x)$
+  \end{enumerate}
+
+  По теореме Лагранжа $\exists  c \in  (x_0, x)$ \[
+    f'(c) = \frac{f(x) - f(x_0)}{x - x_0}
+  \]
+  При $x > x_0$ $x - x_0 > 0$. 
+  По условию \\
+  1) при $x > x_0 \quad f'(x) < 0 \quad \implies f'(c) = \frac{f(x) - f(x_0)}{x - x_0} < 0 \quad \implies f(x) < f(x_0)$ по определению строгого  $x_0$ -- точка локального максимума.
+  2) при $x < x_0 \quad f'(x) > 0 \quad \implies f'(c) = \frac{f(x) - f(x_0)}{x - x_0} > 0 \quad \implies f(x) > f(x_0)$ по определению строгого  $x_0$ -- точка локального минимума.
+
+  По теореме Лагранжа $\exists c \in (x, x_0)$: \[
+  f'(c) = \frac{f(x_0) - f(x)}{x_0 - x}
+  \] 
+  Т.к. $x < x_0$, то $x - x_0 < 0 \quad \implies \quad x_0 - x > 0$.
+  По условию \\
+  1) при $x < x_0 \quad f'(x) > 0 \quad \implies f'(c) = \frac{f(x_0) - f(x)}{x_0 - x} > 0 \quad \implies f(x_0) > f(x)$ по определению строгого  $x_0$ -- точка локального максимума.
+  2) при $x > x_0 \quad f'(x) > 0 \quad \implies f'(c) = \frac{f(x_0) - f(x)}{x_0 - x} <` 0 \quad \implies f(x) < f(x_0)$ по определению строгого  $x_0$ -- точка локального минимума.
+\end{proof}
+
+\begin{theorem}
+  \textit{Второй достаточный признак локального экстремума}. \\
+  Пусть функция $y = f(x)$ дважды дифференцируема в точке $x_0$, и $f'(x_0) = 0$. Тогда:
+   \begin{enumerate}
+    \item Если $f''(x_0) < 0$, то $x_0$ -- точка строго максимума. 
+    \item Если $f''(x_0) > 0$, то $x_0$ -- точка строго минимума. 
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  Разложим функцию $y = f(x)$ в окрестности точки $x_0$ по формуле Тейлора:
+  \begin{gather*}
+    f(x) = f(x_0) + \frac{f'(x_0)}{1!} (x - x_0) + \frac{f''(x_0)}{2!} (x - x_0)^2 + o((x - x_0)^{2})
+  \end{gather*}
+  Т.к. $f'(x_0) = 0$, то
+  \begin{align*}
+    f(x) = f(x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + o((x - x_0)^2) \\
+    f(x) - f(x_0) = \frac{f''(x_0)}{2!}(x - x_0)^2 + o((x - x_0)^2)
+  \end{align*}
+  Знак $f(x) - f(x_0)$ определяет $f''(x_0)$, т.к. $o((x - x_0)^2)$ -- б.м.ф. при $x \to  x_0$. 
+  Если $f(x) - f(x_0) < 0$ то $f(x) < f(x_0), \quad \forall x \in  S(x_0)$
+  По определению $x_0$ -- точка локального максимума.
+
+  Если $f(x) - f(x_0) > 0$ то $f(x) < f(x_0), \quad \forall x \in  S(x_0)$
+  По определению $x_0$ -- точка локального минимума.
+\end{proof}
+
+\section{Исследование по второй производной}
+
+\begin{definition}
+  Говорят, что график функции $y = f(x)$ на интервале $(a, b)$ выпуклый (выпуклый вверх) на этом интервале, если касательная к нему в любой точке этого интервала (кроме точки касания) лежит выше графика функции.
+\end{definition}
+
+\begin{definition}
+  Говорят, что график функции $y = f(x)$ на интервале $(a, b)$ вогнутый (выпуклый вниз) на этом интервале, если касательная к нему в любой точке этого интервала (кроме точки касания) лежит ниже графика функции.
+\end{definition}

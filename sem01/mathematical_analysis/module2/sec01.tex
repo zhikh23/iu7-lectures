@@ -1,0 +1,94 @@
+\section{Дифференциальное исчисление функции одной переменной}
+
+Рассмотрим $y=f(x)$ определённую в $S(x_0)$. Пусть $x$ -- произвольная точка из $S(x_0)$.
+Обозначим:
+\begin{itemize}
+  \item $\Delta x$ -- приращение аргумента \[
+    x = x_0 + \Delta x \quad \implies \quad \Delta x = x - x_0
+  \]
+  \item $\Delta y$ -- приращение функции \[
+    \Delta y = y(x_0 + \Delta x) - y(x_0)
+  \] 
+\end{itemize}
+
+\begin{definition}
+  \textit{Производной функции $y = f(x)$ в точке $x_0$ } называется предел отношения приращения функции и предел приращения аргумента при стремлении последнего к нулю. \[
+  y'(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+  \] 
+\end{definition}
+
+Если предел \textit{конечен}, то функция $y=f(x)$ в точке $x_0$ имеет конечную производную.
+Если предел \textit{бесконечен}, то функция $y=f(x)$ в точке $x_0$ имеет бесконечную производную.
+
+\textit{Дифференцирование} -- процесс получения производной.
+
+\begin{eg}
+  \begin{gather*}
+    y = e^x, D_f = \R \\
+    x = x_0 + \Delta x, \forall x \in D_f \\
+\Delta  y = y(x_0 + \Delta x) - y(x_0) = e^{x_0 + \Delta x} - e^{x_0} = e^{x_0} \left(e^{\Delta x} - 1\right) \\
+y'(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{e^{x_0} \left( e^{\Delta x} - 1 \right) }{\Delta x} = \lim_{\Delta x \to 0} \frac{e^{x_0} \Delta x}{\Delta x} = e^{x0}
+  \end{gather*}
+\end{eg}
+
+\pagebreak
+
+\begin{eg}
+  \begin{gather*}
+    y = \sin(x), D_f = \R \\
+    x = x_0 + \Delta x, \forall x \in D_f \\
+  \Delta y = y(x_0 + \Delta x) + y(x_0) = \sin(x_0 + \Delta x) - \sin(x_0) = \\
+  2\sin \frac{x_0 + \Delta x - x_0}{2} \cos \frac{x_0 + \Delta x + x_0}{2} = 2\sin \frac{\Delta x}{2} \cos \left(x_0 + \frac{\Delta x}{2}\right) \\
+  y'(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{2\sin \frac{\Delta x}{2} \cos \left( x_0 + \frac{\Delta x}{2} \right) }{\Delta x} = \\
+  \lim_{\Delta x \to 0} \frac{2 \cdot \frac{\Delta x}{2} \cos\left( x_0 + \frac{\Delta x}{2} \right) }{\Delta x} = \lim_{\Delta x \to 0} \cos\left( x_0 + \frac{\Delta x}{2} \right) = \cos x_0
+  \end{gather*}
+\end{eg}
+
+\subsection{Односторонние производные}
+
+\begin{definition}
+  \textit{Производной функции $y=f(x)$ в точке $x_0$ справа} или \textit{правосторонней производной} называется предел отношения приращения функции к приращению аргумента при стремлении к нулю справа. \[
+  y'_+(x_0) = \lim_{\Delta x \to 0+} \frac{\Delta y}{\Delta x}
+  \] 
+\end{definition}
+
+\begin{definition}
+  \textit{Производной функции $y=f(x)$ в точке $x_0$ слева} или \textit{левосторонней производной} называется предел отношения приращения функции к приращению аргумента при стремлении к нулю слева. \[
+  y'_-(x_0) = \lim_{\Delta x \to 0-} \frac{\Delta y}{\Delta x}
+  \] 
+\end{definition}
+
+\begin{theorem}
+  \textit{О существовании производной функции в точке}.
+  Функция $y = f(x)$ в точке $x_0$ имеет производную тогда и только тогда, коогда она имеет производные и справа, и слева, и они равны между собой. \[
+  y'(x_0) = y'_+(x_0) = y'_-(x_0)
+  \] 
+\end{theorem}
+
+\begin{eg}
+  \begin{gather*}
+    y = |x|, x_0 = 0 \\
+    y = \begin{cases}
+      x, x > 0 \\
+      0, x = 0 \\
+      -x, x < 0
+    \end{cases}
+    \implies y' = \begin{cases}
+      1, x > 0 \\
+      0, x = 0 \\
+      -1, x < 0
+    \end{cases} \\
+    \begin{rcases}
+      y'_+(0) = 1 \\
+      y'_-(0) = -1
+    \end{rcases} \text{ -- т.к. производные конечные, но различные, то } x_0 = 0 \text{ называется точкой излома}
+  \end{gather*}
+  \textbf{Геометрический смысл: } $\not \exists $ касательной к функции в точке излома. 
+\end{eg}
+
+\begin{eg}
+  \begin{gather*}
+    y = x^{\frac{1}{3}}, z_0 = 0 \\
+    y' = \frac{1}{3}x{-\frac{2}{3}}
+  \end{gather*}   
+\end{eg}

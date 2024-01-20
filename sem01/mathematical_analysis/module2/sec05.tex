@@ -1,0 +1,236 @@
+\section{Формула Тейлора. Многочлен Тейлора}
+
+\begin{theorem}
+  Пусть функция $y = f(x)$ дифференцируема $n$ раз в точке $x_0$ и определена в некоторой окрестности этой точки. Тогда $\forall x \in S(x_0)$ имеет место формула Тейлора: \[
+    f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}}{n!}(x - x_0)^n + R_n(x)
+    \]
+  Или кратко: $f(x) = P_n(x) + R_n(x)$, где:  \[
+    P_n(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}}{n!}(x - x_0)^n + R_n(x)
+  \] 
+\end{theorem}
+
+\begin{itemize}
+  \item $P_n(x)$ называют \textit{многочленом} или \textit{полиномом Тейлора}.
+  \item $R_n(x)$ называют \textit{остаточным членов формулы Тейлора}.
+\end{itemize}
+
+\begin{proof}
+  Покажем, что многочлен $P_n(x)$ существует. Будем искать многочлен Тейлора в виде:  \[
+    P_n(x) = a_0 + a_1 (x - x_0) + a_2 (x - x_0)^2 + a_3 (x - x_0)^3 + \ldots + a_n (x - x_0)^n \tag{2} 
+  \]
+  где $a_1, a_2, a_3 \ldots a_n$ -- некоторые константы.
+
+  Пусть выполнены условия: \[
+    P_n(x_0) = f(x_0) \quad P_n'(x) = f'(x) \quad \ldots \quad P_n^{(n)}(x) = f^{(n)}(x) \tag{3} 
+  \] 
+
+  $f'(x_0), f''(x_0), \ldots f^{(n)}(x)$ существуют т.к. $y = f(x)$ дифференцируема $n$ раз в точке $x_0$.
+
+  Вычислим $P_n'(x), P_n''(x), \ldots P_n^{(n)}(x)$:
+  \begin{align*}
+    P_n'(x) &= a_1 \cdot 1 + a_2 \cdot 2(x - x_0) + a_3 \cdot 3(x - 0)^2 + \ldots + a_n \cdot n (x - x_0)^{(n-1)} \\
+    P_n''(x) &= a_2 \cdot 1 + a_3 \cdot 3 \cdot 2(x - x_0) \\
+             &+ a_4 \cdot 4 \cdot 3(x - 0)^2 + \ldots + a_n \cdot n \cdot (n - 1)(x - x_0)^{(n-2)} \\
+              & \quad \ldots \\
+    P_n^{(n)}(x) &= a_n n (n - 1)(n - 2) \ldots 1 = a_n \cdot n!
+  \end{align*}
+
+  \begin{align*}
+    &P_n(x_0) = a_0 = f(x_0) \\
+    &P_n'(x_0) = 1 \cdot a_1 = f'(x_0) \\
+    &P_n''(x_0) = 1 \cdot 2 \cdot a_2 = 2 f''(x_0)\\
+    & \qquad \ldots \\
+    &P_n^{(n)}(x_0) = n! a_n = n! \cdot f^{(n)}(x_0)
+  \end{align*}
+
+  Выразим $a_0, a_1, a_2, \ldots a_3$: \[
+     a_0  = f(x_0) 
+     \quad a_1 = \frac{f'(x_0)}{1!}
+     \quad a_2 = \frac{f''(x_0)}{2!}
+      \quad \ldots
+    \quad a_n = \frac{f^{(n)}(x_0)}{n!}
+  \]
+  Подставим значения $a_1, a_2, a_3, \ldots a_n$ в (2): \[
+    P_n(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}}{n!}(x - x_0)^n + R_n(x)
+  \] 
+\end{proof}
+
+\begin{theorem}
+  Пусть функция $y = f(x)$ дифференцируема $n$ раз в точке $x_0$, тогда $x \to x_0$: \[
+    \boxed{R_n(x) = o((x - x_0)^n)}
+  \] 
+  -- \textit{форма Пеано}. 
+\end{theorem}
+\begin{proof}
+  Формула Тейлора:
+  \begin{align*}
+    f(x) &= P_n(x) - R_n(x) \\
+    R_n(x) &= f(x) - P_n(x)
+  \end{align*}
+  В силу условия (3):
+  \begin{align*}
+    R_n(x) &= f(x_0) - P_n(x_0) = f(x_0) - f(x_0) = 0 \\
+    R_n'(x) &= f'(x_0) - P_n'(x_0) = f'(x_0) - f'(x_0) = 0 \\
+            &\ldots \\
+    R_n^{(n)}(x) &= f^{(n)}(x_0) - P_n^{(n)}(x_0) = f^{(n)}(x_0) - f^{(n)}(x_0) = 0 \\
+  \end{align*}
+
+  Вычислим: 
+  \begin{align*}
+    \lim_{x \to x_0} \frac{R_n(x)}{(x - x_0)^n} &= \left( \frac{0}{0} \right) = \\
+      &= \lim_{x \to x_0} \frac{R_n'(x)}{n(x - x_0)^{n-1}} \\
+      &\ldots \\
+      &= \lim_{x \to x_0} \frac{R^{(n)}}{n(n-1)(n-2) \ldots 1} \\
+      &= \frac{1}{n!} \lim_{x \to x_0} R_n^{(n)}(x) = \frac{1}{n!} \cdot 0 = 0 
+  \end{align*}
+  Вывод: $R_n(x) = o((x - x_0)^n)$ при $x \to x_0$.
+\end{proof}
+
+\begin{theorem}
+  Пусть функция $y=f(x)$  $(n+1)$ дифференцируема в $\mathring{S}(x_0)$, $\forall x \in \mathring{S}(x_0)$ $f^{(n+1)}(x_0) \neq 0$.
+  Тогда:
+  \begin{gather*}
+    \boxed{
+      R_n(c) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}
+    }
+  \end{gather*} 
+  где $c \in \mathring{S}(x_0)$.
+  Такая форма записи остаточного члена называется \textit{формой Лагранжа}. 
+\end{theorem}
+\begin{proof}
+  \[
+    f(x) = P-n(x) + R_n(x)
+  \]
+  Будем считать $R_n(x) = \frac{\varphi(x)}{(n+1)!}(x-x_0)^{n+1}$, где $\varphi(x)$ -- неизвестная функция. Введём вспомогательную функцию:
+  \begin{align*}
+    F(t) &= P_n(t) + R_n(t) - f(x) \\
+         &= f(t) + \frac{f'(t)}{1!}(x-t) + \frac{f''(t)}{2!}(x-t)^2 + \ldots\\
+         &+ \frac{f^{(n)(t)}}{n!}(x-t)^n + \frac{\varphi(x)}{(n+1)!}(x-t)^{n+1}
+  \end{align*}
+\end{proof}
+
+ДОДЕЛАТЬ ДОКАЗАТЕЛЬСТВО!
+
+\subsubsection{Формула Тейлора с остаточным членом в форме Пеано}
+
+\begin{align*}
+  f(x) = f(x_0) + \frac{f'(x)}{1!} + \frac{f''(x)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}}{n!} + o((x - x_0)^n)
+\end{align*}
+
+\subsubsection{Формула Тейлора с остаточным членом в форме Лангранжа}
+
+\begin{align*}
+  f(x) = f(x_0) + \frac{f'(x)}{1!} + \frac{f''(x)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}}{n!} + \frac{f^{(n+1)}\left( x_0 \theta(x - x_0) \right) }{n+1}(x-x_0)^{n+1}
+\end{align*}
+
+\subsection{Формулы Маклорена}
+
+Частный случай формулы Тейлора при $x_0 = 0$.
+
+\begin{align*}
+  f(x) = f(x_0) + \frac{f'(x)}{1!} x + \frac{f''(x)}{2!} x^2 + \ldots + \frac{f^{(n)}}{n!} x^n + R_n(x)
+\end{align*}
+
+Остаточный член в форме Пеано: \[
+  R_n(x) = o(x^n) 
+\] 
+
+Остаточный член в формет Лагранжа: \[
+  R_n(x) = \frac{f^{(n+1)}}{(n+1)!}x^{n+1}
+\] 
+
+\subsection{Разложение основных элементарных функций по формулам Маклорена}
+
+1) $y=e^x$,  $x_0 = 0$
+    \begin{gather*}
+      f'(x) = f''(x) = f^{(n)}(x) = f^{(n+1)}(x) = e^x \\
+      f'(0) = f''(0) = f^{(n)}(0) = f^{(n+1)}(0) = 1 \\
+      \\
+      e^x = 1 + \frac{1}{1!}x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \ldots + \frac{1}{n!}x^n + R_n(x) \\
+      R_n(x) = \frac{e^{\theta x}}{(n+1)!}x^{n+1}
+    \end{gather*}
+\begin{corollary}
+  \begin{gather*}
+    e^{-x} = 1 - \frac{1}{1!}x + \frac{1}{2!}x^2 - \frac{1}{3!}x^3 + \ldots + R_n(x) \\
+  \end{gather*}
+\end{corollary}
+\begin{corollary}
+  \begin{gather*}
+    \sh x = \frac{1}{2}(e^x - e^{-x}) = \frac{1}{1!}x + \frac{1}{3!}x^3 + \frac{1}{5!}x^5 + \ldots + \frac{1}{(2n-1)}x^{2n-1} + R_{2n}
+  \end{gather*}
+\end{corollary}
+\begin{corollary}
+  \begin{gather*}
+    \ch x = \frac{1}{2}(e^x + e^{-x}) = 1 + \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + \ldots + \frac{1}{2n}x^{2n} + R_{2n+1}(x)
+  \end{gather*}
+\end{corollary}
+\begin{corollary}
+  \begin{gather*}
+    a^x = 1 + \frac{\ln(a)}{1!}x + \frac{\ln^2(a)}{2!} x^2 + \ldots + \frac{\ln^{n+1}}{n!} x^n
+  \end{gather*}
+\end{corollary}
+\begin{corollary}
+  \begin{gather*}
+    \sh^2 x = \left( \frac{e^x - e^{-x}}{2} \right)^2 = \frac{1}{2}\left( \ch 2x - 1 \right) \\
+  \end{gather*}
+\end{corollary}
+\begin{corollary}
+  \begin{gather*}
+    \ch x = \left( \frac{e^x + e^{-x}}{2} \right) = \frac{1}{2}\left( \ch 2x + 1 \right) 
+  \end{gather*}
+\end{corollary}
+
+2) $y = f(x) = \sin(x)$, $x_0 = 0$
+\begin{align*}
+  f'(x) &= \cos x = \sin\left(x + 1 \frac{\pi}{2}\right) \\
+  f''(x) &= -\sin x = \sin\left(x + 2 \frac{\pi}{2}\right) \\
+  f'''(x) &= - \cos x = \sin\left(x + 3 \frac{\pi}{2}\right) \\
+  f''''(x) &= \sin x = \sin\left(x + 4 \frac{\pi}{2}\right) = \sin\left( x \right)
+\end{align*}
+\begin{align*}
+  f(0) &= 0 \\
+  f'(x) &= 1 \\
+  f''(x) &= 0 \\
+  f'''(x) &= -1 \\
+  f''''(x) &= 0 \\
+\end{align*}
+\begin{gather*}
+  \sin x = 0 + \frac{1}{1!}x + \frac{0}{2!}x^2 - \frac{1}{3!}x^3 + \frac{0}{4!}x^4 + \ldots + \frac{\left( \sin \frac{2n}{2} \right) }{n!}x^n + R_n(x) \\
+  \sin x = \frac{1}{1!}x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 + \ldots + \frac{\left( -1 \right)^k+1 }{(\frac{2k-1}!}x^{2k-1} + R_{2k}(x) \\
+\end{gather*}
+
+Остаточны член в форме Лагранжа
+\begin{gather*}
+  y = f(x) = \sin(x), x_0 = 0 \\
+  R_{2k}(x) = \frac{f^{\left( 2k-1 \right)}(\theta x)}{(2k + 1)}x^{2k+1} = \\
+    = \frac{\sin(\theta x + (2k + 1)) \frac{\pi}{2}}{(2k+1)!}x^{2k+1} = \\
+    = \frac{\sin(\theta x - \pi k + \frac{\pi}{2}) }{(2k + 1)!} x^{2k+1} = \frac{(-1)^k \cos \theta x}{\left( 2k + 1 \right)! } x^{2k + 1}
+\end{gather*}
+
+3) $y = f(x) = \cos(x)$, $x_0 = 0$
+\begin{align*}
+  f'(x) = - \sin x = \cos\left(x + 1 \frac{\pi}{2}\right) \\
+  f''(x) = -\cos x = \cos\left(x + 2 \frac{\pi}{2}\right) \\
+  f'''(x) = \sin x = \cos\left(x + 3 \frac{\pi}{2}\right) \\
+  f''''(x) = \cos x = \cos\left(x + 4 \frac{\pi}{2}\right) = \cos(x) \\
+\end{align*}
+\begin{align*}
+  f(0) &= 1 \\
+  f'(0) &= 0 \\
+  f''(0) &= -1 \\
+  f'''(0) &= 0 \\
+  f''''(0) &= 1 \\
+\end{align*}
+\begin{gather*}
+  \cos x = 1 + \frac{0}{1!} x - \frac{1}{2!} x^2 + \frac{0}{3} x^3 - \frac{1}{4} x^4 - \frac{0}{5}x^5 + \ldots + \frac{\cos \frac{\pi n}{2}}{n!} x^n + R_n(x) \\
+  \cos x = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^4 + \ldots + \frac{(-1)^k }{(2k)!} x^2k
+\end{gather*}
+
+Остаточный член в форме Лагранжа
+\begin{gather*}
+  R_{2k+1}(x) = \frac{f^{(2k+2)}(\theta x)}{(2k+1)!}x^{2n+1} = 
+  = \frac{-\cos (\theta x + \pi k)}{(2k + 2)! } x^{2k+2} = \\
+  = \frac{(-1)(-1)\cos \theta x}{(2k+2)!}x^{2k+2} = 
+  = \frac{(-1)^{k+1} \cos \theta x}{(2k + 2)!} x^{2k+2}
+\end{gather*}
+
