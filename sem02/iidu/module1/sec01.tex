@@ -1,0 +1,188 @@
+\section{Первообразная и неопределённый интеграл}
+
+\begin{definition}[первообразная]
+    Функция $F(x)$ называется \textit{первообразной} функции $f(x)$ на интервале $(a, b)$, если $F(x)$ дифференцируема на интервале $(a, b)$ и $\forall x \in (a, b)$ верно: \[
+        F'(x) = f(x)
+    \]
+\end{definition}
+
+\begin{enumerate}
+    \item Если $F(x)$ -- первообразная функции $f(x)$ на $(a, b)$, то $F(x) + C$ -- первообразная функции $f(x)$ на $(a, b)$, где $\forall C - const$.
+    \item  Если $F(x)$ дифференцируема на $(a, b)$ и $\forall x \in (a, b) F'(x) = 0$, то $F(x) = const \forall x \in (a, b)$.
+    \item Любая непрерывная функция на  $(a, b)$  имеет множество первообразных на этом интервале, причём любые две отличаются на константу.
+\end{enumerate}
+
+\begin{definition}[неопределённый интеграл]
+    множество первообразных функции $f(x)$ на $(a, b)$ называется \textit{неопределённым интегралом} \[
+        \int f(x)dx = F(x) + C
+    \]
+\end{definition}
+
+\begin{itemize}
+    \item $\int$ -- знак интеграла
+    \item $f(x)$ -- подынтегральная функция
+    \item $f(x)dx$ -- подынтегральное выражение
+    \item $x$ -- переменная
+    \item $F(x) + C$ -- множество первообразных
+    \item $C$ -- константа
+\end{itemize}
+
+\begin{definition}[Интегрирование]
+    Интегрированием называется процесс нахождения неопределённого интеграла.
+\end{definition}
+
+\subsection{Свойства неопределённого интеграла}
+
+\begin{property}[1]
+    Производная от неопределённого интеграла равна подынтегральной функции. \[
+        \left(\int f(x)dx \right)' = f(x)
+    \] 
+\end{property}
+\begin{proof}
+    \[
+        \left(\int f(x) dx \right)' = (F(x) + C)' = F'(x) + 0 = f(x)
+    \]
+\end{proof}
+
+\begin{property}[2]
+   Дифференциал от неопределённого интеграла равен подынтегральному выражению. \[
+        d \left(\int f(x) dx \right) = f(x) dx
+    \]
+\end{property}
+
+\begin{proof}
+    \[
+        d \left(\int f(x) dx \right) = d (F(x) + C) = d(F(x) + C)'dx = F'(x)dx = f(x) dx
+    \]
+\end{proof}
+
+\begin{property}[3]
+    Неопределённый интеграл от \\ дифференциала некоторой функции равен сумме этой функции и константы. \[
+        \int d(F(x)) = F(x) + C
+    \]
+\end{property}
+\begin{proof}
+    \[
+        \int d(F(x)) = \int F'(x) dx = \int f(x) dx = F(x) + C
+    \]
+\end{proof}
+
+\begin{property}[4]
+    Константу можно выносить за знак неопределённого интеграла. \[
+        \int \lambda f(x) dx = \lambda \int f(x) dx \quad \lambda \neq 0
+    \]
+\end{property}
+\begin{proof}
+    Пусть $F(x)$ -- первообразная $f(x)$. Тогда: \[
+        \lambda \int f(x) dx = \lambda (F(x) + C), \forall c - const \\
+    \]
+    Функция $\lambda F(x)$ -- первообразная $\lambda f(x)$: \[
+        \left(\lambda F(x)\right)' = \lambda F'(x) = \lambda f(x)
+    \]
+    Рассмотрим левую часть: \[
+        \int \lambda f(x) dx = \lambda F(x) + C_1, \quad \forall C_1 -- const
+    \]
+    Т.к константы $C_1$ и $C$ -- произвольные, $\lambda \neq 0$, то их всегда можно выбрать так, чтобы было верно равенство $C_1 = \lambda C$. Тогда множества $\lambda (F(x) + C)$ и $\lambda F(x) + C_1$ совпадают.
+\end{proof}
+
+\begin{property}[5]
+    Если функции $f_1(x)$ и $f_2(x)$ имеют первообразные $F_1(x)$ и $F_2(x)$ соответственно, то функция $\lambda_1 f_1(x) + \lambda_2 f_2(x)$, где $\lambda_1, \lambda_2 \in \R$ имеет первообразную на $(a b)$ , причём $\lambda_1^2 + \lambda_2^2 > 0$: \[
+        \int \left( \lambda_1 f_1(x) + \lambda_2 f_2(x) \right) dx = \lambda_1 \int f_1(x) dx + \lambda_2 \int f_2(x) dx 
+    \]
+\end{property}
+\begin{proof}
+    $F_1(x)$ -- первообразная $f_1(x)$ \\
+    $F_2(x)$ -- первообразная $f_2(x)$ \\
+    \begin{align*}
+        \lambda_1 \int f_1(x) dx + \lambda_2 \int f_2(x) &= \lambda_1 \left(F_1(x) + C_1\right) + \lambda_2 \left(F_2(x) + C_2\right) \\
+            &= \lambda_1 F_1(x) + \lambda_2 F_2(x) + \lambda_1 C_1 + \lambda_2 + C_2 \tag{1}
+    \end{align*}
+    \begin{align*}
+        F'(x) = \left(\lambda_1 F_1(x) + \lambda_2 F_2(x)\right) &= \lambda_1 F_1'(x) + \lambda_2 F_2'(x) \\
+            &= \lambda_1 f_1(x) + \lambda_2 f_2(x) \tag{2}
+    \end{align*}
+    \begin{align*}
+        \int \left(\lambda_1 f_1(x) + \lambda_2 f_2(x) \right)  dx = \lambda_1 F_1(x) + \lambda_2 F_2(x) + C \tag{3}
+    \end{align*}
+    Т.к константы $C$, $C_1$ и $C_2$ -- произвольные, $\lambda \neq 0$, то их всегда можно выбрать так, чтобы было верно равенство: \[
+        C = \lambda_1 C_1 + \lambda_2 C_2
+    \]
+    Тогда множества $\lambda_1 F_1(x) + \lambda_2 F_2(x) + \lambda_1 C_1 + \lambda_2 C_2$ и $\lambda_1 F_1(x) + \lambda_2 F_2(x) + C$ совпадают.  
+\end{proof}
+
+\begin{property}[Инвариантность формы интегрирования]
+    Если $\int f(x) dx + F(x) + C$, где $C - const$, то $\int f(u) du = F(u) + C$, где $C - const$, где $u = \varphi(x)$ -- непрерывно-дифференцируемая функция.      
+\end{property}
+\begin{proof}
+    Пусть $x$ -- переменная, $f(x)$ -- непрерывная функция, $F(x)$ -- первообразная $f(x)$: \[
+        \int f(x) dx = F(x) + C, \quad C - const
+    \]
+    Рассмотрим сложную функцию $F(u) = F(\varphi(x))$.
+    Найдём дифференциал $F(u)$: 
+    \begin{gather*}
+        d(F(u)) = F'(u) u'(x) dx = \begin{vmatrix}
+            u = \varphi(x) \\
+            du = \varphi'(x) dx
+        \end{vmatrix} = F'(u) du = \\
+        = f(u)du
+    \end{gather*}
+    Неопределённый интеграл:
+    \begin{align*}
+        \int f(u) du = \int d(F(u)) = F(u) + C, \quad F(u) + C
+    \end{align*}
+\end{proof}
+
+\subsection{Геометрический смысл}
+
+% РИСУНОЧЕК!
+% Несколько кривых друг над другом
+% y = F(x) + C_1
+% y = F(x) + C_2
+% y = F(x) + C_3
+
+Неопределённый интеграл геометрически представляет собой семейство \\
+интегральных кривых (граф. функций) вида: \[
+    y = F(x) + C, \quad \forall C = const
+\]
+ 
+\subsection{Таблица основных интегралов}
+
+\begin{enumerate}
+    \item $\int x^n dx = \frac{x^{n+1}}{n+1} + C, \forall C - const$ 
+    \item $\int dx = x + c$ 
+    \item $\int \frac{dx}{x} = \ln |x| + C$
+    \item $\int e^x dx = e^x + C$
+    \item $\int a^x dx = \frac{a^x}{\ln a} + C$
+    \item $\int \sin x dx = -\cos x + C$
+    \item $\int \cos x dx = \sin x + C$
+    \item $\int \frac{dx}{ \cos^2 x} = \tg x + C$
+    \item $\frac{dx}{ \sin^2 x} = -\ctg x + C$ 
+    \item $\int \frac{dx}{a^2 + x^2} = \frac{1}{a} \arctg \frac{x}{a} + C$ 
+    \item $\int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \ln \left| \frac{a + x}{a - x} \right|$
+    \item $\int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \ln \left| \frac{a - x}{a + x} \right|$
+    \item $\int \frac{dx}{\sqrt{a^2 - x^2} } = \arcsin \frac{x}{a} + C $
+    \item $\int \frac{dx}{\sqrt{x^2 \pm a^2} } = \ln |x + \sqrt{x^2 \pm a^2} | + C $
+    \item $\int sh x dx = ch x + C$
+    \item $\int ch x dx = sh x + C$
+    \item $\int \frac{dx}{ch^x} = \th x + C$
+    \item $\int \frac{dx}{sh^x} = -\cth x + C$ 
+    \item $\int \frac{dx}{\sin x} = \ln |\tg \frac{x}{2}| + C $
+    \item $\int \frac{dx}{\cos x} = \ln |\tg \left( \frac{x}{2} + \frac{\pi}{4} \right) | + C$
+\end{enumerate}
+
+\subsection{Основные методы интегрирования}
+
+\begin{enumerate}
+    \item Непосредственное интегрирование (свойства + таблицы).
+    \item Метод подстановки.
+    \begin{enumerate}
+        \item Занесение под знак дифференциала
+        \item Замена переменной.
+            Пусть функция $x = \varphi(t)$ определена и дифференциама на $T$,  а множество $X$ -- множество значений этой функции, на котором определена $f(x)$. Тогда если существует первообразная функции $f(x)$ на множестве $X$, то на множестве $T$ верно равенство: \[
+                \int f(x) dx = \begin{vmatrix}
+                    x = \varphi(t) \\
+                    dx = \varphi'(t)
+                \end{vmatrix} = \int f(\phi(t)) \varphi'(t) dt
+            \]
+    \end{enumerate}
+\end{enumerate}

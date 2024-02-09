@@ -1,0 +1,117 @@
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cancel}
+\usepackage[none]{hyphenat}
+
+% IGNORE USELESS WARNINGS ===========================================
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+
+% HEADER AND FOOTER =================================================
+\def\@header{}
+\newcommand{\lectures}[1]{
+  \def\@header{#1. Лекции}
+  \begin{center}
+    \section*{#1. Лекции}
+  \end{center}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{22.54279pt}
+
+\fancyhead[R]{\@header}
+\fancyhead[R]{}
+\fancyfoot[L]{\thepage}
+\fancyfoot[C]{\leftmark}
+
+\makeatother
+
+% THEOREMS ==========================================================
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{thmtools}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ForestGreen!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=ForestGreen, 
+    }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, 
+    }
+]{thmbluebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue
+    }
+]{thmblueline}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, 
+    bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, 
+    }
+]{thmredbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, 
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, 
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, 
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, 
+    },
+]{thmexplanationbox}
+
+\theoremstyle{plain}
+
+\declaretheorem[style=thmgreenbox, name=Определение, parent=section]{definition}
+\declaretheorem[style=thmbluebox, name=Вывод, numbered=no]{corollary}
+
+\declaretheorem[style=thmredbox, name=Теорема, parent=section]{theorem}
+\declaretheorem[style=thmproofbox, name=Доказательство]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Свойство]{property}
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Пример]{eg}
+\declaretheorem[style=thmblueline, numbered=no, name=Замечание]{note}
+
+% MATH SYMBOLS ======================================================
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
