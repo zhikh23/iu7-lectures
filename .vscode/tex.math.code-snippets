@@ -245,4 +245,19 @@
 			"\\mathring{S}"
 		],
 	},
+
+	"In": {
+		"prefix": "in",
+		"body": [
+			"\\in"
+		],
+	},
+	
+	"Implies": {
+		"prefix": "imp",
+		"body": [
+			"\\implies"
+		],
+	},
+	
 }

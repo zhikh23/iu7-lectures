@@ -1,14 +1,14 @@
 {
-	"begin{} / eng{}": {
+	"begin{} / end{}": {
 		"prefix": "beg",
 		"body": [
 			"\\begin{$1}",
 				"\t$0"
-			"\\eng{$1}"
+			"\\end{$1}"
 		],
 	},
 
-		"Section*": {
+	"Section*": {
 		"prefix": "sec*",
 		"body": [
 			"\\section*{$1}",
@@ -61,7 +61,7 @@
 		"body": [
 			"\\begin{itemize}",
 				"\t\\item $0",
-			"\\eng{itemize}",
+			"\\end{itemize}",
 		],
 	},
 
@@ -70,7 +70,7 @@
 		"body": [
 			"\\begin{enumerate}",
 				"\t\\item $0",
-			"\\eng{enumerate}",
+			"\\end{enumerate}",
 		],
 	},
 
@@ -117,10 +117,20 @@
 		],
 	},
 
+	"Property": {
+		"prefix": "prop",
+		"body": [
+			"\\begin{property}[$1]",
+				"\t$0",
+			"\\end{property}",
+		],
+	},
+	
+
 	"Inline math": {
 		"prefix": "mk",
 		"body": [
-			"\$$1\$ $0"
+			"$$1$ $0"
 		],
 	},
 
@@ -151,4 +161,4 @@
 			"\\end{align*}",
 		],
 	},
-}
+}  

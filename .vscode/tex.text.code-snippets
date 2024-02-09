@@ -2,14 +2,14 @@
     "Bold": {
 		"prefix": "bf",
 		"body": [
-			"\\bf{$1} $0"
+			"\\textbf{$1} $0"
 		],
 	},
 
 	"Italic": {
 		"prefix": "it",
 		"body": [
-			"\\it{$1} $0"
+			"\\textit{$1} $0"
 		],
 	},
 
