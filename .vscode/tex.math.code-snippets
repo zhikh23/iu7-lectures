@@ -1,8 +1,8 @@
 {
 	"Fraction": {
-		"prefix": "//",
+		"prefix": "fr",
 		"body": [
-			"\\frac{$1}{$2}$0"
+			"\\frac{$1}{$2}"
 		],
 	},
 
@@ -100,9 +100,9 @@
 	},
 	
 	"Delta": {
-		"prefix": "dd",
+		"prefix": "DD",
 		"body": [
-			"\Delta $0"
+			"\\Delta $0"
 		],
 	},
 	
@@ -260,4 +260,17 @@
 		],
 	},
 	
+	"Dot": {
+		"prefix": "dot",
+		"body": [
+			"\\.{$1}"
+		],
+	},
+
+	"Double dot": {
+		"prefix": "ddot",
+		"body": [
+			"\\\"{$1}"
+		],
+	},
 }

@@ -84,7 +84,7 @@
 	"Definition": {
 		"prefix": "def",
 		"body": [
-			"\\begin{definition}",
+			"\\begin{definition}[$1]",
 				"\t$0",
 			"\\end{definition}",
 		],
@@ -159,6 +159,16 @@
 			"\\begin{align*}",
 				"\t$0",
 			"\\end{align*}",
+		],
+	},
+
+	"Figure": {
+		"prefix": "fig",
+		"body": [
+			"\\begin{figure}[ht]",
+				"\t\\centering"
+				"\t$0",
+			"\\end{figure}",
 		],
 	},
 }  

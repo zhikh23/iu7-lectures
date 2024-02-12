@@ -1,0 +1,51 @@
+{
+	"TikZ Pricture": {
+		"prefix": "tikz",
+		"body": [
+			"\\begin{tikzpicture}[domain=-$start:$end]",
+				"\t$0",
+			"\\end{tikzpicture}",
+		],
+	},
+
+	"Grid": {
+		"prefix": "grid",
+		"body": [
+			"\\draw[step=$1cm,gray,very thin] (-$2,-$3) grid ($4,$5);"
+		],
+	},
+	
+	"Axes": {
+		"prefix": "axes",
+		"body": [
+			"\\draw[thick,->] (-$1,0) -- ($2,0) node[anchor=north west] {$3};",
+			"\\draw[thick,->] (0,-$4) -- (0,$5) node[anchor=south east] {$6};",
+		],
+	},
+
+	"Axes with divisions": {
+		"prefix": "axes",
+		"body": [
+			"% Axes",
+			"\\draw[thick,->] (-$left-1,0) -- ($right+1,0) node[anchor=north west] {$xlabel};",
+			"\\draw[thick,->] (0,-$down-1) -- (0,$top+1) node[anchor=south east] {$ylabel};",
+			"\\foreach \\x in {-$left,...,-1}",
+        		"\t\\draw (\\x cm,1pt) -- (\\x cm,-1pt) node[anchor=north] {\$\\x\$};",
+			"\\foreach \\x in {1,...,$right}",
+        		"\t\\draw (\\x cm,1pt) -- (\\x cm,-1pt) node[anchor=north] {\$\\x\$};",
+			"\\foreach \\y in {-$down,...,-1}",
+            	"\t\\draw (1pt,\\y cm) -- (-1pt,\\y cm) node[anchor=east] {\$\\y\$};",
+			"\\foreach \\y in {1,...,$top}",
+            	"\t\\draw (1pt,\\y cm) -- (-1pt,\\y cm) node[anchor=east] {\$\\y\$};",
+        	"\\draw (1pt,0 cm) -- (-1pt,0 cm) node[anchor=north east] {\$0\$};",
+		],
+	},
+
+	"Function plot": {
+		"prefix": "plot",
+		"body": [
+        	"\\draw plot (\\x,{$1}) node[${2|left,right|}] {$3};",
+		],
+	},
+	
+}  
