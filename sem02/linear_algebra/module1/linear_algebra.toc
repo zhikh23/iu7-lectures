@@ -1,0 +1,12 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Линейные пространства}{1}{}%
+\contentsline {subsubsection}{\numberline {1.0.1}Свойства линейных пространств}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Линейная зависимость и независимость векторов}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Базис, размерность пространства}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Преобразование координат вектора при замене базиса}{4}{}%
+\contentsline {section}{\numberline {2}Линейные подпространства}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Ранг системы векторов}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Евклидово пространство}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Неравенство Коши -- Буняковского}{7}{}%
+\contentsline {subsection}{\numberline {2.4}Норма вектора}{7}{}%
+\contentsline {subsection}{\numberline {2.5}Ортогональные системы векторов}{8}{}%
