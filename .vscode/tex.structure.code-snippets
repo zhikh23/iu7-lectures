@@ -51,7 +51,7 @@
 	"Subsubsection": {
 		"prefix": "sssec",
 		"body": [
-			"\\subsection{$1}",
+			"\\subsubsection{$1}",
 			"$0",
 		],
 	},
