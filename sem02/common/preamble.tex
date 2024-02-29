@@ -9,22 +9,13 @@
 \WarningFilter{mdframed}{You got a bad break}
 
 % HEADER AND FOOTER =================================================
-\def\@header{}
-\newcommand{\lectures}[1]{
-  \def\@header{#1. Лекции}
-  \begin{center}
-    \section*{#1. Лекции}
-  \end{center}
-}
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \setlength{\headheight}{22.54279pt}
 
-\fancyhead[R]{\@header}
 \fancyhead[R]{}
-\fancyfoot[L]{\thepage}
-\fancyfoot[C]{\leftmark}
+\fancyhead[L]{\leftmark}
+\fancyfoot[L]{}
 
 \makeatother
 
@@ -120,3 +111,4 @@
 % TIKZ ========================================================================
 
 \usepackage{tikz}
+
