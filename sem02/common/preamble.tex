@@ -2,7 +2,6 @@
 \usepackage[russian]{babel}
 \usepackage{cancel}
 \usepackage[none]{hyphenat}
-%\usepackage{titlesec}
 
 % IGNORE USELESS WARNINGS ===========================================
 \usepackage{silence}
@@ -20,7 +19,7 @@
 \makeatother
 
 % THEOREMS ==========================================================
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, amscd}
 \usepackage{thmtools}
 \usepackage[usenames,dvipsnames]{xcolor}
 
@@ -100,6 +99,8 @@
 
 \declaretheorem[style=thmbluebox, numbered=no, name=Пример]{eg}
 \declaretheorem[style=thmblueline, numbered=no, name=Замечание]{note}
+
+\declaretheorem[style=thmbluebox, parent=theorem, name=Следствие]{consequence}
 
 % MATH SYMBOLS ======================================================
 \newcommand\N{\ensuremath{\mathbb{N}}}
