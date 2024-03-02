@@ -10,3 +10,9 @@
 \contentsline {subsection}{\numberline {2.3}Неравенство Коши -- Буняковского}{9}{}%
 \contentsline {subsection}{\numberline {2.4}Норма вектора}{9}{}%
 \contentsline {subsection}{\numberline {2.5}Ортогональные системы векторов}{10}{}%
+\contentsline {section}{\numberline {3}Процесс ортогонализации. Линейные операторы}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Процесс ортогонализации Грама-Шмидта}{10}{}%
+\contentsline {subsection}{\numberline {3.2}Изоморфизм линейных пространств}{11}{}%
+\contentsline {subsection}{\numberline {3.3}Матрица линейного оператора}{12}{}%
+\contentsline {subsection}{\numberline {3.4}Преобразование матрицы линейного оператора}{13}{}%
+\contentsline {subsection}{\numberline {3.5}Произведение линейных операторов}{14}{}%

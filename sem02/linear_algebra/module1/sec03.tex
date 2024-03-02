@@ -1,0 +1,206 @@
+\section{Процесс ортогонализации. Линейные операторы}
+
+\subsection{Процесс ортогонализации Грама-Шмидта}
+
+\begin{theorem}
+  В конечномерном евклидовом пространстве существует ортонормированный базис.
+\end{theorem}
+
+Пусть $f = \left( f_1 \ldots f_n \right) $ -- некоторый базис в $n$-мерном евклидовом пространстве $\mathcal{E}$. Построим новый ортонормированный базис $e = \left( e_1 \ldots e_n \right)$:
+
+\begin{gather*}
+  e_1 = f_1 \\
+  e_k = f_k - \sum_{i=1}^{k-1} c_i^{k-1} e_i \quad k = 2 \ldots n
+\end{gather*}
+
+\begin{definition}[Суръективное отображение]
+  Отображение $f: X \to Y$ называют \textit{суръективным}, если каждый $y \in Y$ является образом некоторого элемента $x \in X$.
+\end{definition}
+
+\begin{definition}[Инъективное отображение]
+  Отображение $f: X \to Y$ называют \textit{инъективным}, если разные элементы $x_1, x_2 \in X$ имеют разные образы.
+\end{definition}
+
+\begin{definition}[Биективное отображение]
+  \textit{Биективным отображением} называют отображение, являющееся и суръективным, и инъективным одновременно.
+\end{definition}
+
+\begin{definition}[Линейное отображение или линейный оператор] 
+  \label{def:32}
+  Отображение $\mathcal{L} \to \mathcal{L}'$ из линейного пространства $\mathcal{L}$ в линейное пространство $\mathcal{L}'$ называют  \textit{линейным преобразованием} или \textit{линейным оператором}, если выполнены условия:
+  \begin{enumerate}
+    \item $\mathcal{A}(x + y) = \mathcal{A}(x) + \mathcal{A}(y) \quad \forall x, y \in \mathcal{L}$;
+    \item $\mathcal{A}(\lambda x) = \lambda \mathcal{A}(x) \quad \forall x \in \mathcal{L} \quad \forall \lambda \in R$.
+  \end{enumerate}
+\end{definition}
+
+Линейный оператор $\mathcal{A}: \mathcal{L} \to \mathcal{L}'$, который осуществляет отображение линейного пространства $\mathcal{L}$ в себя, называют также $линейным преобразованием$ линейного пространства $\mathcal{L}$ и говорят, что линейный оператор $\mathcal{A}$ действует в линейном пространстве $\mathcal{L}$.
+
+\begin{note}
+  Условия определения \ref{def:32} можно скомбинировать в виде одного условия, например так: \[
+  \mathcal{A}(\lambda x + \mu y) = \lambda (\mathcal{A} x) + \mu (\mathcal{A} y)
+  \] 
+\end{note}
+
+\subsection{Изоморфизм линейных пространств}
+
+\begin{definition}[Изоморфизм линейных пространств]
+  Два линейных пространства $\mathcal{L}$ и $\mathcal{L}'$ называют \textit{изоморфными}, если существует линейное биективное отображение $\mathcal{A}: \mathcal{L} \to \mathcal{L}'$. При этом само отображение $\mathcal{A}$ называют \textit{изоморфизмом линейных пространств $\mathcal{L}$ и $\mathcal{L}'$} 
+\end{definition}
+
+\begin{theorem}
+  Два конечномерных линейных пространства изоморфны тогда и только тогда, когда они имеют одинаковую размерность.
+\end{theorem}
+\begin{consequence}
+  Все $n$-мерные линейные пространства изоморфны  \textit{линейному арифметическому пространству} $\R^n$ 
+\end{consequence}
+
+\subsection{Матрица линейного оператора}
+
+\begin{definition}
+  Матрицу $A = (a_1 \ldots a_n)$, составленную из координатных столбцов векторов $\mathcal{A} b_1 \ldots \mathcal{A} b_n$ в базисе $b = \left( b_1 \ldots b_n \right)$ называют \textit{матрицей линейного оператора $\mathcal{A}$ в базисе $\mathcal{B}$}.
+\end{definition}
+
+\begin{theorem}
+  \label{th:33}
+  Пусть $\mathcal{A} : \mathcal{L} \to \mathcal{L}'$ -- линейный оператор. Тогда столбец $y$ координат вектора $y = \mathcal{A}x$ в данном базисе $b$ линейного пространства $\mathcal{L}$ равен произведению $Ax$ матрицы $A$ оператора $A$ в базисе $b$ на столбец $x$ координат вектора $x$ в том же базисе:  $y = Ax$.
+\end{theorem}
+\begin{proof}
+  Пусть $x = x_1 b_1 + \ldots + x_n b_n$. Тогда образом $x$ будет:
+  \begin{align*}
+    y &= \mathcal{A} x = \mathcal{A} (x_1 b_1 + \ldots + x_n b_n) = x_1 (\mathcal{A}b_1) + \ldots + x_n (\mathcal{A} b_n) \\
+      &= x_1 \left( a_{11} b_1 + \ldots + a_{n1} b_n \right) + \ldots + x_n \left( a_{1n} b_1 + \ldots + a_{nn} b_n \right) \\
+      &= \left( a_{11} x_1 + \ldots + a_{1n} x_n \right) b_1 + \ldots + \left( a_{n1} x_1 + \ldots + a_{nn} x_n \right) b_n
+  \end{align*}
+
+Столбец координат вектора $\mathcal{A}x$ в базисе $b$ имеет вид:  \[
+\begin{pmatrix}
+  a_{11} x_1 + \ldots + a_{1n} x_{n} \\
+  \ldots \\
+  a_{n1} x_1 + \ldots + a_{nn} x_{n}
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a_{11} & \ldots & a_{1n} \\
+  \ldots & \ldots & \ldots \\
+  a_{n1} & \ldots & a_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+  x_1 \\
+  \ldots \\
+  x_{n}
+\end{pmatrix}
+= Ax
+\] 
+\end{proof}
+
+\begin{theorem}
+  \label{th:34}
+  Пусть $b$ -- произвольный базис в $n$-мерном линейном пространстве $\mathcal{L}$. Различным линейным операторам $\mathcal{A}$ и $\mathcal{B}$, действующим в пространстве $\mathcal{L}$, соответствуют и различные матрицы в базисе $b$. Любая квадратная матрица $A$ порядка $n$ является матрицей некоторого линейного оператора, действующего в линейном пространстве $\mathcal{L}$.
+\end{theorem}
+\begin{proof}
+  \nobreakspace
+  \begin{enumerate}
+    \item Если матрицы $A$ и $B$ операторов $\mathcal{A}$ и $\mathcal{B}$ в базисе $b$ совпадают, то согласно теореме \ref{th:33} $\forall x$ со столбцом координат $x$ будет верно:  \[
+    \mathcal{A}x = bBx = \mathcal{B}x
+  \] 
+  Образы произвольного вектора при двух отображениях совпадают, а значит совпадают и сами отображения.
+
+    \item Пусть $A = (a_{ij})$ -- произвольная квадратная матрица порядка $n$. Определим отображение  $\mathcal{A}: \mathcal{L} \to \mathcal{L}'$ согласно формуле $\mathcal{A}(x) = bAx$, где $x$ -- столбец координат вектора $x$. Такое отображения является линейным: \[
+      A(\lambda x + \mu y) = bA(\lambda x + \mu y) = \lambda(b A x) + \mu(b A y) = \lambda \mathcal{A} x + \mu \mathcal{A} y
+    \] 
+    Вычислим $i = \overline{1, n}$ столбец координат образа  $i$-ного вектора из базиса  $b$: \[
+    \mathcal{A}b_i = bA
+    \begin{pmatrix}
+      0 \\ \ldots \\ 0 \\ 1 \\ 0 \\ \ldots \\ 0
+    \end{pmatrix}
+    = b
+    \begin{pmatrix}
+      a_{1i} \\ \ldots \\ a_{i-1,i} \\ a_{ii} \\ a_{i+1,i} \\ \ldots \\ a_{ni}
+    \end{pmatrix}
+    \] 
+    где единица стоит в $i$-ной строке; столбец совпадает с $i$-ым столбцом матрицы $A$.
+    Поэтому матрица заданного линейного оператора совпадает с исходной матрицей $A$.
+  \end{enumerate}
+\end{proof}
+
+\subsection{Преобразование матрицы линейного оператора}
+
+\begin{theorem}
+  Матрицы $A_b$ и  $A_e$ линейного оператора $\mathcal{A} : \mathcal{L} \to \mathcal{L}'$, записанные в базисах $b$ и  $e$ линейного пространства  $\mathcal{L}$, связаны друг с другом соотношением: \[
+    A_e = U^{-1} A_b U
+  \]
+  где $U = U_{b \to e}$ -- матрица перехода от базиса $b$ к базису $e$.
+\end{theorem}
+\begin{proof}
+  Пусть $y = \mathcal{A} x$. Обозначим координаты векторов $x$ и $y$ в старом базисе через  $x_b$ b  $y_b$, а в новом базисе $e$ -- через $x_e$ и $y_e$. Поскольку: \[
+    y_b = A_b x_b \quad x_b = U x_e \quad y_b = U y_e
+  \] 
+  То получаем: \[
+    y_e = U^{-1}y_b = U^{-1}(A_b x_b) = U^{-1}(A_b U x_e) = (U^{-1} A_b U) x_e
+  \] 
+  Равенство $y_e = (U^{-1} A_b U) x_e$ является матричной формой записи действия линейного оператора $\mathcal{A}$ в базисе $e$, поэтому, согласно теореме \ref{th:34}, $U^{-1} A_b U = A_e$
+\end{proof}
+
+Наглядная иллюстрация доказательства:
+\begin{gather*}
+  \begin{CD}
+    x_e    @>A_e>>  B \\
+    @VUVV           @AAU^{-1}A \\
+    x_b   @>A_b>> y_b
+\end{CD}
+\end{gather*}
+
+\begin{definition}[Подобные матрицы]
+  Квадратные матрицы $A$ и $B$ порядка $n$ называют \textit{подобными}, если существует такая невырожденная матрица $P$, что $P^{-1} Ap = B$.
+\end{definition}
+
+\begin{theorem}
+  \label{def:34}
+  Если матрицы $A$ и $B$ подобны, то $\det A = \det B$
+\end{theorem}
+\begin{proof}
+  Если матрицы $A$ и $B$ подобны, то, согласно определению \ref{def:34}, существует такая невырожденная матрица $P$ , что $B = P −1AP$ . Так как определитель произведения квадратных матриц равен произведению определителей этих матриц, а $\det(P^{−1}) = (\det P)^{-1}$, то получаем: \[
+  \det B = \det \left( P^{-1} AP \right) = \det\left( P^{-1} \right) \det A \det P = \det A
+  \] 
+\end{proof}
+
+\begin{consequence}
+  Определитель матрицы линейного оператора не зависит от выбора базиса.
+\end{consequence}
+
+\begin{definition}[Определитель линейного оператора]
+  \textit{Определителем линейного оператора} называют определитель его матрицы в каком-либо базисе.
+\end{definition}
+
+\subsection{Произведение линейных операторов}
+
+\begin{theorem}
+  \label{th:37}
+  Пусть в линейном пространстве $\mathcal{L}$ действуют линейные операторы $\mathcal{A}$ и $\mathcal{B}$, а $A$ и $B$ -- матрицы этих линейных операторов в некотором базисе $b$. Тогда матрицей линейного оператора $\mathcal{BA}$ в том же базисе $b$ является матрица $BA$.
+\end{theorem}
+\begin{proof}
+  Действие линейного оператора на вектор в данном базисе представляется как умножение матрицы этого оператора на столбец координат вектора. Поэтому для произведения двух операторов $\mathcal{A}$ и $\mathcal{B}$ получаем: \[
+    \left( \mathcal{BA} \right) x = \mathcal{B}\left( \mathcal{A}x \right) = \mathcal{B}\left( b A x \right)  = b\left( B(Ax) \right) = b(BA)x
+  \] 
+\end{proof}
+
+\begin{theorem}
+  Если линейный оператор $\mathcal{A}$ имеет обратное отображение $\mathcal{A}^{-1}$, то это отображение линейно, причем если матрицей $\mathcal{A}$ в данном базисе $b$ является $A$, то матрицей линейного оператора $\mathcal{A}^{-1}$ в том же базисе является $A^{-1}$.
+\end{theorem}
+\begin{proof}
+  Любым векторам $y_1$ и  $y_2$ линейного пространства $\mathcal{L}$ соответствуют такие однозначно определенные векторы $x_1$ и $x_2$, что  $y_i = \mathcal{A} x_i, i = 1,2$. При этом $\forall \lambda, \mu \in \R$ вектору $\lambda y_1 + \mu y_1$ соответствует вектор $\lambda x_1 + \mu x_2$, т.к.: \[
+  \mathcal{A}\left( \lambda x_1 + \mu x_2 \right) = \lambda \mathcal{A} x_1 + \mu \mathcal{A} x_2 = \lambda y_1 + \mu y_2
+  \] 
+  Поэтому: \[
+    \mathcal{A}^{-1} \left( \lambda y_1 + \mu y_2 \right) = \lambda x_1 + \mu x_2 = \lambda \mathcal{A}^{-1} y_1 + \mu \mathcal{A}^{-1} y_2
+  \]
+  А значит отображение $A^{-1}$ линейно.
+
+  Произведение операторов $\mathcal{A}$ и $\mathcal{A}^{-1}$, как композиция прямого и обратного отображения, является тождественным оператором. Согласно теореме  \ref{th:37}, произведение этих матриц равно единичной матрице $E : A'A = E$. А значит матрица $\mathcal{A}^{-1}$ является обратной к матрице $\mathcal{A}$.
+\end{proof}
+
+\begin{theorem}
+  Пусть в $n$-мерном пространстве $\mathcal{L}$ задан некоторый базис $b$. Тогда отображение $\Phi: L\left( \mathcal{L}, \mathcal{L} \right)$, сопоставляющее каждому линейному оператору его матрицу в базисе $b$, является  \textit{изоморфизмом линейных пространств} $L (\mathcal{L}, \mathcal{L})$ и $M_n(\R)$ 
+\end{theorem}
+

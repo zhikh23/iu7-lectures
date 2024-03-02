@@ -1,16 +1,16 @@
 \section{Линейные пространства}
 
 \begin{definition}[Линейное пространство]
-    Линейное пространство $\mathbb{L}$ над множеством значений $P$ (элементы будем называть векторами), для которого определены операции сложения и умножеения на скаляр, а также верно:
+  Линейное пространство $\mathcal{L}$ над множеством значений $mathcal{P}$ (элементы будем называть векторами), для которого определены операции сложения и умножеения на скаляр, а также верно:
     \begin{enumerate}
-        \item $\forall \vec{x}, \vec{y} \in \mathbb{L} \quad \vec{x} + \vec{y} = \vec{y} + \vec{x}$
-        \item $\forall \vec{x}, \vec{y} \quad (\vec{x} + \vec{y}) + \vec{z} = \vec{x} + (\vec{y} + \vec{z})$
-        \item $\exists \vec{0} : \forall \vec{x} \in \mathbb{L} \vec{x} + \vec{0} = \vec{x}$
-        \item $\forall \vec{x} \in \mathbb{L} \exists \vec{y} : \vec{x} + \vec{y}$ -- существование противоположного вектора $(-\vec{x})$
-        \item $\forall \vec{x} \in \mathbb{L} \quad (\alpha \beta) \vec{x} = \alpha (\beta \vec{x})$
-        \item $\forall \vec{x} \quad 1 \vec{x} = \vec{x}$ 
-        \item $(\alpha + \beta) \vec{x} = \alpha \vec{x} + \beta \vec{x}$
-        \item $\alpha(\vec{x} + \vec{y}) = \alpha \vec{x} + \alpha \vec{y}$ 
+        \item $\forall x, y \in \mathcal{L} \quad x + y = y + x$
+        \item $\forall x, y \quad (x + y) + z = x + (y + z)$
+        \item $\exists 0 : \forall x \in \mathcal{L} x + 0 = x$
+        \item $\forall x \in \mathcal{L} \exists y : x + y$ -- существование противоположного вектора $(-x)$
+        \item $\forall x \in \mathcal{L} \quad (\alpha \beta) x = \alpha (\beta x)$
+        \item $\forall x \quad 1 x = x$ 
+        \item $(\alpha + \beta) x = \alpha x + \beta x$
+        \item $\alpha(x + y) = \alpha x + \alpha y$ 
     \end{enumerate}
 \end{definition}
 
@@ -41,54 +41,54 @@
     Для каждого элемента противоположный единственный.
 \end{property}
 \begin{proof}
-    Пусть существую два противоположных элемента для $\vec{x}$: $\vec{y_1}$ и $\vec{y_2}$. Тогда:
+    Пусть существую два противоположных элемента для $x$: $\vec{y_1}$ и $\vec{y_2}$. Тогда:
     \begin{align*}
-        \vec{x} + \vec{y_1} &= \vec{0} \\
-        \vec{x} + \vec{y_2} &= \vec{0} \\
-        \vec{x} + \vec{y_1} &= \vec{x} + \vec{y_2} \\
+        x + \vec{y_1} &= 0 \\
+        x + \vec{y_2} &= 0 \\
+        x + \vec{y_1} &= x + \vec{y_2} \\
         \vec{y_1} &= \vec{y_2}
     \end{align*}
 \end{proof}
 
 \begin{property}
     \[
-        0 \cdot \vec{x} = \vec{x}
+        0 \cdot x = x
     \]
 \end{property}
 \begin{proof}
     \begin{gather*}
-        0 \vec{x} = 0 \vec{x} + \vec{0} = (0 + 1) \vec{x} + (-\vec{x}) = \vec{0}
+        0 x = 0 x + 0 = (0 + 1) x + (-x) = 0
     \end{gather*} 
 \end{proof}
 
 \begin{property}
     \[
-        (-1) \cdot \vec{x} = (- \vec{x})
+        (-1) \cdot x = (- x)
     \]
 \end{property}
 \begin{proof}
     \begin{gather*}
-        (-1) \cdot \vec{x} + \vec{x} = (1 - 1) \vec{x} = \vec{0} = \vec{x} + -\vec{x} \\
-        \implies (-1) \cdot \vec{x} = -\vec{x}
+        (-1) \cdot x + x = (1 - 1) x = 0 = x + -x \\
+        \implies (-1) \cdot x = -x
     \end{gather*}
 \end{proof}
 
 \begin{property}
     Уравнение \[
-        \forall \vec{x}, \vec{y} \in \mathbb{L} \quad \vec{x} + \vec{a} = \vec{y}
+        \forall x, y \in \mathcal{L} \quad x + a = y
     \]
     имеет решение и притом единственное.
 \end{property}
 \begin{proof}
     Пусть: \[
-        \vec{a} = \vec{y} + (-\vec{x})
+        a = y + (-x)
     \]
     Тогда подставляя в изначальное уравнение получаем тождество.
 \end{proof}
 
 \subsection{Линейная зависимость и независимость векторов}
 
-Пусть есть некоторый набор векторов $\vec{x_1}, \ldots, \vec{x_k} \in \mathbb{L}$.
+Пусть есть некоторый набор векторов $\vec{x_1}, \ldots, \vec{x_k} \in \mathcal{L}$.
 
 \begin{definition}[Линейная комбинация]
     Линейной комбинацией называется выражение вида: \[
@@ -125,13 +125,13 @@
 \end{property}
 
 \begin{property}
-    Если векторы $x_1, \ldots, x_n$ линейного пространства $\mathbb{L}$ линейно независимы и вектор $y \in \mathbb{L}$ не является их линейной комбинацией, то расширенная система векторов $x_1, \ldots , x_n, y$ является линейно независимой.
+    Если векторы $x_1, \ldots, x_n$ линейного пространства $\mathcal{L}$ линейно независимы и вектор $y \in \mathcal{L}$ не является их линейной комбинацией, то расширенная система векторов $x_1, \ldots , x_n, y$ является линейно независимой.
 \end{property}
 
 \subsection{Базис, размерность пространства}
 
 \begin{definition}[Базис]
-    \textit{Базисом} линейного пространства $\mathbb{L}$ называют любую упорядоченную систему векторов, для которой выполнены два условия:
+    \textit{Базисом} линейного пространства $\mathcal{L}$ называют любую упорядоченную систему векторов, для которой выполнены два условия:
     \begin{enumerate}
         \item эта система векторов линейно независима;
         \item каждый вектор в линейном пространстве может быть представлен в виде линейной комбинации векторов этой системы.
@@ -155,12 +155,12 @@
 \end{definition}
 
 \begin{theorem}
-    Если $\mathbb{L}$ -- конечномерное пространство, тогда все базисы состоят из конечного числа векторов.
+    Если $\mathcal{L}$ -- конечномерное пространство, тогда все базисы состоят из конечного числа векторов.
 \end{theorem}
 
 \begin{definition}[Размерность линейного пространства]
     Максимальное количество линейно независимых векторов в данном линейном пространстве называют \textit{размерностью линейного пространства}. \[
-        \mathrm{dim} (\mathbb{L}) = n
+        \mathrm{dim} (\mathcal{L}) = n
     \]
 \end{definition}
 
@@ -168,7 +168,7 @@
 
 \subsection{Преобразование координат вектора при замене базиса}
 
-Пусть в $n$-мерном пространстве $\mathbf{L}$ заданы два базиса:  \[
+Пусть в $n$-мерном пространстве $\mathcal{L}$ заданы два базиса:  \[
   b = \left( b_1, \ldots b_n \right) \quad c = \left( c_1, \ldots c_n \right) 
 \] 
 
