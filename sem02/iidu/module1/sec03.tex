@@ -1,0 +1,93 @@
+\section{Определенный интеграл}
+
+Тут пропущена лекция.
+
+\subsection{Свойста определённого интеграла (пр)}
+
+\begin{theorem}[Об интегрировании неравенства]
+  \label{th:36}
+  Пусть функция $f(x)$ и  $g(x)$ интегрируема на  $[a, b]$ и $\forall x \in [a, b]$ $f(x) > g(x)$, то: \[
+  \int_a^b f(x) dx \ge \int_a^b g(x)dx
+  \] 
+\end{theorem}
+\begin{proof}
+  По условию $f(x) \ge g(x)$, $\forall x \in [a, b]$. Обозначим $h(x) = f(x) - g(x) \ge 0$. Тогда по теореме \ref{ref:35} $\implies \int_a^b h(x) dx \ge 0$. Получаем: \[
+  \int_a^b (f(x) - g(x)) dx \ge 0
+  \] 
+  По теореме \ref{ref:34}:
+  \begin{align*}
+    \int_a^b f(x) dx - \int_a^b g(x) dx &\ge 0 \\
+    \int_a^b f(x) dx &\ge \int_a^b g(x) dx
+  \end{align*}
+\end{proof}
+
+\begin{theorem}[Об оценке модуля определённого интеграла]
+  Если функции $f(x)$ и $|f(x)|$ интегрируема на оценке $[a, b]$, то справедливо неравенство:  \[
+  \left| \int_a^b f(x) dx \right| \le \int_a^b f(x) dx
+  \] 
+\end{theorem}
+\begin{proof}
+  \label{th:37}
+  $\forall x \in [a, b]$ верно неравенство: \[
+    -|f(x)| \le f(x) \le |f(x)| 
+  \] 
+  По теореме \ref{ref:34} и \ref{th:46} $\implies$: \[
+    -\int_a^b |f(x)| dx \le \int_a^b f(x) dx \le \int_a^b |f(x)| dx
+  \] 
+  Сворачиваем двойное неравенство: \[
+    \left| \int_a^b f(x) dx \right| \ge \int_a^b | f(x) |fx
+  \] 
+\end{proof}
+
+\begin{theorem}[О среднем значении для определённого интеграла]
+  Если $f(x)$ непрерывна на $[a, b]$, то: \[
+    \exists c \in [a, b] : f(x) = \frac{1}{b - a} \int_a^b f(x) dx
+  \] 
+\end{theorem}
+\begin{proof}
+  Т.к. функция $f(x)$ непрерывна на $[a, b]$, то по теореме Вейерштрасса она достигает своего наибольшего и наименьшего значения, т.е. $\exists m, M \in \R : \forall x \in [a, b] \quad m \le f(x) \le M$
+  По теореме \ref{ref:36}:  \[
+  \int_a^b mdx \le \int_a^b f(x) dx \le \int_a^b Mdx
+  \] 
+  По теореме \ref{ref:34}: \[
+    m \int_a^b dx \le \int_a^b f(x) dx \le M \int_a^b dx
+  \]
+  По теореме \ref{ref:33}: \[
+    m(b - a) \le \int_a^b f(x) dx \le M(b - a) \tag{1} 
+  \] 
+  Т.к. функция $f(x)$ непрерывна на  $[a, b]$, то по теореме Больцана-Коши, она принимает все свои значения между наибольшим и наименьшим значениями. Разделим $(1)$ на  $b - a$:  \[
+  m \le \frac{1}{b - a} \int_a^b f(x) dx \le M
+  \] 
+  по теореме Больцано-Коши: \[
+    \exists c \in [a, b] : f(x) = \frac{1}{b - a} \int_a^b f(x) dx
+  \]
+\end{proof}
+
+\begin{theorem}[Об оценке определённого интеграла]
+  \label{th:39}
+  Пусть функция $f(x)$ и $g(x)$ интегрируемы на отрезке $[a, b]$ и  $\forall x \in [a, b] : m \le f(x) \le M, \quad g(x) \ge 0$.
+  Тогда: \[
+    m \int_a^b g(x) dx \le \int_a^b f(x) g(x) dx \le M \int_a^b g(x) dx
+  \]
+\end{theorem}
+
+\begin{proof}
+  Т.к. $\forall x \in [a, b]$ верны неравенства:
+  \begin{align*}
+    m \le  &f(x) \le M \quad m, M \in \R \\
+         &g(x) \ge 0 \\
+    mg(x) \le &f(x)g(x) \le M g(x)
+  \end{align*}
+  По теореме \ref{ref:36}: \[
+    m \int_a^b g(x) dx \le \int_a^b f(x) g(x) dx \le M \int_a^b g(x) dx
+  \] 
+\end{proof}
+
+\begin{consequence}
+  $g(x) = 1$, $\forall x \in [a, b]$: \[
+    m\left( b - a \right)   \le \int_a^b f(x) \le M(b - a)
+  \] 
+\end{consequence}
+
+
+

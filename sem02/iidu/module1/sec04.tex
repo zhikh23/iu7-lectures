@@ -1,0 +1,122 @@
+\section{Определенный интеграл с переменным верхним пределом интегрирования}
+
+Пусть $f(x)$ непрерывна на $[a, b]$. Рассмотрим $\int_a^b f(x) dx$.
+Закрепим нижний предел интегрирования $a$. Изменяем верхний предел интегрирования $b$. Чтобы подчеркнуть изменение предела интегрирования, заменим $b \to x$, $x \in [a, b] \implies [a, x] \subset [a, b]$: \[
+  \mathcal{I}(x) = \int_a^x f(t) dt
+\]
+
+\begin{definition}
+  Определенным интегралом с переменным верхнем пределом интегрирования от непрерывной функции $f(x)$ на $[a, b]$ называется интеграл вида: \[
+  \mathcal{I}(x) = \int_a^x f(t) dt
+  \] 
+\end{definition}
+
+\subsubsection*{Геометрический смысл}
+
+$\mathcal{I}(x)$ -- переменная площадь криволинейной трапеции с основанием $[a - x] \subset  [a, b]$
+
+\subsection{Свойства определенного интеграла с переменным верхним пределом интегрирования}
+
+\begin{theorem}[Непрерывность]
+  \label{th:41}
+  Если функция $f(x)$ на $[a, b]$ непрерывна, то $\mathcal{I}(x) \int_a^b f(t)dt$ -- непрерывна на $[a, b$.
+\end{theorem}
+\begin{proof}
+  Рассмотрим $\mathcal{I}(x) = \int_a^b f(t) dt$.
+  Найдем $\mathcal{I(x + \Delta x)} = \int_a^{x + \Delta x} f(t) dt$. Тогда:
+  \begin{align*}
+    \Delta \mathcal{I}(x) &= \mathcal{I}(x + \Delta x) - I(x) \\
+           &= \int_a^{x + \Delta x} f(t) dt - \int_a^x f(t) dt = (*)
+  \end{align*}
+  Т.к. функция $f(x)$ непрерывна на $[a, b] \implies f(x)$ интегрируема на $[a, b] \implies$ применяем свойство аддитивности определенного интеграла:
+  \begin{align*}
+    (*) &= \int_a^x f(t) dt + \int_a_{x + \Delta x} f(t) - \int_a^x f(t) dt \\
+        &= \int)_x^{x + \Delta x} = (*)
+  \end{align*}
+  Согласно теореме \ref{th:38}: 
+  \begin{align*}
+    (*) &= f(c) (x + \Delta x - x) \\
+        &= f(c) \Delta x \text{, где } c \in [x, x + \Delta x]
+  \end{align*}
+  Найдем предел:  \[
+    \lim_{\Delta x \to 0} \Delta \mathcal{I}(x) = \lim_{\Delta x \to 0} f(c) \Delta x = 0
+  \] 
+  По определению непрерывной функции: \[
+  \mathcal{I}(x) = \int_a^x f(t) dt
+  \] 
+\end{proof}
+
+\begin{note}
+  Такого вопроса на экзамене нет, но при доказательстве следующей теоремы нужно доказать эту.
+\end{note}
+
+\begin{theorem}[О производной]
+  \label{th:42}
+  Если функция $y = f(x)$ непрерывна на $[a, b]$, то  $\forall x \in [a, b]$ верно равенство: \[
+    \left( \mathcal{I}(x) \right)' = \left( \int_a^x f(t) dt \right)' = f(x)
+  \] 
+\end{theorem}
+\begin{proof}
+  По определению производной функции: \[
+    \left( \mathcal{I}(x) \right)' = \lim_{\Delta x \to 0} \frac{\Delta \mathcal{I}(x)}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(c) \Delta x}{\Delta x} = \lim_{\Delta x \to 0} f(c)
+  \] 
+\end{proof}
+
+% тут рисуночек
+
+\begin{consequence}
+  Функция $I(x)$ является первообразной функции $f(x)$ на  $[a, b]$ по теореме \ref{th:32}.
+\end{consequence}
+
+\subsection{Формула Ньютона-Лейбница}
+
+\begin{theorem}
+  Пусть функция $f(x)$ непрерывна на $[a, b]$. Тогда:  \[
+    \int_a^b f(x) dx = F(x) \bigg|_a^b = F(b) - F(a)
+  \] 
+  где $F(x)$ -- первообразная функции $f(x)$.
+\end{theorem}
+\begin{proof}
+  Пусть $F(x)$ -- первообразная функции $f(x)$ на отрезке $[a, b]$. Тогда по следствию из теоремы \ref{th:42}.
+  По свойству первообразной:
+  \begin{gather*}
+    \mathcal{I(x)} - F(x) = C, \quad C = const \\
+    \int_a^x f(t) dt = F(x) + C \text{, где } C = const \tag{*} 
+  \end{gather*}
+  Возьмем $x = a$:
+  \begin{align*}
+    \int_a^a f(t)dt &= F(a) + C \\
+    0 &= F(a) + C \\
+    C &= -F(a)
+  \end{align*}
+  Подставим $C = -F(a)$ в  $(*)$:  \[
+    \int_a^x f(t) dt = F(x) - F(a)
+  \] 
+  Возьмем $x = b$: \[
+    \boxed{\int_a^b f(t) dt = F(b) - F(a)}
+  \] 
+\end{proof}
+
+\subsection{Методы вычисления определенного интеграла}
+
+\subsubsection{Интегрирование по частям}
+
+\begin{theorem}
+  Пусть функции $u = u(x)$ и  $v = v(x)$ непрерывно дифференцируемы, тогда имеет место равенство:  \[
+  \int_a^b u du = uv \bigg|_a^b - \int_a^b v du
+  \] 
+\end{theorem}
+\begin{proof}
+  Рассмотрим произведение функций $uv$. Дифференциал:
+  \begin{gather*}
+    d(uv) = v du + u dv \\
+    u dv = d(uv) - v du \\
+  \end{gather*}
+  Интегрируем:
+  \begin{gather*}
+    \int_a^b u dv = \int_a^b (d(uv) - vdu) \\
+    \int_a^b u dv = \int_a^b d(uv) - \int_a^b v du \\
+    \int_a^b u dv = uv \bigg|_a^b - \int_a^b v du
+  \end{gather*}
+\end{proof}
+
