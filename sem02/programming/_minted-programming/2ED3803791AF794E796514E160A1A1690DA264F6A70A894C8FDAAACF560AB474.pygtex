@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }gcc\PYG{+w}{ }\PYGZhy{}std\PYG{o}{=}c99\PYG{+w}{ }\PYGZhy{}Wall\PYG{+w}{ }\PYGZhy{}Werror\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }hello.exe\PYG{+w}{ }hello.c
+\end{Verbatim}

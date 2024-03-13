@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYG{n}{gcc}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{std}\PYG{o}{=}\PYG{n}{c99}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{Wall}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{Werror}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{o}\PYG{+w}{ }\PYG{n}{hello}\PYG{p}{.}\PYG{n}{exe}\PYG{+w}{ }\PYG{n}{hello}\PYG{p}{.}\PYG{k}{c}
+\end{Verbatim}

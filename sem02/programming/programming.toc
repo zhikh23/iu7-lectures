@@ -1,0 +1,49 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Особенности языка Си}{4}{}%
+\contentsline {subsection}{\numberline {1.1}Отличия языка Си от Python}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Пример программы на языке Си}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Выполнение программы из примера}{4}{}%
+\contentsline {subsection}{\numberline {1.4}Выводы}{5}{}%
+\contentsline {section}{\numberline {2}Переменная в языке Си}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Выбор типа переменной}{5}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Пример использования переменных}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Выводы}{6}{}%
+\contentsline {section}{\numberline {3}Функции}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Подпрограмма}{6}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Виды подпрограмм}{7}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Структура подпрограммы}{7}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Вызов подпрограммы}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Передача параметров}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Функции в языке Си}{7}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Возвращаемое значениe}{7}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Параметры функции}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Тело функции}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Объявление функции}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}Объявление и определение}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.6}Функции без параметров}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.7}Чистые функции}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.8}Вызов функции}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.9}Выводы}{10}{}%
+\contentsline {subsection}{\numberline {3.4}Рекурсия}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Преимущества и недостатки использования рекурсии}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Хвостовая рекурсия}{10}{}%
+\contentsline {section}{\numberline {4}Одномерные статические массивы}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Массивы в Си}{11}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Доступ к элементу массива}{11}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Инициализация массива}{11}{}%
+\contentsline {section}{\numberline {5}Указатели}{11}{}%
+\contentsline {subsection}{\numberline {5.1}Указатели в языке Си}{11}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Разновидности указателей}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Зачем нужны указатели?}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.3}Операции с указателями}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.4}Инициализация указателей}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.5}Указатели и \texttt {const}}{13}{}%
+\contentsline {subsection}{\numberline {5.2}Указатели и массивы}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Исключения}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Различия указателя и массива}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}Передача массива в функцию}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.4}Тип \texttt {size\_t}}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.5}Сложение указателя с числом}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.6}Операция индексации}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.7}Сравнение указателей}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.8}Разность указателей}{14}{}%

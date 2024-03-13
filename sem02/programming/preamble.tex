@@ -1,0 +1,109 @@
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cancel}
+\usepackage[none]{hyphenat}
+\usepackage{csquotes}
+
+% IGNORE USELESS WARNINGS ===========================================
+\usepackage{silence}
+\WarningFilter{mdframed}{You got a bad break}
+
+% HEADER AND FOOTER =================================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{22.54279pt}
+
+\fancyhead[R]{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[L]{}
+
+\makeatother
+
+% THEOREMS ==========================================================
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, amscd}
+\usepackage{thmtools}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+    bodyfont=\normalfont,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=ForestGreen,
+        }
+]{thmgreenbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black},
+    bodyfont=\normalfont,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=NavyBlue,
+        }
+]{thmbluebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black},
+    bodyfont=\normalfont,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=NavyBlue
+        }
+]{thmblueline}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black},
+    bodyfont=\normalfont,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=RawSienna,
+        }
+]{thmredbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black},
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=RawSienna,
+        },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black},
+    bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=NavyBlue,
+        },
+]{thmexplanationbox}
+
+\theoremstyle{plain}
+
+\declaretheorem[style=thmgreenbox, name=Определение, parent=section]{definition}
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Пример]{eg}
+\declaretheorem[style=thmblueline, numbered=no, name=Замечание]{note}
+
+% MATH SYMBOLS ======================================================
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+
+% CODE ==============================================================
+\usepackage{minted}
+\usemintedstyle{trac}
+
+\def\code#1{\texttt{#1}}
+
