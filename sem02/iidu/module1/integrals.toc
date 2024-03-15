@@ -1,0 +1,22 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Первообразная и неопределённый интеграл}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Свойства неопределённого интеграла}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Геометрический смысл}{6}{}%
+\contentsline {subsection}{\numberline {1.3}Таблица основных интегралов}{6}{}%
+\contentsline {subsection}{\numberline {1.4}Основные методы интегрирования}{7}{}%
+\contentsline {subsubsection}{\numberline {1.4.1}Непосредственное интегрирование}{7}{}%
+\contentsline {subsubsection}{\numberline {1.4.2}Занесение под знак дифференциала}{7}{}%
+\contentsline {subsubsection}{\numberline {1.4.3}Замена переменной}{7}{}%
+\contentsline {subsubsection}{\numberline {1.4.4}Интегрирование по частям}{7}{}%
+\contentsline {section}{\numberline {2}Правильные и неправильные рациональные дроби}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Интегрирование простейших рациональных дробей}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Неправильные рациональные дроби}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Метод неопределенных коэффициентов}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Метод конкретных значений}{10}{}%
+\contentsline {section}{\numberline {3}Определенный интеграл}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Свойста определённого интеграла (пр)}{10}{}%
+\contentsline {section}{\numberline {4}Определенный интеграл с переменным верхним пределом интегрирования}{12}{}%
+\contentsline {subsection}{\numberline {4.1}Свойства определенного интеграла с переменным верхним пределом интегрирования}{12}{}%
+\contentsline {subsection}{\numberline {4.2}Формула Ньютона-Лейбница}{14}{}%
+\contentsline {subsection}{\numberline {4.3}Методы вычисления определенного интеграла}{14}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Интегрирование по частям}{14}{}%
